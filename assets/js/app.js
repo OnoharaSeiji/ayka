@@ -22,12 +22,37 @@ function buildLessonGrid() {
   `).join('');
 }
 
+function buildCalendarGrid() {
+  const mount = document.getElementById('calendarGrid');
+  if (!mount || !window.AYKA_CONFIG) return;
+  const days = window.AYKA_CONFIG.calendarDays || [];
+  mount.innerHTML = days.map(item => {
+    const subjects = (item.subjects || []).map(s => `<span class="calendar-chip">${s}</span>`).join('');
+    const inner = `
+      <div class="calendar-top">
+        <div>
+          <div class="calendar-weekday">${item.weekday}</div>
+          <div class="calendar-date">${item.dateLabel}</div>
+        </div>
+        <div class="calendar-badge ${item.status === 'pronta' ? 'ready' : 'planned'}">${item.status === 'pronta' ? 'pronta' : 'planejada'}</div>
+      </div>
+      <div class="calendar-day">Dia ${item.day}</div>
+      <div class="calendar-title">${item.title}</div>
+      <div class="calendar-chips">${subjects}</div>
+    `;
+    if (item.status === 'pronta') {
+      return `<a class="calendar-card ready" href="${item.file}">${inner}</a>`;
+    }
+    return `<div class="calendar-card planned">${inner}</div>`;
+  }).join('');
+}
+
 const levels = [
-  {min:0,  label:'Explorador 🌱',   msg:'Vamos começar! Cada estrela conta! 🌟'},
-  {min:3,  label:'Aprendiz ✨',      msg:'Ótimo começo! Você está arrasando! 🎉'},
-  {min:6,  label:'Estudante 📚',    msg:'Que dedicação incrível! Continue assim! 💪'},
-  {min:10, label:'Campeã 🏆',       msg:'Você é uma verdadeira campeã, Ayka! 🎊'},
-  {min:15, label:'Superestrela 🌟', msg:'SUPERESTRELA! Você é demais, Ayka! 🦄👑'},
+  {min:0,  label:'Exploradora 🌱', msg:'Começo certo: constância primeiro, velocidade depois.'},
+  {min:3,  label:'Aprendiz ✨',    msg:'Boa. O importante é manter o ritmo da semana.'},
+  {min:6,  label:'Estudante 📚',   msg:'A base está ficando firme e organizada.'},
+  {min:10, label:'Campeã 🏆',      msg:'Ritmo forte. Já dá para sentir evolução real.'},
+  {min:15, label:'Superestrela 🌟',msg:'Excelente constância. Agora é seguir sem quebrar a rotina.'},
 ];
 
 let totalStars = parseInt(localStorage.getItem((window.AYKA_CONFIG && window.AYKA_CONFIG.starStorageKey) || 'aykaStars2') || '0');
@@ -75,7 +100,7 @@ function playStarSound(n) {
 }
 
 function setupObserver() {
-  const targets = document.querySelectorAll('.subj-card,.sci-card,.reward-card,.rt-item,.day-col,.lesson-card');
+  const targets = document.querySelectorAll('.subj-card,.sci-card,.reward-card,.rt-item,.day-col,.lesson-card,.calendar-card');
   if (!targets.length) return;
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -95,6 +120,7 @@ function setupObserver() {
 
 document.addEventListener('DOMContentLoaded', () => {
   buildLessonGrid();
+  buildCalendarGrid();
   buildStarRow();
   setupObserver();
 });
