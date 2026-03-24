@@ -1,699 +1,889 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apostila Dia 1 — Ayka 📚</title>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800;900&family=Patrick+Hand&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/apostila.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    const APOSTILA = {
+      numero: 1,
+      titulo: "Leitura, Números e Primeiras Palavras em Inglês",
+      disciplina: "Português + Matemática + Inglês",
+      disciplinaIcone: "🌟",
+      semana: 1,
+      fase: "Trilha de aceleração — 2º para o 3º ano",
+      reino: "Reino das Descobertas",
+      reinoIcone: "📚",
+      raridade: "comum",
+      xp: 10,
+      moedas: 3,
+      corPrincipal: "#2563eb",
+      corSecundaria: "#60a5fa"
+    };
+  </script>
+  <title>Dia 001 — Leitura, Números e Primeiras Palavras em Inglês | Ayka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0f172a;--navy:#16233d;--blue:#2563eb;--blue2:#60a5fa;--sky:#dbeafe;--green:#16a34a;--lime:#dcfce7;--orange:#ea580c;--amber:#f59e0b;--yellow:#fef3c7;--red:#dc2626;--purple:#7c3aed;--violet:#ede9fe;--gray0:#f8fafc;--gray1:#f1f5f9;--gray2:#e2e8f0;--gray3:#cbd5e1;--gray4:#64748b;--white:#ffffff;--shadow:0 12px 30px rgba(15,23,42,.10)}
+    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+    body{font-family:'Nunito',sans-serif;background:var(--gray0);color:var(--ink);line-height:1.65}
+    .cover{min-height:100vh;background:linear-gradient(155deg,#0d1117 0%, #113a24 46%, #16a34a 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;position:relative;overflow:hidden}
+    .cover-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);background-size:56px 56px}
+    .cover-glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle, rgba(74,222,128,.35), transparent 70%);top:-120px;right:-100px;animation:pulse 7s ease-in-out infinite}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}} @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}} @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .cover-icon{font-size:88px;position:relative;z-index:2;animation:floaty 2.8s ease-in-out infinite;margin-bottom:14px}
+    .cover h1{font-family:'Fredoka',cursive;font-size:clamp(38px,7vw,70px);line-height:1.08;color:#fff;text-shadow:0 8px 30px rgba(0,0,0,.35);position:relative;z-index:2;animation:fadeUp .8s ease .1s both}
+    .cover-sub{margin-top:14px;color:rgba(255,255,255,.9);font-weight:800;font-size:clamp(16px,2.5vw,22px);position:relative;z-index:2;animation:fadeUp .8s ease .3s both}
+    .cover-pills{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:26px;position:relative;z-index:2;animation:fadeUp .8s ease .5s both}
+    .pill{padding:9px 16px;border-radius:999px;font-size:13px;font-weight:900;border:2px solid rgba(255,255,255,.24);color:#fff;background:rgba(255,255,255,.12);backdrop-filter:blur(4px)}
+    .cover-note{margin-top:24px;max-width:760px;padding:18px 22px;border-radius:18px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);color:rgba(255,255,255,.94);font-size:14px;font-weight:700;line-height:1.65;position:relative;z-index:2;animation:fadeUp .8s ease .7s both}.cover-note strong{color:#fde68a}
+    .science-bar{background:var(--navy);padding:12px 18px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}.science-chip{background:rgba(255,255,255,.08);color:rgba(255,255,255,.9);border:1.5px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800}
+    .nav{position:sticky;top:0;z-index:200;background:#0d1117;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:12px 14px;box-shadow:0 2px 20px rgba(0,0,0,.4)}
+    .nav button{border:1.5px solid rgba(255,255,255,.18);background:transparent;color:rgba(255,255,255,.82);border-radius:999px;padding:7px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;cursor:pointer;transition:.22s ease}.nav button:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:scale(1.04)}
+    .page{max-width:980px;margin:0 auto;padding:40px 18px}
+    .stage{border-radius:24px;padding:28px 24px;margin-bottom:28px;position:relative;overflow:hidden}.stage::after{content:'';position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.08);right:-50px;bottom:-90px}
+    .stage.orange{background:linear-gradient(135deg,#9a3412,#ea580c,#fb923c)} .stage.blue{background:linear-gradient(135deg,#065f46,#16a34a,#4ade80)} .stage.purple{background:linear-gradient(135deg,#14532d,#15803d,#4ade80)} .stage.green{background:linear-gradient(135deg,#1e3a8a,#2563eb,#60a5fa)} .stage.dark{background:linear-gradient(135deg,#0d1117,#113a24,#16a34a)}
+    .stage-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.18);color:#fff;border:1.5px solid rgba(255,255,255,.28);padding:6px 14px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;margin-bottom:10px}
+    .stage-icon{font-size:50px;margin-bottom:10px;display:block;animation:floaty 2.6s ease-in-out infinite;position:relative;z-index:1}
+    .stage h2{font-family:'Fredoka',cursive;font-size:clamp(28px,4vw,48px);color:#fff;line-height:1.12;text-shadow:0 4px 16px rgba(0,0,0,.25);position:relative;z-index:1}
+    .stage p{margin-top:10px;color:rgba(255,255,255,.92);font-size:15px;font-weight:700;position:relative;z-index:1}.stage-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;position:relative;z-index:1}.stage-tag{background:rgba(255,255,255,.16);color:#fff;border:1.5px solid rgba(255,255,255,.24);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800}
+    .card{background:var(--white);border-radius:18px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)} .card h3{font-family:'Fredoka',cursive;font-size:24px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .card.bc{border-left:6px solid var(--orange)} .card.bc h3{color:var(--orange)} .card.bp{border-left:6px solid var(--blue)} .card.bp h3{color:var(--blue)} .card.ba{border-left:6px solid var(--purple)} .card.ba h3{color:var(--purple)} .card.bg{border-left:6px solid var(--green)} .card.bg h3{color:var(--green)} .card.bo{border-left:6px solid var(--amber)} .card.bo h3{color:var(--amber)} .card.br{border-left:6px solid var(--red)} .card.br h3{color:var(--red)}
+    .cpa-label{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;margin-bottom:10px}.cpa-c{background:#fff7ed;color:#9a3412;border:2px solid #fb923c}.cpa-p{background:#eff6ff;color:#1e3a8a;border:2px solid #93c5fd}.cpa-a{background:#f5f3ff;color:#4c1d95;border:2px solid #c4b5fd}
+    .info{border-radius:14px;padding:16px 18px;margin:12px 0;font-size:14px;font-weight:700;line-height:1.65}.info strong{font-weight:900}.info.yellow{background:#fefce8;border:2px solid #fde047}.info.blue{background:#eff6ff;border:2px solid #93c5fd}.info.green{background:#f0fdf4;border:2px solid #86efac}.info.orange{background:#fff7ed;border:2px solid #fdba74}.info.purple{background:#f5f3ff;border:2px solid #c4b5fd}.info.red{background:#fef2f2;border:2px solid #fca5a5}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
+    .bubble-card{background:var(--gray0);border:2px solid var(--gray2);border-radius:16px;padding:16px;text-align:center;transition:.2s ease;cursor:pointer;min-height:110px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px}.bubble-card:hover{transform:translateY(-2px) scale(1.01);border-color:var(--blue);background:#ecfdf5}.bubble-card strong{font-size:15px;color:var(--ink)}.bubble-card small{color:var(--gray4);font-size:12px;font-weight:800}
+    .sun-wrap{background:linear-gradient(135deg,#ecfdf5,#dcfce7);border:2.5px solid #86efac;border-radius:18px;padding:24px;margin:16px 0;text-align:center}.sun-core{width:160px;height:160px;border-radius:50%;background:linear-gradient(135deg,#16a34a,#4ade80);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;margin:0 auto 20px;padding:18px;font-family:'Fredoka',cursive;font-size:22px;line-height:1.2;box-shadow:0 0 0 10px rgba(22,163,74,.12)}.orbit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.orbit{background:#fff;border:2px dashed #86efac;border-radius:14px;padding:14px;font-size:14px;font-weight:800;color:#166534}
+    .steps{list-style:none;counter-reset:step}.steps li{counter-increment:step;display:flex;align-items:flex-start;gap:12px;margin-bottom:13px;font-size:14px;font-weight:700}.steps li::before{content:counter(step);width:32px;height:32px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Fredoka',cursive;color:#fff;background:var(--blue)}.steps.purple li::before{background:var(--purple)}
+    .worked,.guided,.independent{border-radius:18px;padding:22px;margin:16px 0;position:relative}.worked{background:linear-gradient(135deg,#f8fafc,#ecfdf5);border:2px solid var(--gray2)}.worked::before{content:'Exemplo resolvido';position:absolute;top:-12px;left:18px;background:var(--blue);color:#fff;padding:4px 14px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.5px;text-transform:uppercase}.guided{background:linear-gradient(135deg,#fff7ed,#ffedd5);border:2px solid #fdba74}.guided::before{content:'Prática guiada';position:absolute;top:-12px;left:18px;background:var(--orange);color:#fff;padding:4px 14px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.5px;text-transform:uppercase}.independent{background:#fff;border:2px solid var(--gray2)}.independent::before{content:'Prática independente';position:absolute;top:-12px;left:18px;background:var(--green);color:#fff;padding:4px 14px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.5px;text-transform:uppercase}
+    .question{background:var(--gray0);border-left:5px solid var(--gray3);border-radius:14px;padding:15px 16px;margin-bottom:10px;font-size:14px;font-weight:700;line-height:1.65;cursor:pointer;transition:.2s ease}.question:hover{transform:translateX(4px);background:#f8fbff}.question.blue{border-left-color:var(--blue)} .question.orange{border-left-color:var(--orange)} .question.green{border-left-color:var(--green)} .question.purple{border-left-color:var(--purple)}
+    .show-btn{border:none;border-radius:999px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:900;font-size:11px;cursor:pointer;margin-top:8px;color:#fff;background:var(--blue)} .show-btn.orange{background:var(--orange)} .show-btn.green{background:var(--green)} .show-btn.purple{background:var(--purple)}
+    .answer{display:none;margin-top:10px;border-radius:12px;padding:12px 14px;background:#f0fdf4;border:2px solid #86efac;color:#166534;font-size:13px;font-weight:800;line-height:1.6}.answer.show{display:block}
+    .stars{display:flex;align-items:center;gap:6px;width:fit-content;margin:14px 0;padding:8px 18px;border-radius:999px;border:2px solid #fde047;background:var(--yellow);font-weight:900}.star{font-size:20px;cursor:pointer;user-select:none;transition:.2s ease}.star:hover{transform:scale(1.2)} .star.off{filter:grayscale(1) opacity(.35)}
+    .memory-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}.memory-card{background:#fff;border:2px solid var(--gray2);border-radius:14px;padding:16px;font-size:14px;font-weight:800;cursor:pointer;transition:.2s ease;text-align:center}.memory-card:hover{transform:translateY(-2px);border-color:var(--purple);background:#f5f3ff}
+    .quiz-wrap{background:linear-gradient(160deg,#0d1117,#113a24);border-radius:24px;padding:28px;margin-top:24px}.quiz-wrap h3{color:#fff;text-align:center;font-family:'Fredoka',cursive;font-size:26px;margin-bottom:18px}.quiz-bar-wrap{height:10px;background:rgba(255,255,255,.12);border-radius:999px;overflow:hidden;margin-bottom:14px}.quiz-bar{height:100%;width:0;background:linear-gradient(90deg,#22c55e,#4ade80);transition:.35s ease}.quiz-score{text-align:center;color:#fde68a;font-family:'Fredoka',cursive;font-size:18px;margin-bottom:14px}.quiz-question{color:#fff;font-size:17px;font-weight:900;min-height:58px;line-height:1.5;margin-bottom:16px}.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}.quiz-option{border:2px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;cursor:pointer;text-align:left;transition:.2s ease}.quiz-option:hover:not(:disabled){background:rgba(255,255,255,.15);transform:scale(1.01)}.quiz-option.correct{background:rgba(34,197,94,.28);border-color:#22c55e}.quiz-option.wrong{background:rgba(220,38,38,.28);border-color:#dc2626}.quiz-feedback{min-height:26px;text-align:center;font-size:16px;font-weight:900;margin-bottom:12px}.quiz-next{display:block;margin:0 auto;border:none;border-radius:999px;padding:12px 32px;font-family:'Fredoka',cursive;font-size:18px;color:#fff;background:linear-gradient(135deg,#22c55e,#16a34a);cursor:pointer;transition:.2s ease;box-shadow:0 6px 20px rgba(34,197,94,.24)}.quiz-next:hover{transform:scale(1.04)}.quiz-next:disabled{opacity:.45;cursor:not-allowed;transform:none}
+    .nav-bottom{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0 10px}.nav-bottom a{display:inline-block;text-decoration:none;border-radius:12px;padding:12px 18px;font-weight:900;transition:.2s ease}.btn-back{background:#e5e7eb;color:#111827}.btn-back:hover{background:#d1d5db}.btn-next{background:var(--blue);color:#fff}.btn-next:hover{background:#15803d}.btn-next.disabled{background:#9ca3af;pointer-events:none;cursor:not-allowed}
+    .top-btn{position:fixed;right:22px;bottom:22px;width:50px;height:50px;border-radius:50%;border:none;background:#0d1117;color:#fff;font-size:20px;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.28);z-index:300;transition:.2s ease}.top-btn:hover{background:var(--blue);transform:scale(1.08)}
+    .footer{background:#0d1117;color:rgba(255,255,255,.6);text-align:center;padding:28px 20px;font-size:13px;font-weight:700;margin-top:50px}
 
+    .sound-toggle{position:fixed;left:22px;bottom:22px;z-index:320;border:none;border-radius:999px;padding:12px 16px;background:#fff;color:#0f172a;font-weight:900;font-family:'Nunito',sans-serif;box-shadow:0 8px 20px rgba(0,0,0,.18);cursor:pointer;transition:.2s ease}
+    .sound-toggle:hover{transform:scale(1.05)}
+    .sound-toggle.off{opacity:.72}
+    .celebration-layer{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:310}
+    .confetti{position:absolute;width:10px;height:16px;border-radius:4px;opacity:.95;animation:confettiFall 1200ms linear forwards}
+    .burst-ring{position:absolute;width:18px;height:18px;border:3px solid rgba(255,255,255,.95);border-radius:50%;animation:burstRing 700ms ease-out forwards}
+    .feedback-pop{animation:feedbackPop .45s ease}
+    .option-bounce{animation:optionBounce .36s ease}
+    @keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg) scale(1);opacity:1}100%{transform:translateY(110vh) rotate(540deg) scale(.85);opacity:0}}
+    @keyframes burstRing{0%{transform:scale(.4);opacity:.95}100%{transform:scale(7);opacity:0}}
+    @keyframes feedbackPop{0%{transform:scale(.88)}60%{transform:scale(1.08)}100%{transform:scale(1)}}
+    @keyframes optionBounce{0%{transform:scale(1)}50%{transform:scale(1.04)}100%{transform:scale(1)}}
+
+    @media(max-width:760px){.grid-2,.grid-3,.memory-grid,.quiz-options,.orbit-grid{grid-template-columns:1fr}.cover h1{font-size:44px}.stage h2{font-size:32px}.quiz-wrap{padding:22px}.sound-toggle{left:14px;bottom:14px;padding:10px 14px;font-size:13px}}
+  </style>
 </head>
 <body>
-<div class="wrap">
-
-<div class="top-nav">
-  <a class="nav-link soft" href="../index.html">⬅ Voltar ao cronograma</a>
-  <a class="nav-link alt" href="dia-002.html">Próxima apostila ➜</a>
-</div>
-
-
-<!-- ══════════════ CAPA ══════════════ -->
-<div class="capa">
-  <div class="capa-inner">
-    <div class="badge-dia">📚 Apostila · Dia 1 de 186</div>
-    <h1>Bem-vinda ao<br>2º Ano, Ayka! 🌟</h1>
-    <p class="capa-sub">Segunda-feira, 23 de março de 2026</p>
-    <div class="materia-chips">
-      <div class="mchip">📖 Português</div>
-      <div class="mchip">🔢 Matemática</div>
-      <div class="mchip">📘 Leitura</div>
+  <div class="cover" id="top" style="background:linear-gradient(155deg,#0f172a 0%, #1d4ed8 46%, #60a5fa 100%)">
+    <div class="cover-grid"></div>
+    <div class="cover-glow" style="background:radial-gradient(circle, rgba(96,165,250,.35), transparent 70%)"></div>
+    <div class="cover-icon" id="coverIcon">🌟</div>
+    <h1 id="coverTitle">Leitura, Números e Primeiras Palavras em Inglês</h1>
+    <p class="cover-sub" id="coverSubtitle">Dia 001 • segunda-feira • português + matemática + inglês</p>
+    <div class="cover-pills">
+      <span class="pill">⏱️ 55 min</span>
+      <span class="pill">📖 Português</span>
+      <span class="pill">🔢 Matemática</span>
+      <span class="pill">🌍 Inglês</span>
+      <span class="pill">✨ 10 XP</span>
+      <span class="pill">🪙 3 moedas</span>
     </div>
-    <div class="capa-meta">
-      ✨ Esta apostila vai te ensinar tudo com calma, um passo de cada vez.<br>
-      Leia com atenção, pense, e você vai entender de verdade!
+    <div class="cover-note">
+      Hoje a Ayka segue o cronograma de <strong>segunda-feira</strong>. Primeiro faz uma leitura guiada, percebe sons e escreve uma frase curta. Depois treina <strong>contagem, números e cálculo mental</strong>. No final, entra em contato com <strong>cumprimentos, cores, números e uma musiquinha em inglês</strong>. <br><br>
+      <strong>Importante:</strong> esta é a primeira apostila da trilha. A revisão dela aparece no começo da <strong>apostila 2</strong>.
     </div>
   </div>
-</div>
 
-<!-- ════════════════════════════════════════════
-     PARTE 1 — PORTUGUÊS
-     Tema: O Alfabeto — Vogais e Consoantes
-     ════════════════════════════════════════════ -->
-
-<div class="sec-header" style="background:linear-gradient(135deg,#D63B45,#F97316)">
-  <span class="sec-icon">📖</span>
-  <div class="sec-title-wrap">
-    <div class="sec-materia">Língua Portuguesa</div>
-    <div class="sec-tema">O Alfabeto: Vogais e Consoantes</div>
+  <div class="science-bar">
+    <div class="science-chip">Leitura guiada</div>
+    <div class="science-chip">Consciência fonológica</div>
+    <div class="science-chip">Cálculo mental</div>
+    <div class="science-chip">Prática guiada</div>
+    <div class="science-chip">Prática independente</div>
+    <div class="science-chip">Aprendizagem lúdica</div>
+    <div class="science-chip">Fechamento leve</div>
+      <div class="science-chip">Fábula com exercícios</div>
   </div>
-  <div class="sec-time">⏱ 20 minutos</div>
-</div>
 
-<div class="content-card">
+  <nav class="nav">
+    <button onclick="go('intro')">🧭 Missão do dia</button>
+    <button onclick="go('porque')">🧪 Por que isso importa?</button>
+    <button onclick="go('nivel1')">📖 Português</button>
+    <button onclick="go('nivel2')">🔢 Matemática</button>
+    <button onclick="go('nivel3')">🌍 Inglês</button>
+    <button onclick="go('worked')">🧠 Exemplos</button>
+    <button onclick="go('guided')">🧑‍🏫 Guiada</button>
+    <button onclick="go('independent')">✏️ Independente</button>
+    <button onclick="go('quiz')">🎮 Quiz final</button>
+    <button onclick="go('fabula')">📖 Fábula final</button>
+  </nav>
 
-  <!-- BLOCO 1: O QUE É O ALFABETO -->
-  <div class="teach-block">
-    <div class="step-label" style="background:var(--port-l);color:var(--port)">🔤 Passo 1 — Entendendo o Alfabeto</div>
-    <h2>O que é o Alfabeto?</h2>
-    <p>
-      O alfabeto é o <strong>conjunto de todas as letras</strong> que usamos para escrever palavras em português.
-      Assim como a música tem notas (dó, ré, mi...), a língua tem letras!
-    </p>
-    <p>
-      Com apenas <strong>26 letras</strong>, podemos escrever milhões de palavras diferentes. É incrível, né?
-    </p>
-
-    <div class="explain-box vermelho">
-      <h3>📝 O Alfabeto Completo</h3>
-      <p style="font-family:'Baloo 2',cursive;font-size:1.3rem;font-weight:800;letter-spacing:.08em;line-height:2">
-        A &nbsp; B &nbsp; C &nbsp; D &nbsp; E &nbsp; F &nbsp; G &nbsp; H &nbsp; I &nbsp; J &nbsp; K<br>
-        L &nbsp; M &nbsp; N &nbsp; O &nbsp; P &nbsp; Q &nbsp; R &nbsp; S &nbsp; T &nbsp; U &nbsp; V<br>
-        W &nbsp; X &nbsp; Y &nbsp; Z
-      </p>
+  <div class="page" id="intro">
+    <div class="stage orange">
+      <div class="stage-badge">🧭 Mapa da missão</div>
+      <span class="stage-icon">🗺️</span>
+      <h2>Como estudar a apostila 1</h2>
+      <p>Esta apostila acompanha os três blocos da segunda-feira e mantém o estudo leve, claro e direto.</p>
+      <div class="stage-tags"><span class="stage-tag">55 minutos</span><span class="stage-tag">3 blocos</span><span class="stage-tag">2 pausas curtas</span></div>
     </div>
-
-    <div class="think-box">
-      <span class="think-icon">💭</span>
-      <div class="think-text">
-        <strong>Pense assim:</strong> Imagine que as letras são como peças de um quebra-cabeça. Quando você junta as peças certas, forma palavras e, com as palavras, forma frases e histórias!
+    <div class="card bo">
+      <h3>🎒 Roteiro do dia</h3>
+      <div class="info yellow">
+        <strong>15h30–15h45 — Português:</strong> leitura guiada, sons iniciais e escrita curta.<br>
+        <strong>15h45–15h50 — Pausa:</strong> água, alongar e levantar.<br>
+        <strong>15h50–16h05 — Matemática:</strong> contagem, cálculo mental e números.<br>
+        <strong>16h05–16h10 — Pausa:</strong> respirar e se mexer um pouco.<br>
+        <strong>16h10–16h25 — Inglês:</strong> greetings, colors, numbers e música.
+      </div>
+      <div class="info orange">
+        <strong>Regra de ouro:</strong> a Ayka não precisa correr. O objetivo é <strong>entender bem</strong>, responder com calma e terminar a aula com sensação de conquista.
       </div>
     </div>
   </div>
 
-  <!-- BLOCO 2: VOGAIS -->
-  <div class="teach-block">
-    <div class="step-label" style="background:var(--port-l);color:var(--port)">🎵 Passo 2 — As Vogais</div>
-    <h2>O que são as Vogais?</h2>
-    <p>
-      As <strong>vogais</strong> são letras especiais. Elas fazem um som livre, que sai da boca sem nenhum obstáculo.
-      Você pode pronunciá-las sozinhas, com a boca aberta!
-    </p>
-    <p>
-      Em português, temos <strong>5 vogais:</strong>
-    </p>
-
-    <div class="letter-showcase">
-      <div class="letter-card vogal">A</div>
-      <div class="letter-card vogal">E</div>
-      <div class="letter-card vogal">I</div>
-      <div class="letter-card vogal">O</div>
-      <div class="letter-card vogal">U</div>
+  <div class="page" id="porque">
+    <div class="stage dark">
+      <div class="stage-badge">🧪 Por que isso importa?</div>
+      <span class="stage-icon">🧠</span>
+      <h2>Base forte agora evita dificuldade depois</h2>
+      <p>Quem lê com atenção, conta com segurança e começa cedo com inglês entra no 3º ano com mais autonomia, confiança e repertório.</p>
+      <div class="stage-tags"><span class="stage-tag">Compreensão</span><span class="stage-tag">Raciocínio</span><span class="stage-tag">Vocabulário</span></div>
     </div>
-
-    <div class="explain-box azul">
-      <h3>🔬 Como identificar uma vogal?</h3>
-      <p>Fique com a boca aberta e faça o som: <strong>A... E... I... O... U...</strong></p>
-      <p style="margin-top:.5rem">Percebe como o ar sai livremente? Sem nenhuma barreira? Isso é o que torna uma letra uma <strong>vogal</strong>!</p>
-    </div>
-
-    <div class="didyouknow">
-      <span class="dyk-icon">🌟</span>
-      <div class="dyk-text">
-        <strong>Curiosidade:</strong> Toda palavra da língua portuguesa tem pelo menos uma vogal. Sem vogal, não existe sílaba e sem sílaba, não existe palavra! As vogais são o "coração" das palavras.
+    <div class="card bp">
+      <h3>🎯 Objetivo da aula</h3>
+      <div class="info blue">
+        No final desta aula, a Ayka vai conseguir:<br>
+        • localizar a ideia principal de um texto curto<br>
+        • perceber sons iniciais e completar uma escrita simples<br>
+        • contar, comparar e resolver cálculos mentais fáceis<br>
+        • reconhecer e usar palavras básicas em inglês
       </div>
     </div>
-
-    <p>Veja as vogais em ação nas palavras:</p>
-    <div class="word-grid">
-      <div class="word-card">
-        <span class="word-emoji">🌳</span>
-        <div class="word-text"><span class="v">á</span>rv<span class="v">o</span>r<span class="v">e</span></div>
-        <div class="word-silabas">3 vogais: á · o · e</div>
+    <div class="card bg">
+      <h3>🌱 Frase de crescimento do dia</h3>
+      <div class="info green">
+        Eu posso aprender um pouco de cada vez. Quando eu leio, conto e repito, meu cérebro fica mais forte.
       </div>
-      <div class="word-card">
-        <span class="word-emoji">🍎</span>
-        <div class="word-text">m<span class="v">a</span>çã</div>
-        <div class="word-silabas">2 vogais: a · ã</div>
-      </div>
-      <div class="word-card">
-        <span class="word-emoji">🦋</span>
-        <div class="word-text">b<span class="v">o</span>rb<span class="v">o</span>l<span class="v">e</span>t<span class="v">a</span></div>
-        <div class="word-silabas">4 vogais: o·o·e·a</div>
-      </div>
-      <div class="word-card">
-        <span class="word-emoji">🐘</span>
-        <div class="word-text"><span class="v">e</span>l<span class="v">e</span>f<span class="v">a</span>nt<span class="v">e</span></div>
-        <div class="word-silabas">4 vogais: e·e·a·e</div>
-      </div>
-    </div>
-    <p style="font-size:.82rem;color:var(--soft);margin-top:.3rem">🔴 Letras em vermelho = vogais</p>
-  </div>
-
-  <!-- BLOCO 3: CONSOANTES -->
-  <div class="teach-block">
-    <div class="step-label" style="background:var(--port-l);color:var(--port)">🎼 Passo 3 — As Consoantes</div>
-    <h2>O que são as Consoantes?</h2>
-    <p>
-      As <strong>consoantes</strong> são todas as outras letras do alfabeto — aquelas que <strong>não são vogais</strong>.
-      Elas fazem sons que dependem do formato da boca, dos lábios ou da língua.
-    </p>
-    <p>
-      Tente dizer só a letra <strong>B</strong> sozinha. Você vai perceber que o som fica "preso" nos lábios — ele precisa de uma vogal pra soar completo: <strong>BA, BE, BI, BO, BU</strong>!
-    </p>
-
-    <div class="letter-showcase" style="flex-wrap:wrap">
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">B</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">C</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">D</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">F</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">G</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">H</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">J</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">L</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">M</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">N</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">P</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">R</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">S</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">T</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">V</div>
-      <div class="letter-card consoante" style="width:52px;height:52px;font-size:1.9rem">Z</div>
-    </div>
-
-    <div class="explain-box verde">
-      <h3>🌿 A Grande Equipe: Vogal + Consoante = Sílaba!</h3>
-      <p>Quando uma consoante e uma vogal se unem, formam uma <strong>sílaba</strong>. E várias sílabas juntas formam uma <strong>palavra</strong>!</p>
-      <p style="margin-top:.7rem;font-family:'Baloo 2',cursive;font-size:1.2rem;font-weight:800;letter-spacing:.05em">
-        B + A = BA &nbsp;|&nbsp; C + A = CA &nbsp;|&nbsp; M + A = MA
-      </p>
     </div>
   </div>
 
-  <!-- BLOCO 4: VOGAIS vs CONSOANTES -->
-  <div class="teach-block">
-    <div class="step-label" style="background:var(--port-l);color:var(--port)">⚖️ Passo 4 — Comparando as Duas</div>
-    <h2>Resumo: Vogais × Consoantes</h2>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0">
-      <div style="background:linear-gradient(135deg,#FDE8EA,#FECDD3);border-radius:var(--r);padding:1.2rem;border:2px solid #FDA4AF">
-        <div style="font-size:2rem;text-align:center;margin-bottom:.5rem">🔴</div>
-        <h4 style="font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;text-align:center;color:#9F1239;margin-bottom:.6rem">VOGAIS</h4>
-        <ul style="padding-left:1rem;font-size:.85rem;font-weight:700;color:#7F1D1D;line-height:2">
-          <li>São 5: A, E, I, O, U</li>
-          <li>Som sai livre</li>
-          <li>Formam o núcleo da sílaba</li>
-          <li>Toda palavra tem uma!</li>
-        </ul>
+  <div class="page" id="nivel1">
+    <div class="stage orange">
+      <div class="stage-badge">📖 Bloco 1</div>
+      <span class="stage-icon">📚</span>
+      <h2>Português — leitura, sons e escrita curta</h2>
+      <p>Neste bloco, a Ayka lê um texto curtinho, identifica o mais importante e brinca com os sons das palavras.</p>
+      <div class="stage-tags"><span class="stage-tag">Leitura guiada</span><span class="stage-tag">Som inicial</span><span class="stage-tag">Frase curta</span></div>
+    </div>
+    <div class="card bc">
+      <div class="cpa-label cpa-c">📘 Leitura guiada</div>
+      <h3>🐶 Texto do dia</h3>
+      <div class="info blue">
+        <strong>Luna e o parque</strong><br><br>
+        Luna foi ao parque com a mãe. Ela correu na grama, brincou no escorregador e viu um cachorro marrom. No fim, Luna voltou para casa feliz porque a tarde foi divertida.
       </div>
-      <div style="background:linear-gradient(135deg,#DBEAFE,#BFDBFE);border-radius:var(--r);padding:1.2rem;border:2px solid #93C5FD">
-        <div style="font-size:2rem;text-align:center;margin-bottom:.5rem">🔵</div>
-        <h4 style="font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;text-align:center;color:#1E40AF;margin-bottom:.6rem">CONSOANTES</h4>
-        <ul style="padding-left:1rem;font-size:.85rem;font-weight:700;color:#1E3A8A;line-height:2">
-          <li>São 21 letras</li>
-          <li>Som precisa de vogal</li>
-          <li>Acompanham as vogais</li>
-          <li>Dão forma às palavras!</li>
-        </ul>
+      <div class="info orange">
+        <strong>Ideia principal:</strong> Luna passou uma tarde divertida no parque.
+      </div>
+      <div class="grid-2">
+        <div class="bubble-card" onclick="highlightCard(this)"><div style="font-size:32px;">🌳</div><strong>Foi ao parque</strong><small>informação importante</small></div>
+        <div class="bubble-card" onclick="highlightCard(this)"><div style="font-size:32px;">🐕</div><strong>Viu um cachorro marrom</strong><small>detalhe</small></div>
+        <div class="bubble-card" onclick="highlightCard(this)"><div style="font-size:32px;">🛝</div><strong>Brincou no escorregador</strong><small>detalhe</small></div>
+        <div class="bubble-card" onclick="highlightCard(this)"><div style="font-size:32px;">😊</div><strong>Voltou feliz</strong><small>ajuda a entender o texto</small></div>
       </div>
     </div>
-
-    <div class="memory-trick">
-      <div class="mt-icon">🎵</div>
-      <h4>Truque para nunca esquecer as vogais!</h4>
-      <p>Cante assim: <strong>"A — E — I — O — U, a Ayka sabe tudo tu!"</strong><br>
-      Repita 3 vezes e vai ficar para sempre na memória! 🌟</p>
+    <div class="card bc">
+      <h3>🔤 Consciência fonológica</h3>
+      <div class="grid-3">
+        <div class="info yellow"><strong>L</strong><br>Luna • livro • lápis</div>
+        <div class="info blue"><strong>P</strong><br>parque • pato • pipa</div>
+        <div class="info green"><strong>C</strong><br>cachorro • casa • cola</div>
+      </div>
+      <div class="info purple">
+        O jogo aqui é perceber o <strong>som do começo</strong>. Luna começa com <strong>L</strong>. Parque começa com <strong>P</strong>.
+      </div>
     </div>
+    <div class="card bc">
+      <h3>✍️ Escrita curta</h3>
+      <div class="info yellow">
+        Complete e copie no caderno:<br>
+        <strong>A Luna foi ao ______.</strong><br>
+        <strong>Ela voltou para casa ______.</strong>
+      </div>
+      <div class="info green">
+        Resposta esperada: <strong>parque</strong> e <strong>feliz</strong>.
+      </div>
+    </div>
+    <div class="stars"><span>Português:</span><span class="star" onclick="toggleStar(this)">⭐</span><span class="star off" onclick="toggleStar(this)">⭐</span><span class="star off" onclick="toggleStar(this)">⭐</span></div>
   </div>
 
-  <!-- BLOCO 5: PRATICA -->
-  <div class="teach-block">
-    <div class="step-label" style="background:var(--port-l);color:var(--port)">✏️ Passo 5 — Hora de Praticar!</div>
-    <h2>Colocando em Prática</h2>
-    <p>Agora que você aprendeu, veja como identificar vogais e consoantes em palavras reais:</p>
-
-    <div class="steps">
-      <div class="step-item">
-        <div class="step-num" style="background:#D63B45">1</div>
-        <div class="step-content">
-          <h4>Leia a palavra em voz alta</h4>
-          <p>Exemplo: BOLA — fale devagar: BO — LA</p>
+  <div class="page" id="nivel2">
+    <div class="stage blue">
+      <div class="stage-badge">🔢 Bloco 2</div>
+      <span class="stage-icon">🧮</span>
+      <h2>Matemática — contagem, números e cálculo mental</h2>
+      <p>Aqui a Ayka observa quantidades, faz somas mentais simples e compara números sem complicação.</p>
+      <div class="stage-tags"><span class="stage-tag">Contagem</span><span class="stage-tag">Comparação</span><span class="stage-tag">Cálculo mental</span></div>
+    </div>
+    <div class="card bp">
+      <div class="cpa-label cpa-p">🔢 Contando com os olhos</div>
+      <h3>🍎 Quantidades do dia</h3>
+      <div class="sun-wrap">
+        <div class="sun-core">NÚMEROS</div>
+        <div class="orbit-grid">
+          <div class="orbit">3 maçãs</div>
+          <div class="orbit">5 lápis</div>
+          <div class="orbit">7 estrelas</div>
+          <div class="orbit">10 dedos</div>
         </div>
       </div>
-      <div class="step-item">
-        <div class="step-num" style="background:#F97316">2</div>
-        <div class="step-content">
-          <h4>Encontre as vogais (A, E, I, O, U)</h4>
-          <p>Em BOLA: O e A são vogais. B e L são consoantes.</p>
+      <div class="info blue">
+        Contar bem ajuda a somar e comparar. Quando a Ayka olha, conta e confere, ela evita erro bobo.
+      </div>
+    </div>
+    <div class="card bp">
+      <h3>⚡ Cálculo mental rápido</h3>
+      <div class="grid-3">
+        <div class="info orange"><strong>2 + 1 = 3</strong><br>juntou mais 1</div>
+        <div class="info blue"><strong>4 + 2 = 6</strong><br>pensar de cabeça</div>
+        <div class="info green"><strong>7 - 1 = 6</strong><br>tirou 1</div>
+      </div>
+      <div class="info purple">
+        Dica: para cálculo mental pequeno, a Ayka pode imaginar objetos, dedos ou passos na cabeça.
+      </div>
+    </div>
+    <div class="card bp">
+      <h3>📏 Quem é maior?</h3>
+      <div class="grid-2">
+        <div class="info yellow"><strong>8 é maior que 5</strong><br>porque vem depois na contagem.</div>
+        <div class="info green"><strong>3 é menor que 6</strong><br>porque vem antes na contagem.</div>
+      </div>
+      <div class="info orange">
+        Compare assim: conte na cabeça e veja qual número está mais à frente.
+      </div>
+    </div>
+    <div class="stars"><span>Matemática:</span><span class="star" onclick="toggleStar(this)">⭐</span><span class="star off" onclick="toggleStar(this)">⭐</span><span class="star off" onclick="toggleStar(this)">⭐</span></div>
+  </div>
+
+  <div class="page" id="nivel3">
+    <div class="stage purple">
+      <div class="stage-badge">🌍 Bloco 3</div>
+      <span class="stage-icon">🎵</span>
+      <h2>Inglês — greetings, colors, numbers e música</h2>
+      <p>O último bloco é leve. A Ayka conhece palavras básicas, fala em voz alta e fecha a aula com ritmo.</p>
+      <div class="stage-tags"><span class="stage-tag">Greetings</span><span class="stage-tag">Colors</span><span class="stage-tag">Numbers</span></div>
+    </div>
+    <div class="card ba">
+      <div class="cpa-label cpa-a">🌈 Vocabulário inicial</div>
+      <h3>👋 Cumprimentos do dia</h3>
+      <div class="grid-2">
+        <div class="info blue"><strong>Hello</strong><br>olá</div>
+        <div class="info green"><strong>Goodbye</strong><br>tchau</div>
+        <div class="info orange"><strong>Good morning</strong><br>bom dia</div>
+        <div class="info purple"><strong>Thank you</strong><br>obrigada(o)</div>
+      </div>
+    </div>
+    <div class="card ba">
+      <h3>🎨 Cores e números</h3>
+      <div class="grid-3">
+        <div class="info red"><strong>Red</strong><br>vermelho</div>
+        <div class="info blue"><strong>Blue</strong><br>azul</div>
+        <div class="info green"><strong>Green</strong><br>verde</div>
+      </div>
+      <div class="grid-3">
+        <div class="info yellow"><strong>One</strong><br>1</div>
+        <div class="info orange"><strong>Two</strong><br>2</div>
+        <div class="info purple"><strong>Three</strong><br>3</div>
+      </div>
+    </div>
+    <div class="card ba">
+      <h3>🎶 Mini música para repetir</h3>
+      <div class="info yellow">
+        <strong>Hello, hello, how are you?</strong><br>
+        <strong>One, two, three — red, blue, green!</strong>
+      </div>
+      <div class="info green">
+        A ideia não é decorar perfeito. É <strong>ouvir, repetir e brincar com o som</strong>.
+      </div>
+    </div>
+    <div class="stars"><span>Inglês:</span><span class="star" onclick="toggleStar(this)">⭐</span><span class="star off" onclick="toggleStar(this)">⭐</span><span class="star off" onclick="toggleStar(this)">⭐</span></div>
+  </div>
+
+  <div class="page" id="worked">
+    <div class="stage dark">
+      <div class="stage-badge">🧠 Exemplos resolvidos</div>
+      <span class="stage-icon">🔍</span>
+      <h2>Primeiro eu vejo, depois eu faço</h2>
+      <p>Aqui a Ayka observa como pensar em cada matéria antes de tentar sozinha.</p>
+    </div>
+    <div class="worked">
+      <h3 style="font-family:'Fredoka',cursive;color:var(--blue);margin-bottom:10px;">Exemplo 1 — Português</h3>
+      <div class="info blue"><strong>Pergunta:</strong> O que foi mais importante no texto da Luna?</div>
+      <div class="info green"><strong>Pensando:</strong> o texto conta várias coisas, mas todas mostram que ela teve uma tarde boa no parque.</div>
+      <div class="info purple"><strong>Resposta:</strong> A ideia principal é que Luna se divertiu no parque.</div>
+    </div>
+    <div class="worked">
+      <h3 style="font-family:'Fredoka',cursive;color:var(--blue);margin-bottom:10px;">Exemplo 2 — Matemática</h3>
+      <div class="info blue"><strong>Pergunta:</strong> Se eu tenho 4 bolinhas e ganho mais 2, com quantas fico?</div>
+      <div class="info green"><strong>Pensando:</strong> 4, 5, 6.</div>
+      <div class="info purple"><strong>Resposta:</strong> 4 + 2 = 6.</div>
+    </div>
+    <div class="worked">
+      <h3 style="font-family:'Fredoka',cursive;color:var(--blue);margin-bottom:10px;">Exemplo 3 — Inglês</h3>
+      <div class="info blue"><strong>Pergunta:</strong> Como digo “olá” em inglês?</div>
+      <div class="info green"><strong>Pensando:</strong> essa é a palavra de greeting que usamos quando encontramos alguém.</div>
+      <div class="info purple"><strong>Resposta:</strong> <strong>Hello</strong>.</div>
+    </div>
+  </div>
+
+  <div class="page" id="guided">
+    <div class="stage orange">
+      <div class="stage-badge">🧑‍🏫 Prática guiada</div>
+      <span class="stage-icon">✍️</span>
+      <h2>Agora vamos fazer juntas</h2>
+      <p>Aqui a Ayka já responde com um pouco mais de autonomia, mas ainda com apoio.</p>
+    </div>
+    <div class="guided">
+      <div class="question orange" onclick="toggleAnswer('g1')">
+        <strong>1.</strong> No texto da Luna, qual palavra completa a frase?<br>
+        “A Luna foi ao ______.”<br>
+        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('g1')">Ver resposta</button>
+        <div class="answer" id="g1">Parque.</div>
+      </div>
+      <div class="question orange" onclick="toggleAnswer('g2')">
+        <strong>2.</strong> Que som vem no começo de <strong>lápis</strong>?<br>
+        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('g2')">Ver resposta</button>
+        <div class="answer" id="g2">O som de <strong>L</strong>.</div>
+      </div>
+      <div class="question orange" onclick="toggleAnswer('g3')">
+        <strong>3.</strong> Se a Ayka tem 3 estrelas e ganha mais 2, fica com quantas?<br>
+        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('g3')">Ver resposta</button>
+        <div class="answer" id="g3">5 estrelas.</div>
+      </div>
+      <div class="question orange" onclick="toggleAnswer('g4')">
+        <strong>4.</strong> Como se diz <strong>azul</strong> em inglês?<br>
+        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('g4')">Ver resposta</button>
+        <div class="answer" id="g4">Blue.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="independent">
+    <div class="stage green">
+      <div class="stage-badge">✏️ Prática independente</div>
+      <span class="stage-icon">🚀</span>
+      <h2>Agora é com a Ayka</h2>
+      <p>Neste momento ela tenta sozinha e depois confere.</p>
+    </div>
+    <div class="independent">
+      <div class="question green" onclick="toggleAnswer('i1')">
+        <strong>1.</strong> O que foi mais importante no texto: o cachorro ser marrom ou a tarde ter sido divertida?<br>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i1')">Ver resposta</button>
+        <div class="answer" id="i1">O mais importante foi a tarde ter sido divertida. O cachorro marrom é só um detalhe.</div>
+      </div>
+      <div class="question green" onclick="toggleAnswer('i2')">
+        <strong>2.</strong> Escreva uma palavra que comece com o som de <strong>P</strong>.<br>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i2')">Ver resposta</button>
+        <div class="answer" id="i2">Resposta possível: parque, pato, pipa, pão.</div>
+      </div>
+      <div class="question green" onclick="toggleAnswer('i3')">
+        <strong>3.</strong> Qual número é maior: <strong>6</strong> ou <strong>4</strong>?<br>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i3')">Ver resposta</button>
+        <div class="answer" id="i3">6 é maior.</div>
+      </div>
+      <div class="question green" onclick="toggleAnswer('i4')">
+        <strong>4.</strong> Resolva mentalmente: <strong>5 + 3</strong><br>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i4')">Ver resposta</button>
+        <div class="answer" id="i4">8.</div>
+      </div>
+      <div class="question green" onclick="toggleAnswer('i5')">
+        <strong>5.</strong> Ligue a palavra em inglês ao significado: <strong>Hello</strong><br>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i5')">Ver resposta</button>
+        <div class="answer" id="i5">Hello = olá.</div>
+      </div>
+      <div class="question green" onclick="toggleAnswer('i6')">
+        <strong>6.</strong> Qual destas palavras em inglês representa o número 3: <strong>one, two ou three</strong>?<br>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i6')">Ver resposta</button>
+        <div class="answer" id="i6">Three.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="quiz">
+    <div class="stage dark">
+      <div class="stage-badge">🎮 Quiz final</div>
+      <span class="stage-icon">🏆</span>
+      <h2>Quiz final — revisão do Dia 1</h2>
+      <p>Agora a Ayka fecha a missão com perguntas rápidas sobre os três blocos do dia.</p>
+    </div>
+    <div class="quiz-wrap">
+      <h3>Ayka vs Leitura, Números e Inglês</h3>
+      <div class="quiz-bar-wrap"><div class="quiz-bar" id="quizBar"></div></div>
+      <div class="quiz-score" id="quizScore">Questão 1 de 12</div>
+      <div class="quiz-question" id="quizQuestion">Carregando...</div>
+      <div class="quiz-options" id="quizOptions"></div>
+      <div class="quiz-feedback" id="quizFeedback"></div>
+      <button class="quiz-next" id="quizNext" onclick="nextQuiz()" disabled>Próxima ➡️</button>
+    </div>
+
+
+    <div class="page" id="fabula">
+      <div class="stage purple">
+        <div class="stage-badge">📖 Fábula do dia</div>
+        <span class="stage-icon">🐝</span>
+        <h2>A abelhinha que aprendeu a contar</h2>
+        <p>No fim da apostila, a Ayka fecha a missão com uma história curta. Aqui ela lê, pensa, conta e usa palavrinhas em inglês de forma leve.</p>
+        <div class="stage-tags"><span class="stage-tag">Leitura</span><span class="stage-tag">Contagem</span><span class="stage-tag">Inglês</span></div>
+      </div>
+
+      <div class="card ba">
+        <h3>📚 Fábula</h3>
+        <div class="info purple">
+          Uma abelhinha saiu cedo para visitar o jardim. Antes de pousar na primeira flor, ela disse: <strong>Hello!</strong><br><br>
+          No caminho, viu uma flor <strong>blue</strong>, uma flor amarela e uma flor vermelha. A abelhinha ficou feliz e decidiu contar quantas flores havia ali.<br><br>
+          Ela pousou uma vez, duas vezes, três vezes e percebeu que, quando observava com calma, conseguia aprender melhor. Então pensou: “Se eu olho, conto e repito, meu trabalho fica mais fácil.”<br><br>
+          No fim do passeio, a abelhinha voltou para casa e contou à mamãe abelha o que viu. Ela disse que o jardim era bonito, colorido e cheio de coisas para descobrir. A mamãe sorriu e falou: “Quem presta atenção aprende mais.” 
         </div>
       </div>
-      <div class="step-item">
-        <div class="step-num" style="background:#D63B45">3</div>
-        <div class="step-content">
-          <h4>Marque com cores diferentes</h4>
-          <p>🔴 Vogais em vermelho · 🔵 Consoantes em azul</p>
+
+      <div class="card bc">
+        <h3>🧠 Entendendo a fábula</h3>
+        <div class="question" onclick="toggleAnswer('f1q1')">
+          <strong>1.</strong> Quem é a personagem principal da história?
+          <button class="show-btn" onclick="event.stopPropagation();toggleAnswer('f1q1')">Ver resposta</button>
+          <div class="answer" id="f1q1">A personagem principal é a <strong>abelhinha</strong>.</div>
+        </div>
+        <div class="question" onclick="toggleAnswer('f1q2')">
+          <strong>2.</strong> O que a abelhinha viu no jardim?
+          <button class="show-btn" onclick="event.stopPropagation();toggleAnswer('f1q2')">Ver resposta</button>
+          <div class="answer" id="f1q2">Ela viu <strong>flores de cores diferentes</strong>.</div>
+        </div>
+        <div class="question" onclick="toggleAnswer('f1q3')">
+          <strong>3.</strong> Qual foi a lição da história?
+          <button class="show-btn" onclick="event.stopPropagation();toggleAnswer('f1q3')">Ver resposta</button>
+          <div class="answer" id="f1q3">A lição é que <strong>quem presta atenção aprende mais</strong>.</div>
         </div>
       </div>
-    </div>
 
-    <div class="practice-area">
-      <h4>📝 No seu caderno, escreva e marque as vogais:</h4>
-      <div class="p-line">1. CASA → C · <span style="color:var(--port);font-weight:900">A</span> · S · <span style="color:var(--port);font-weight:900">A</span> &nbsp;(2 vogais: A e A)</div>
-      <div class="p-line dotted">2. Tente você: PATO →</div>
-      <div class="p-line dotted">3. Tente você: GATO →</div>
-      <div class="p-line dotted">4. Tente você: LIVRO →</div>
-      <div class="p-line dotted">5. Invente uma palavra com 3 vogais →</div>
-    </div>
-  </div>
-
-  <!-- RESUMO PORTUGUÊS -->
-  <div class="summary">
-    <h3>✅ O que aprendemos hoje em Português</h3>
-    <div class="summary-items">
-      <div class="sum-item" style="border-color:#F97316">🔤 O alfabeto tem 26 letras no total</div>
-      <div class="sum-item" style="border-color:#D63B45">🔴 Vogais são 5: A, E, I, O, U — som livre e aberto</div>
-      <div class="sum-item" style="border-color:#3B82F6">🔵 Consoantes são 21 — precisam de vogal para soar</div>
-      <div class="sum-item" style="border-color:#22C55E">✨ Vogal + Consoante = Sílaba → Sílabas = Palavras!</div>
-    </div>
-  </div>
-
-</div><!-- /content-card português -->
-
-
-<!-- ════════════════════════════════════════════
-     PARTE 2 — MATEMÁTICA
-     Tema: Números de 1 a 20 — O que é um número?
-     ════════════════════════════════════════════ -->
-
-<div class="sec-header" style="background:linear-gradient(135deg,#E07B00,#FBBF24)">
-  <span class="sec-icon">🔢</span>
-  <div class="sec-title-wrap">
-    <div class="sec-materia">Matemática</div>
-    <div class="sec-tema">Números de 1 a 20 — Contando com sentido!</div>
-  </div>
-  <div class="sec-time">⏱ 20 minutos</div>
-</div>
-
-<div class="content-card">
-
-  <!-- BLOCO 1: O QUE É UM NÚMERO -->
-  <div class="teach-block">
-    <div class="step-label" style="background:var(--mat-l);color:var(--mat)">🌱 Passo 1 — O que é um Número?</div>
-    <h2>Para que servem os números?</h2>
-    <p>
-      Os números existem porque os seres humanos precisavam <strong>contar coisas</strong>.
-      Quantas maçãs tem na cesta? Quantos dias faltam para o aniversário? Quantos passos da escola até em casa?
-    </p>
-    <p>
-      Um número representa <strong>uma quantidade</strong>. Quando você vê o número <strong>5</strong>,
-      seu cérebro já sabe: são cinco coisas — cinco dedos, cinco estrelas, cinco amigos!
-    </p>
-
-    <div class="explain-box laranja">
-      <h3>🔑 A Ideia Central</h3>
-      <p>Todo número tem <strong>três formas</strong> de aparecer:</p>
-      <ul>
-        <li>👁️ <strong>O símbolo</strong> (o que você escreve): &nbsp;<strong>5</strong></li>
-        <li>🗣️ <strong>O nome</strong> (o que você fala): &nbsp;<strong>cinco</strong></li>
-        <li>🫐 <strong>A quantidade</strong> (o que você vê): &nbsp;<strong>● ● ● ● ●</strong></li>
-      </ul>
-    </div>
-
-    <div class="didyouknow">
-      <span class="dyk-icon">🌍</span>
-      <div class="dyk-text">
-        <strong>Sabia que?</strong> Os números que usamos hoje (0, 1, 2, 3...) foram inventados na Índia há mais de 1.500 anos! Antes disso, os romanos usavam letras como números: I = 1, V = 5, X = 10. Muito mais difícil para calcular!
-      </div>
-    </div>
-  </div>
-
-  <!-- BLOCO 2: NÚMEROS 1 A 10 COM VISUAL -->
-  <div class="teach-block">
-    <div class="step-label" style="background:var(--mat-l);color:var(--mat)">🔢 Passo 2 — Conhecendo os Números 1 a 10</div>
-    <h2>Cada número tem seu valor!</h2>
-    <p>Veja como cada número representa uma quantidade real. Os pontinhos mostram o valor de cada um:</p>
-
-    <div class="number-row">
-      <div class="num-block">
-        <div class="num-big">1</div>
-        <div class="num-dots">●</div>
-        <div class="num-word">um</div>
-      </div>
-      <div class="num-block">
-        <div class="num-big">2</div>
-        <div class="num-dots">● ●</div>
-        <div class="num-word">dois</div>
-      </div>
-      <div class="num-block">
-        <div class="num-big">3</div>
-        <div class="num-dots">● ● ●</div>
-        <div class="num-word">três</div>
-      </div>
-      <div class="num-block">
-        <div class="num-big">4</div>
-        <div class="num-dots">● ●<br>● ●</div>
-        <div class="num-word">quatro</div>
-      </div>
-      <div class="num-block">
-        <div class="num-big">5</div>
-        <div class="num-dots">● ● ●<br>● ●</div>
-        <div class="num-word">cinco</div>
-      </div>
-      <div class="num-block">
-        <div class="num-big">6</div>
-        <div class="num-dots">● ● ●<br>● ● ●</div>
-        <div class="num-word">seis</div>
-      </div>
-      <div class="num-block">
-        <div class="num-big">7</div>
-        <div class="num-dots">● ● ●<br>● ● ●<br>●</div>
-        <div class="num-word">sete</div>
-      </div>
-      <div class="num-block">
-        <div class="num-big">8</div>
-        <div class="num-dots">● ● ●<br>● ● ●<br>● ●</div>
-        <div class="num-word">oito</div>
-      </div>
-      <div class="num-block">
-        <div class="num-big">9</div>
-        <div class="num-dots">● ● ●<br>● ● ●<br>● ● ●</div>
-        <div class="num-word">nove</div>
-      </div>
-      <div class="num-block" style="border:2px solid var(--mat)">
-        <div class="num-big">10</div>
-        <div class="num-dots">🤲</div>
-        <div class="num-word">dez</div>
-      </div>
-    </div>
-
-    <div class="think-box">
-      <span class="think-icon">✋</span>
-      <div class="think-text">
-        <strong>Dez é especial!</strong> O número 10 é o primeiro número com <strong>dois algarismos</strong>. O <strong>1</strong> representa uma dezena (um grupo de 10) e o <strong>0</strong> diz que não sobrou nenhuma unidade. São exatamente os seus 10 dedinhos!
-      </div>
-    </div>
-  </div>
-
-  <!-- BLOCO 3: DEZENAS E UNIDADES -->
-  <div class="teach-block">
-    <div class="step-label" style="background:var(--mat-l);color:var(--mat)">🏗️ Passo 3 — Como os Números Maiores Funcionam</div>
-    <h2>Do 11 ao 20: Dezenas e Unidades</h2>
-    <p>
-      Quando passamos do 10, os números começam a ser <strong>formados por partes</strong>.
-      Pense assim: você tem <strong>uma caixa com 10 bolinhas</strong> (= 1 dezena) e bolinhas soltas (= unidades).
-    </p>
-
-    <div class="explain-box laranja">
-      <h3>📦 A Regra das Dezenas e Unidades</h3>
-      <p>Todo número de dois algarismos tem:</p>
-      <p style="margin-top:.5rem;font-size:1rem">
-        🟠 <strong>Dezenas</strong> = grupos completos de 10<br>
-        🔵 <strong>Unidades</strong> = o que sobra depois dos grupos de 10
-      </p>
-    </div>
-
-    <p>Veja como isso aparece nos números de 11 a 20:</p>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.8rem;margin:1rem 0">
-      <div style="background:white;border-radius:var(--r);padding:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.06)">
-        <div style="font-family:'Baloo 2',cursive;font-size:1.8rem;font-weight:800;color:var(--mat);text-align:center">11</div>
-        <div class="abacus-row" style="justify-content:center">
-          <span class="bead dezena">10</span>
-          <span style="font-weight:900;color:var(--soft)">+</span>
-          <span class="bead unidade">1</span>
+      <div class="card bp">
+        <h3>🔢 Exercícios ligados à apostila</h3>
+        <div class="question" onclick="toggleAnswer('f1q4')">
+          <strong>4.</strong> A abelhinha pousou 3 vezes. Se pousar mais 2 vezes, quantas vezes serão ao todo?
+          <button class="show-btn" onclick="event.stopPropagation();toggleAnswer('f1q4')">Ver resposta</button>
+          <div class="answer" id="f1q4">Serão <strong>5 vezes</strong>. 3 + 2 = 5.</div>
         </div>
-        <div style="text-align:center;font-size:.78rem;font-weight:700;color:var(--soft);margin-top:.3rem">1 dezena e 1 unidade</div>
-      </div>
-      <div style="background:white;border-radius:var(--r);padding:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.06)">
-        <div style="font-family:'Baloo 2',cursive;font-size:1.8rem;font-weight:800;color:var(--mat);text-align:center">14</div>
-        <div class="abacus-row" style="justify-content:center">
-          <span class="bead dezena">10</span>
-          <span style="font-weight:900;color:var(--soft)">+</span>
-          <span class="bead unidade">4</span>
+        <div class="question" onclick="toggleAnswer('f1q5')">
+          <strong>5.</strong> Qual destas palavras em inglês apareceu na fábula: <em>Hello</em> ou <em>Dog</em>?
+          <button class="show-btn" onclick="event.stopPropagation();toggleAnswer('f1q5')">Ver resposta</button>
+          <div class="answer" id="f1q5">A palavra que apareceu foi <strong>Hello</strong>.</div>
         </div>
-        <div style="text-align:center;font-size:.78rem;font-weight:700;color:var(--soft);margin-top:.3rem">1 dezena e 4 unidades</div>
-      </div>
-      <div style="background:white;border-radius:var(--r);padding:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.06)">
-        <div style="font-family:'Baloo 2',cursive;font-size:1.8rem;font-weight:800;color:var(--mat);text-align:center">17</div>
-        <div class="abacus-row" style="justify-content:center">
-          <span class="bead dezena">10</span>
-          <span style="font-weight:900;color:var(--soft)">+</span>
-          <span class="bead unidade">7</span>
+        <div class="question" onclick="toggleAnswer('f1q6')">
+          <strong>6.</strong> A palavra <strong>blue</strong> fala de qual ideia: cor ou número?
+          <button class="show-btn" onclick="event.stopPropagation();toggleAnswer('f1q6')">Ver resposta</button>
+          <div class="answer" id="f1q6"><strong>Blue</strong> fala de uma <strong>cor</strong>.</div>
         </div>
-        <div style="text-align:center;font-size:.78rem;font-weight:700;color:var(--soft);margin-top:.3rem">1 dezena e 7 unidades</div>
-      </div>
-      <div style="background:white;border-radius:var(--r);padding:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.06);border:2px solid var(--mat)">
-        <div style="font-family:'Baloo 2',cursive;font-size:1.8rem;font-weight:800;color:var(--mat);text-align:center">20</div>
-        <div class="abacus-row" style="justify-content:center">
-          <span class="bead dezena">10</span>
-          <span style="font-weight:900;color:var(--soft)">+</span>
-          <span class="bead dezena">10</span>
-        </div>
-        <div style="text-align:center;font-size:.78rem;font-weight:700;color:var(--soft);margin-top:.3rem">2 dezenas e 0 unidades</div>
-      </div>
-    </div>
-
-    <div class="explain-box verde">
-      <h3>🎯 Lendo um número de dois algarismos</h3>
-      <p>No número <strong>18</strong>:</p>
-      <ul>
-        <li>O <strong>1</strong> está na posição das <strong>dezenas</strong> → representa 10</li>
-        <li>O <strong>8</strong> está na posição das <strong>unidades</strong> → representa 8</li>
-        <li>18 = 10 + 8 → "dezoito"</li>
-      </ul>
-    </div>
-
-    <div class="op-visual">
-      <div class="op-big">10 + 8 = 18</div>
-      <div class="op-explain">Uma dezena (10) mais oito unidades (8) = dezoito (18)</div>
-    </div>
-  </div>
-
-  <!-- BLOCO 4: SEQUÊNCIA E ORDEM -->
-  <div class="teach-block">
-    <div class="step-label" style="background:var(--mat-l);color:var(--mat)">📏 Passo 4 — Ordem e Sequência</div>
-    <h2>Maior, menor e em ordem!</h2>
-    <p>
-      Os números têm uma <strong>ordem natural</strong>. Cada número é exatamente <strong>1 a mais</strong> que o anterior.
-      Quando contamos para a frente, os números <strong>crescem</strong>.
-      Quando contamos para trás, eles <strong>diminuem</strong>.
-    </p>
-
-    <div style="background:white;border-radius:var(--r);padding:1.2rem;box-shadow:0 3px 12px rgba(0,0,0,.07);overflow-x:auto;margin:1rem 0">
-      <div style="display:flex;gap:.4rem;min-width:max-content;align-items:center">
-        <span style="font-size:.7rem;font-weight:800;color:var(--soft);writing-mode:vertical-rl;transform:rotate(180deg)">menor</span>
-        <span style="font-size:.8rem;color:var(--soft)">←</span>
-        <div style="display:flex;gap:.3rem">
-          <div style="width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#FDE8E0,#FECACA);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;color:#C03A42;border:1.5px solid #FECACA">1</div>
-          <div style="width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#FDE8E0,#FED7AA);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;color:#C05000;border:1.5px solid #FED7AA">2</div>
-          <div style="width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#FEF3C7,#FDE68A);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;color:#B45309;border:1.5px solid #FDE68A">3</div>
-          <div style="width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#D1FAE5,#A7F3D0);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;color:#065F46;border:1.5px solid #A7F3D0">4</div>
-          <div style="width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#CCFBF1,#99F6E4);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;color:#0F766E;border:1.5px solid #99F6E4">5</div>
-          <div style="width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#DBEAFE,#BFDBFE);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;color:#1D4ED8;border:1.5px solid #BFDBFE">6</div>
-          <div style="width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#EDE9FE,#DDD6FE);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;color:#6D28D9;border:1.5px solid #DDD6FE">7</div>
-          <div style="width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#FCE7F3,#FBCFE8);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;color:#9D174D;border:1.5px solid #FBCFE8">8</div>
-          <div style="width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#FEE2E2,#FECACA);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;color:#991B1B;border:1.5px solid #FECACA">9</div>
-          <div style="width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#1A1714,#2D2A26);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;color:white;border:2px solid var(--mat)">10</div>
-        </div>
-        <span style="font-size:.8rem;color:var(--soft)">→</span>
-        <span style="font-size:.7rem;font-weight:800;color:var(--soft);writing-mode:vertical-rl">maior</span>
-      </div>
-    </div>
-
-    <div class="think-box">
-      <span class="think-icon">🎯</span>
-      <div class="think-text">
-        <strong>Como saber qual número é maior?</strong> O número que vem <em>depois</em> na contagem é sempre maior. 8 é maior que 5 porque 8 vem depois de 5 quando contamos!
-      </div>
-    </div>
-
-    <div class="practice-area">
-      <h4>📝 Pratique no caderno:</h4>
-      <div class="p-line">1. Escreva de 1 a 20 em ordem crescente (do menor para o maior)</div>
-      <div class="p-line dotted">2. Escreva de 10 a 1 em ordem decrescente (do maior para o menor)</div>
-      <div class="p-line dotted">3. Qual vem antes do 15? ___ &nbsp; Qual vem depois do 15? ___</div>
-      <div class="p-line dotted">4. Complete: 11, 12, ___, 14, ___, 16, ___, 18, ___, ___</div>
-    </div>
-
-    <div class="memory-trick">
-      <div class="mt-icon">🪜</div>
-      <h4>Pense em uma escada!</h4>
-      <p>Cada número é um degrau da escada. Subindo, os números crescem. Descendo, diminuem. Quanto mais alto o degrau, maior o número!</p>
-    </div>
-  </div>
-
-  <!-- RESUMO MATEMÁTICA -->
-  <div class="summary">
-    <h3>✅ O que aprendemos hoje em Matemática</h3>
-    <div class="summary-items">
-      <div class="sum-item" style="border-color:#F59E0B">🔢 Números representam quantidades</div>
-      <div class="sum-item" style="border-color:#E07B00">📦 Dezena = grupo de 10 · Unidade = o que sobra</div>
-      <div class="sum-item" style="border-color:#FBBF24">📏 Números têm ordem: cada um é 1 a mais que o anterior</div>
-      <div class="sum-item" style="border-color:#22C55E">🪜 Maior = vem depois na contagem · Menor = vem antes</div>
-    </div>
-  </div>
-
-</div><!-- /content-card matemática -->
-
-
-<!-- ════════════════════════════════════════════
-     PARTE 3 — LEITURA DO DIA
-     ════════════════════════════════════════════ -->
-
-<div class="sec-header" style="background:linear-gradient(135deg,#1B7A5E,#0D9488)">
-  <span class="sec-icon">📘</span>
-  <div class="sec-title-wrap">
-    <div class="sec-materia">Leitura Prazerosa</div>
-    <div class="sec-tema">A Tartaruga e a Lebre — Uma fábula sobre persistência</div>
-  </div>
-  <div class="sec-time">⏱ 15 minutos</div>
-</div>
-
-<div class="content-card">
-
-  <div class="teach-block">
-    <div class="step-label" style="background:var(--leit-l);color:var(--leit)">📖 Antes de ler — O que é uma Fábula?</div>
-    <h2>Conhecendo a Fábula</h2>
-    <p>
-      Uma <strong>fábula</strong> é uma história curta com animais como personagens.
-      No final, sempre tem uma <strong>lição de moral</strong> — um ensinamento importante para a vida!
-    </p>
-    <p>
-      As fábulas mais famosas do mundo foram escritas por um homem chamado <strong>Esopo</strong>,
-      que viveu na Grécia Antiga há mais de 2.500 anos. E as histórias dele ensinam coisas tão importantes
-      que ainda lemos hoje!
-    </p>
-
-    <div class="explain-box verde">
-      <h3>🎭 Personagens de hoje</h3>
-      <ul>
-        <li>🐢 <strong>A Tartaruga</strong> — devagar, mas determinada e confiante</li>
-        <li>🐇 <strong>A Lebre</strong> — muito rápida, mas arrogante e descuidada</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="teach-block">
-    <div class="step-label" style="background:var(--leit-l);color:var(--leit)">📚 Leia com atenção — em voz alta!</div>
-
-    <div class="story-wrap">
-      <div class="story-title">🐢 A Tartaruga e a Lebre 🐇</div>
-      <div class="story-text">
-        <p>Era uma vez uma tartaruga que vivia perto de um lago. Ela caminhava sempre devagar, mas nunca parava. Um dia, a lebre — que era a mais veloz de todos os animais da floresta — passou correndo e a viu arrastando os pés.</p>
-
-        <p>"Que lenta você é, tartaruga!" a lebre gargalhou. "Você leva uma hora para chegar onde eu chego em um minuto!"</p>
-
-        <p>A tartaruga, sem se abalar, respondeu com calma: "É verdade que você é mais rápida. Mas aposto que eu chego do outro lado da floresta antes de você."</p>
-
-        <p>A lebre achou graça. "Você? Me vencer? Impossível!" Mas aceitou a aposta. Todos os animais da floresta vieram ver a corrida.</p>
-
-        <p>Quando a corrida começou, a lebre saiu disparada — tão rápida que parecia voar. Em poucos segundos, já tinha deixado a tartaruga bem para trás. "Tenho tempo de sobra", pensou. "Vou descansar um pouquinho debaixo dessa árvore."</p>
-
-        <p>E assim, confiante demais, a lebre fechou os olhos... e dormiu.</p>
-
-        <p>Enquanto isso, a tartaruga continuou. Um passo. Mais um passo. Mais um. Sem pressa, mas sem parar nunca.</p>
-
-        <p>Quando a lebre acordou de um salto, olhou para a frente — e ficou paralisada. A tartaruga estava quase chegando na linha de chegada! A lebre correu com toda a força, mas era tarde demais.</p>
-
-        <p>A tartaruga cruzou a linha de chegada primeiro. 🎉</p>
-
-        <p><em>Lição: Persistência e constância vencem a pressa e o orgulho. Quem nunca desiste, chega lá!</em></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="teach-block">
-    <div class="step-label" style="background:var(--leit-l);color:var(--leit)">💬 Depois de ler — Vamos pensar!</div>
-    <h2>Entendendo a Fábula</h2>
-
-    <div class="steps">
-      <div class="step-item">
-        <div class="step-num" style="background:#1B7A5E">1</div>
-        <div class="step-content">
-          <h4>Quem são os personagens? O que cada um representa?</h4>
-          <p>A tartaruga = esforço e persistência. A lebre = talento sem dedicação.</p>
+        <div class="question" onclick="toggleAnswer('f1q7')">
+          <strong>7.</strong> Escreva ou fale uma frase curta sobre o jardim da abelhinha.
+          <button class="show-btn" onclick="event.stopPropagation();toggleAnswer('f1q7')">Ver resposta</button>
+          <div class="answer" id="f1q7">Resposta possível: <strong>O jardim tem flores coloridas.</strong></div>
         </div>
       </div>
-      <div class="step-item">
-        <div class="step-num" style="background:#0D9488">2</div>
-        <div class="step-content">
-          <h4>Qual foi o erro da lebre?</h4>
-          <p>Ela era rápida, mas ficou com preguiça e não levou a corrida a sério.</p>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-num" style="background:#1B7A5E">3</div>
-        <div class="step-content">
-          <h4>O que fez a tartaruga vencer?</h4>
-          <p>Ela não parou nunca. Cada passinho pequeno, sem desistir.</p>
-        </div>
+
+      <div class="card bg">
+        <h3>✨ Moral da fábula</h3>
+        <div class="info green"><strong>Observar com calma, repetir e prestar atenção</strong> ajuda a aprender melhor todos os dias.</div>
       </div>
     </div>
 
-    <div class="think-box">
-      <span class="think-icon">💭</span>
-      <div class="think-text">
-        <strong>Conexão com a vida:</strong> Como a tartaruga é parecida com você estudando todos os dias? Cada apostila que você faz, cada dia que você aprende um pouquinho, vai acumulando — como os passinhos da tartaruga. No final do ano você vai olhar para trás e ver o quanto avançou!
-      </div>
-    </div>
 
-    <div class="practice-area">
-      <h4>📝 No caderno, escreva (com suas palavras):</h4>
-      <div class="p-line dotted">1. O que a lebre fez de errado?</div>
-      <div class="p-line dotted">2. O que a tartaruga tem de especial?</div>
-      <div class="p-line dotted">3. Você se parece mais com a tartaruga ou a lebre? Por quê?</div>
+    <div class="nav-bottom">
+      <a class="btn-back" href="../index.html">← Voltar para o cronograma</a>
+      <a class="btn-next" id="btnProximaApostila" href="#">Próxima apostila →</a>
     </div>
   </div>
 
-  <div class="summary">
-    <h3>✅ O que aprendemos na Leitura de hoje</h3>
-    <div class="summary-items">
-      <div class="sum-item" style="border-color:#1B7A5E">📖 Uma fábula é uma história com animais e lição de moral</div>
-      <div class="sum-item" style="border-color:#0D9488">🐢 Persistir sem parar é mais valioso do que ser rápido</div>
-      <div class="sum-item" style="border-color:#22C55E">✨ Cada dia estudando é um passo da tartaruga!</div>
-    </div>
-  </div>
+  <button class="top-btn" onclick="go('top')">⬆️</button>
 
-</div><!-- /content-card leitura -->
+  <footer class="footer" id="footerInfo">
+    Dia 001 — Leitura, Números e Primeiras Palavras em Inglês • Projeto Ayka • Português + Matemática + Inglês • Estrutura: blocos do cronograma + prática + quiz final + fábula com exercícios
+  </footer>
 
+  <script>
+    function go(id){
+      playClickSound();
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
 
-<!-- ═══ REVISÃO FINAL DO DIA ═══ -->
-<div style="background:linear-gradient(135deg,#1A1714,#2D2A26);border-radius:var(--rl);padding:2rem;margin-bottom:2rem;box-shadow:0 12px 40px rgba(0,0,0,.2)">
-  <h2 style="font-family:'Baloo 2',cursive;font-size:1.5rem;font-weight:800;color:white;margin-bottom:1rem;text-align:center">🌟 Revisão do Dia 1 — O que a Ayka aprendeu hoje?</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem">
-    <div style="background:rgba(214,59,69,.2);border:1.5px solid rgba(214,59,69,.4);border-radius:var(--r);padding:1rem">
-      <div style="font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;color:#FCA5A5;margin-bottom:.5rem">📖 Português</div>
-      <ul style="font-size:.85rem;font-weight:700;color:#FEE2E2;padding-left:1rem;line-height:1.9">
-        <li>Vogais: A E I O U</li>
-        <li>Consoantes: as outras 21</li>
-        <li>Vogal + Consoante = Sílaba</li>
-      </ul>
-    </div>
-    <div style="background:rgba(224,123,0,.2);border:1.5px solid rgba(224,123,0,.4);border-radius:var(--r);padding:1rem">
-      <div style="font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;color:#FDE68A;margin-bottom:.5rem">🔢 Matemática</div>
-      <ul style="font-size:.85rem;font-weight:700;color:#FEF3C7;padding-left:1rem;line-height:1.9">
-        <li>Números representam quantidades</li>
-        <li>Dezena = 10 · Unidade = o resto</li>
-        <li>Maior = vem depois na contagem</li>
-      </ul>
-    </div>
-    <div style="background:rgba(27,122,94,.2);border:1.5px solid rgba(27,122,94,.4);border-radius:var(--r);padding:1rem">
-      <div style="font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;color:#6EE7B7;margin-bottom:.5rem">📘 Leitura</div>
-      <ul style="font-size:.85rem;font-weight:700;color:#D1FAE5;padding-left:1rem;line-height:1.9">
-        <li>Fábula = história com moral</li>
-        <li>Tartaruga: persistência vence</li>
-        <li>Cada passinho conta!</li>
-      </ul>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:1.2rem;font-size:.85rem;font-weight:700;color:rgba(255,255,255,.6)">
-    💡 Antes de dormir, peça para alguém perguntar: "O que você aprendeu hoje?"<br>
-    Explicar em voz alta fixa o conteúdo no cérebro para sempre!
-  </div>
-</div>
+    function toggleAnswer(id){
+      playClickSound();
+      const el = document.getElementById(id);
+      if(el) el.classList.toggle('show');
+    }
+
+    function toggleStar(el){
+      playClickSound();
+      const group = el.parentElement.querySelectorAll('.star');
+      const idx = Array.from(group).indexOf(el);
+      group.forEach((star, i) => {
+        if(i <= idx){
+          star.classList.remove('off');
+        }else{
+          star.classList.add('off');
+        }
+      });
+      celebrateElement(el, 10);
+    }
+
+    function highlightCard(el){
+      playClickSound();
+      const cards = el.parentElement.querySelectorAll('.bubble-card');
+      cards.forEach(card => {
+        card.style.borderColor = '';
+        card.style.background = '';
+      });
+      el.style.borderColor = '#2563eb';
+      el.style.background = '#eff6ff';
+      celebrateElement(el, 8);
+    }
 
 
-<div class="top-nav">
-  <a class="nav-link soft" href="../index.html">⬅ Voltar ao cronograma</a>
-  <a class="nav-link alt" href="dia-002.html">Próxima apostila ➜</a>
-</div>
+    const soundState = {
+      enabled: true,
+      unlocked: false,
+      ctx: null
+    };
 
-<!-- FOOTER -->
-<div class="apostila-footer">
-  <div class="ayka-sig">📚 Apostila da Ayka · Dia 1 de 186</div>
-  Feita com carinho · Segunda-feira, 23 de março de 2026 · 2º Ano do Ensino Fundamental<br>
-  <span style="margin-top:.4rem;display:inline-block">🌟 Continue amanhã! Dia 2 espera por você! 🌟</span>
-</div>
+    function getAudioCtx(){
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if(!AudioCtx) return null;
+      if(!soundState.ctx) soundState.ctx = new AudioCtx();
+      return soundState.ctx;
+    }
 
-</div><!-- /wrap -->
+    async function unlockAudio(){
+      const ctx = getAudioCtx();
+      if(!ctx) return;
+      if(ctx.state === 'suspended'){
+        try{ await ctx.resume(); }catch(e){}
+      }
+      soundState.unlocked = true;
+    }
+
+    function playTone(freq, duration=0.09, type='sine', volume=0.025, when=0){
+      if(!soundState.enabled) return;
+      const ctx = getAudioCtx();
+      if(!ctx) return;
+      const start = ctx.currentTime + when;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, start);
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(volume, start + 0.01);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+      osc.connect(gain).connect(ctx.destination);
+      osc.start(start);
+      osc.stop(start + duration + 0.02);
+    }
+
+    function playCorrectSound(){
+      playTone(523.25, 0.08, 'triangle', 0.03, 0);
+      playTone(659.25, 0.09, 'triangle', 0.03, 0.07);
+      playTone(783.99, 0.12, 'triangle', 0.03, 0.14);
+    }
+
+    function playWrongSound(){
+      playTone(220, 0.08, 'sawtooth', 0.022, 0);
+      playTone(185, 0.14, 'sawtooth', 0.02, 0.06);
+    }
+
+    function playClickSound(){
+      playTone(440, 0.045, 'square', 0.013, 0);
+    }
+
+    function playBigWinSound(){
+      [523.25,659.25,783.99,1046.5].forEach((f, i) => playTone(f, 0.12, 'triangle', 0.032, i * 0.08));
+    }
+
+    function burstAt(x, y, count=24){
+      const layer = document.getElementById('celebrationLayer');
+      if(!layer) return;
+      const colors = ['#60a5fa','#22c55e','#f59e0b','#f472b6','#fde047','#a78bfa','#fb7185'];
+      const ring = document.createElement('div');
+      ring.className = 'burst-ring';
+      ring.style.left = `${x - 9}px`;
+      ring.style.top = `${y - 9}px`;
+      layer.appendChild(ring);
+      setTimeout(() => ring.remove(), 720);
+
+      for(let i = 0; i < count; i++){
+        const piece = document.createElement('div');
+        piece.className = 'confetti';
+        piece.style.left = `${x + (Math.random()*120 - 60)}px`;
+        piece.style.top = `${y - 10 + (Math.random()*18 - 9)}px`;
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.transform = `translateY(-20px) rotate(${Math.random()*180}deg)`;
+        piece.style.animationDuration = `${900 + Math.random()*700}ms`;
+        piece.style.width = `${8 + Math.random()*6}px`;
+        piece.style.height = `${12 + Math.random()*8}px`;
+        layer.appendChild(piece);
+        setTimeout(() => piece.remove(), 1800);
+      }
+    }
+
+    function celebrateElement(el, count=24){
+      const rect = el.getBoundingClientRect();
+      burstAt(rect.left + rect.width/2, rect.top + rect.height/2, count);
+      el.classList.remove('option-bounce');
+      void el.offsetWidth;
+      el.classList.add('option-bounce');
+    }
+
+    function celebrateScreen(){
+      const w = window.innerWidth;
+      burstAt(w * 0.22, 120, 26);
+      burstAt(w * 0.5, 90, 34);
+      burstAt(w * 0.78, 120, 26);
+    }
+
+    function pulseFeedback(){
+      const feedback = document.getElementById('quizFeedback');
+      if(!feedback) return;
+      feedback.classList.remove('feedback-pop');
+      void feedback.offsetWidth;
+      feedback.classList.add('feedback-pop');
+    }
+
+    function updateSoundToggle(){
+      const btn = document.getElementById('soundToggle');
+      if(!btn) return;
+      btn.textContent = soundState.enabled ? '🔊 Som ligado' : '🔇 Som desligado';
+      btn.classList.toggle('off', !soundState.enabled);
+      btn.setAttribute('aria-pressed', String(soundState.enabled));
+    }
+
+
+    const quizData = [
+      {
+        "q": "No texto da Luna, qual é a ideia principal?",
+        "opts": [
+          "O cachorro era marrom.",
+          "Luna teve uma tarde divertida no parque.",
+          "O escorregador era grande.",
+          "A mãe foi com ela."
+        ],
+        "a": 1
+      },
+      {
+        "q": "Qual palavra começa com o som de L?",
+        "opts": ["parque", "lápis", "casa", "pipa"],
+        "a": 1
+      },
+      {
+        "q": "Complete: A Luna voltou para casa...",
+        "opts": ["triste", "molhada", "feliz", "assustada"],
+        "a": 2
+      },
+      {
+        "q": "Quanto é 3 + 2?",
+        "opts": ["4", "5", "6", "7"],
+        "a": 1
+      },
+      {
+        "q": "Qual número é maior?",
+        "opts": ["4", "6"],
+        "a": 1
+      },
+      {
+        "q": "Se eu tenho 7 balas e tiro 1, fico com:",
+        "opts": ["5", "6", "7", "8"],
+        "a": 1
+      },
+      {
+        "q": "Como se diz 'olá' em inglês?",
+        "opts": ["Blue", "One", "Hello", "Green"],
+        "a": 2
+      },
+      {
+        "q": "Qual palavra significa 'azul'?",
+        "opts": ["Red", "Blue", "Three", "Goodbye"],
+        "a": 1
+      },
+      {
+        "q": "Qual palavra representa o número 2?",
+        "opts": ["one", "two", "three", "hello"],
+        "a": 1
+      },
+      {
+        "q": "Em português, a atividade de escrita curta pedia completar a frase com:",
+        "opts": ["parque", "janela", "sapato", "bicicleta"],
+        "a": 0
+      },
+      {
+        "q": "O objetivo da pausa curta é:",
+        "opts": [
+          "fazer mais lição",
+          "beber água e relaxar um pouco",
+          "pular o resto da aula",
+          "trocar de apostila"
+        ],
+        "a": 1
+      },
+      {
+        "q": "Para terminar bem o Dia 1, a Ayka precisa:",
+        "opts": [
+          "fazer tudo correndo",
+          "entender, praticar e repetir com calma",
+          "ler só o começo",
+          "chutar o quiz"
+        ],
+        "a": 1
+      }
+    ];
+
+    let quizIndex = 0;
+    let quizScore = 0;
+    let answered = false;
+
+    function initQuiz(){
+      quizIndex = 0;
+      quizScore = 0;
+      renderQuiz();
+    }
+
+    function renderQuiz(){
+      answered = false;
+      const item = quizData[quizIndex];
+
+      document.getElementById('quizQuestion').textContent = item.q;
+      document.getElementById('quizScore').textContent = `Questão ${quizIndex + 1} de ${quizData.length}`;
+      document.getElementById('quizBar').style.width = `${(quizIndex / quizData.length) * 100}%`;
+      document.getElementById('quizFeedback').textContent = '';
+      document.getElementById('quizFeedback').style.color = '#fff';
+      document.getElementById('quizNext').disabled = true;
+
+      const opts = document.getElementById('quizOptions');
+      opts.innerHTML = '';
+
+      item.opts.forEach((opt, i) => {
+        const button = document.createElement('button');
+        button.className = 'quiz-option';
+        button.textContent = opt;
+        button.onclick = () => answerQuiz(i);
+        opts.appendChild(button);
+      });
+    }
+
+    function answerQuiz(selected){
+      if(answered) return;
+      answered = true;
+
+      const item = quizData[quizIndex];
+      const buttons = document.querySelectorAll('.quiz-option');
+      buttons.forEach(btn => btn.disabled = true);
+
+      buttons[item.a].classList.add('correct');
+
+      if(selected === item.a){
+        quizScore++;
+        document.getElementById('quizFeedback').textContent = '🎉 Correto!';
+        document.getElementById('quizFeedback').style.color = '#4ade80';
+        pulseFeedback();
+        playCorrectSound();
+        celebrateElement(buttons[item.a], 20);
+      }else{
+        buttons[selected].classList.add('wrong');
+        document.getElementById('quizFeedback').textContent = '❌ A correta está em verde.';
+        document.getElementById('quizFeedback').style.color = '#f87171';
+        pulseFeedback();
+        playWrongSound();
+      }
+
+      document.getElementById('quizNext').disabled = false;
+    }
+
+    function nextQuiz(){
+      quizIndex++;
+      if(quizIndex >= quizData.length){
+        finishQuiz();
+      }else{
+        renderQuiz();
+      }
+    }
+
+    function finishQuiz(){
+      const percent = Math.round((quizScore / quizData.length) * 100);
+      const question = document.getElementById('quizQuestion');
+      const options = document.getElementById('quizOptions');
+      const feedback = document.getElementById('quizFeedback');
+      const score = document.getElementById('quizScore');
+      const next = document.getElementById('quizNext');
+
+      document.getElementById('quizBar').style.width = '100%';
+
+      question.textContent = '🏆 Quiz concluído!';
+      options.innerHTML = '';
+      score.textContent = `Ayka acertou ${quizScore} de ${quizData.length} (${percent}%)`;
+
+      let msg = '';
+      if(percent >= 85){
+        msg = '🥇 Excelente. A base do Dia 1 ficou muito firme.';
+      }else if(percent >= 65){
+        msg = '🥈 Muito bom. Uma revisão curta amanhã vai consolidar bastante.';
+      }else{
+        msg = '💪 Bom começo. Agora vale revisar com calma e tentar de novo.';
+      }
+
+      feedback.textContent = msg;
+      feedback.style.color = '#fde68a';
+      pulseFeedback();
+      celebrateScreen();
+      if(percent >= 85){
+        playBigWinSound();
+      }else if(percent >= 65){
+        playCorrectSound();
+      }
+
+      next.textContent = '🔄 Tentar novamente';
+      next.disabled = false;
+      next.onclick = () => {
+        next.textContent = 'Próxima ➡️';
+        next.onclick = nextQuiz;
+        initQuiz();
+      };
+    }
+
+    (function(){
+      const btn = document.getElementById('btnProximaApostila');
+      if(!btn) return;
+      btn.href = 'dia-002.html';
+    })();
+
+    document.addEventListener('pointerdown', unlockAudio, { once: true });
+    document.addEventListener('keydown', unlockAudio, { once: true });
+
+    const soundToggle = document.getElementById('soundToggle');
+    if(soundToggle){
+      soundToggle.addEventListener('click', async () => {
+        await unlockAudio();
+        soundState.enabled = !soundState.enabled;
+        updateSoundToggle();
+      });
+    }
+
+    updateSoundToggle();
+    initQuiz();
+  </script>
 </body>
 </html>
