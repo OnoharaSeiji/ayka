@@ -1,0 +1,1 @@
+window.TEST_CONNECTOR_WRITE = true;
