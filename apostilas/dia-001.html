@@ -3,116 +3,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>
-    const APOSTILA = {
-      numero: 1,
-      titulo: "Leitura, Números e Primeiras Palavras em Inglês",
-      disciplina: "Português + Matemática + Inglês",
-      disciplinaIcone: "🌟",
-      semana: 1,
-      fase: "Trilha de aceleração — 2º para o 3º ano",
-      reino: "Reino das Descobertas",
-      reinoIcone: "📚",
-      raridade: "comum",
-      xp: 10,
-      moedas: 3,
-      corPrincipal: "#2563eb",
-      corSecundaria: "#60a5fa"
-    };
-  </script>
   <title>Dia 001 — Leitura, Números e Primeiras Palavras em Inglês | Ayka</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root{--ink:#0f172a;--navy:#16233d;--blue:#2563eb;--blue2:#60a5fa;--sky:#dbeafe;--green:#16a34a;--lime:#dcfce7;--orange:#ea580c;--amber:#f59e0b;--yellow:#fef3c7;--red:#dc2626;--purple:#7c3aed;--violet:#ede9fe;--gray0:#f8fafc;--gray1:#f1f5f9;--gray2:#e2e8f0;--gray3:#cbd5e1;--gray4:#64748b;--white:#ffffff;--shadow:0 12px 30px rgba(15,23,42,.10)}
-    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+    :root{--ink:#0f172a;--navy:#16233d;--blue:#2563eb;--blue2:#60a5fa;--green:#16a34a;--orange:#ea580c;--amber:#f59e0b;--yellow:#fef3c7;--purple:#7c3aed;--gray0:#f8fafc;--gray2:#e2e8f0;--gray4:#64748b;--white:#ffffff;--shadow:0 12px 30px rgba(15,23,42,.10)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
     body{font-family:'Nunito',sans-serif;background:var(--gray0);color:var(--ink);line-height:1.65}
-    .cover{min-height:100vh;background:linear-gradient(155deg,#0d1117 0%, #113a24 46%, #16a34a 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;position:relative;overflow:hidden}
+    .cover{min-height:72vh;background:linear-gradient(155deg,#0d1117 0%, #113a24 46%, #16a34a 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;position:relative;overflow:hidden}
     .cover-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);background-size:56px 56px}
-    .cover-glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle, rgba(74,222,128,.35), transparent 70%);top:-120px;right:-100px;animation:pulse 7s ease-in-out infinite}
-    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}} @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}} @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-    .cover-icon{font-size:88px;position:relative;z-index:2;animation:floaty 2.8s ease-in-out infinite;margin-bottom:14px}
-    .cover h1{font-family:'Fredoka',cursive;font-size:clamp(38px,7vw,70px);line-height:1.08;color:#fff;text-shadow:0 8px 30px rgba(0,0,0,.35);position:relative;z-index:2;animation:fadeUp .8s ease .1s both}
-    .cover-sub{margin-top:14px;color:rgba(255,255,255,.9);font-weight:800;font-size:clamp(16px,2.5vw,22px);position:relative;z-index:2;animation:fadeUp .8s ease .3s both}
-    .cover-pills{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:26px;position:relative;z-index:2;animation:fadeUp .8s ease .5s both}
+    .cover-glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle, rgba(74,222,128,.35), transparent 70%);top:-120px;right:-100px}
+    .cover-icon{font-size:88px;position:relative;z-index:2;margin-bottom:14px}
+    .cover h1{font-family:'Fredoka',cursive;font-size:clamp(38px,7vw,70px);line-height:1.08;color:#fff;text-shadow:0 8px 30px rgba(0,0,0,.35);position:relative;z-index:2}
+    .cover-sub{margin-top:14px;color:rgba(255,255,255,.9);font-weight:800;font-size:clamp(16px,2.5vw,22px);position:relative;z-index:2}
+    .cover-pills{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:26px;position:relative;z-index:2}
     .pill{padding:9px 16px;border-radius:999px;font-size:13px;font-weight:900;border:2px solid rgba(255,255,255,.24);color:#fff;background:rgba(255,255,255,.12);backdrop-filter:blur(4px)}
-    .cover-note{margin-top:24px;max-width:760px;padding:18px 22px;border-radius:18px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);color:rgba(255,255,255,.94);font-size:14px;font-weight:700;line-height:1.65;position:relative;z-index:2;animation:fadeUp .8s ease .7s both}.cover-note strong{color:#fde68a}
-    .science-bar{background:var(--navy);padding:12px 18px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}.science-chip{background:rgba(255,255,255,.08);color:rgba(255,255,255,.9);border:1.5px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800}
+    .cover-note{margin-top:24px;max-width:760px;padding:18px 22px;border-radius:18px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);color:rgba(255,255,255,.94);font-size:14px;font-weight:700;line-height:1.65;position:relative;z-index:2}.cover-note strong{color:#fde68a}
+    .science-bar{background:var(--navy);padding:12px 18px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+    .science-chip{background:rgba(255,255,255,.08);color:rgba(255,255,255,.9);border:1.5px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800}
     .nav{position:sticky;top:0;z-index:200;background:#0d1117;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:12px 14px;box-shadow:0 2px 20px rgba(0,0,0,.4)}
-    .nav button{border:1.5px solid rgba(255,255,255,.18);background:transparent;color:rgba(255,255,255,.82);border-radius:999px;padding:7px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;cursor:pointer;transition:.22s ease}.nav button:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:scale(1.04)}
+    .nav button{border:1.5px solid rgba(255,255,255,.18);background:transparent;color:rgba(255,255,255,.82);border-radius:999px;padding:7px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;cursor:pointer;transition:.22s ease}
+    .nav button:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:scale(1.04)}
     .page{max-width:980px;margin:0 auto;padding:40px 18px}
-    .stage{border-radius:24px;padding:28px 24px;margin-bottom:28px;position:relative;overflow:hidden}.stage::after{content:'';position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.08);right:-50px;bottom:-90px}
-    .stage.orange{background:linear-gradient(135deg,#9a3412,#ea580c,#fb923c)} .stage.blue{background:linear-gradient(135deg,#065f46,#16a34a,#4ade80)} .stage.purple{background:linear-gradient(135deg,#14532d,#15803d,#4ade80)} .stage.green{background:linear-gradient(135deg,#1e3a8a,#2563eb,#60a5fa)} .stage.dark{background:linear-gradient(135deg,#0d1117,#113a24,#16a34a)}
+    .stage{border-radius:24px;padding:28px 24px;margin-bottom:28px;position:relative;overflow:hidden}
+    .stage::after{content:'';position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.08);right:-50px;bottom:-90px}
+    .stage.orange{background:linear-gradient(135deg,#9a3412,#ea580c,#fb923c)}
+    .stage.blue{background:linear-gradient(135deg,#1e3a8a,#2563eb,#60a5fa)}
+    .stage.purple{background:linear-gradient(135deg,#4c1d95,#7c3aed,#a78bfa)}
+    .stage.green{background:linear-gradient(135deg,#14532d,#15803d,#4ade80)}
+    .stage.dark{background:linear-gradient(135deg,#0d1117,#113a24,#16a34a)}
     .stage-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.18);color:#fff;border:1.5px solid rgba(255,255,255,.28);padding:6px 14px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;margin-bottom:10px}
-    .stage-icon{font-size:50px;margin-bottom:10px;display:block;animation:floaty 2.6s ease-in-out infinite;position:relative;z-index:1}
+    .stage-icon{font-size:50px;margin-bottom:10px;display:block;position:relative;z-index:1}
     .stage h2{font-family:'Fredoka',cursive;font-size:clamp(28px,4vw,48px);color:#fff;line-height:1.12;text-shadow:0 4px 16px rgba(0,0,0,.25);position:relative;z-index:1}
-    .stage p{margin-top:10px;color:rgba(255,255,255,.92);font-size:15px;font-weight:700;position:relative;z-index:1}.stage-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;position:relative;z-index:1}.stage-tag{background:rgba(255,255,255,.16);color:#fff;border:1.5px solid rgba(255,255,255,.24);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800}
-    .card{background:var(--white);border-radius:18px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)} .card h3{font-family:'Fredoka',cursive;font-size:24px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-    .card.bc{border-left:6px solid var(--orange)} .card.bc h3{color:var(--orange)} .card.bp{border-left:6px solid var(--blue)} .card.bp h3{color:var(--blue)} .card.ba{border-left:6px solid var(--purple)} .card.ba h3{color:var(--purple)} .card.bg{border-left:6px solid var(--green)} .card.bg h3{color:var(--green)} .card.bo{border-left:6px solid var(--amber)} .card.bo h3{color:var(--amber)} .card.br{border-left:6px solid var(--red)} .card.br h3{color:var(--red)}
-    .cpa-label{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;margin-bottom:10px}.cpa-c{background:#fff7ed;color:#9a3412;border:2px solid #fb923c}.cpa-p{background:#eff6ff;color:#1e3a8a;border:2px solid #93c5fd}.cpa-a{background:#f5f3ff;color:#4c1d95;border:2px solid #c4b5fd}
-    .info{border-radius:14px;padding:16px 18px;margin:12px 0;font-size:14px;font-weight:700;line-height:1.65}.info strong{font-weight:900}.info.yellow{background:#fefce8;border:2px solid #fde047}.info.blue{background:#eff6ff;border:2px solid #93c5fd}.info.green{background:#f0fdf4;border:2px solid #86efac}.info.orange{background:#fff7ed;border:2px solid #fdba74}.info.purple{background:#f5f3ff;border:2px solid #c4b5fd}.info.red{background:#fef2f2;border:2px solid #fca5a5}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
-    .bubble-card{background:var(--gray0);border:2px solid var(--gray2);border-radius:16px;padding:16px;text-align:center;transition:.2s ease;cursor:pointer;min-height:110px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px}.bubble-card:hover{transform:translateY(-2px) scale(1.01);border-color:var(--blue);background:#ecfdf5}.bubble-card strong{font-size:15px;color:var(--ink)}.bubble-card small{color:var(--gray4);font-size:12px;font-weight:800}
-    .sun-wrap{background:linear-gradient(135deg,#ecfdf5,#dcfce7);border:2.5px solid #86efac;border-radius:18px;padding:24px;margin:16px 0;text-align:center}.sun-core{width:160px;height:160px;border-radius:50%;background:linear-gradient(135deg,#16a34a,#4ade80);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;margin:0 auto 20px;padding:18px;font-family:'Fredoka',cursive;font-size:22px;line-height:1.2;box-shadow:0 0 0 10px rgba(22,163,74,.12)}.orbit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.orbit{background:#fff;border:2px dashed #86efac;border-radius:14px;padding:14px;font-size:14px;font-weight:800;color:#166534}
-    .steps{list-style:none;counter-reset:step}.steps li{counter-increment:step;display:flex;align-items:flex-start;gap:12px;margin-bottom:13px;font-size:14px;font-weight:700}.steps li::before{content:counter(step);width:32px;height:32px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Fredoka',cursive;color:#fff;background:var(--blue)}.steps.purple li::before{background:var(--purple)}
-    .worked,.guided,.independent{border-radius:18px;padding:22px;margin:16px 0;position:relative}.worked{background:linear-gradient(135deg,#f8fafc,#ecfdf5);border:2px solid var(--gray2)}.worked::before{content:'Exemplo resolvido';position:absolute;top:-12px;left:18px;background:var(--blue);color:#fff;padding:4px 14px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.5px;text-transform:uppercase}.guided{background:linear-gradient(135deg,#fff7ed,#ffedd5);border:2px solid #fdba74}.guided::before{content:'Prática guiada';position:absolute;top:-12px;left:18px;background:var(--orange);color:#fff;padding:4px 14px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.5px;text-transform:uppercase}.independent{background:#fff;border:2px solid var(--gray2)}.independent::before{content:'Prática independente';position:absolute;top:-12px;left:18px;background:var(--green);color:#fff;padding:4px 14px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.5px;text-transform:uppercase}
-    .question{background:var(--gray0);border-left:5px solid var(--gray3);border-radius:14px;padding:15px 16px;margin-bottom:10px;font-size:14px;font-weight:700;line-height:1.65;cursor:pointer;transition:.2s ease}.question:hover{transform:translateX(4px);background:#f8fbff}.question.blue{border-left-color:var(--blue)} .question.orange{border-left-color:var(--orange)} .question.green{border-left-color:var(--green)} .question.purple{border-left-color:var(--purple)}
-    .show-btn{border:none;border-radius:999px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:900;font-size:11px;cursor:pointer;margin-top:8px;color:#fff;background:var(--blue)} .show-btn.orange{background:var(--orange)} .show-btn.green{background:var(--green)} .show-btn.purple{background:var(--purple)}
-    .answer{display:none;margin-top:10px;border-radius:12px;padding:12px 14px;background:#f0fdf4;border:2px solid #86efac;color:#166534;font-size:13px;font-weight:800;line-height:1.6}.answer.show{display:block}
-    .stars{display:flex;align-items:center;gap:6px;width:fit-content;margin:14px 0;padding:8px 18px;border-radius:999px;border:2px solid #fde047;background:var(--yellow);font-weight:900}.star{font-size:20px;cursor:pointer;user-select:none;transition:.2s ease}.star:hover{transform:scale(1.2)} .star.off{filter:grayscale(1) opacity(.35)}
-    .memory-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}.memory-card{background:#fff;border:2px solid var(--gray2);border-radius:14px;padding:16px;font-size:14px;font-weight:800;cursor:pointer;transition:.2s ease;text-align:center}.memory-card:hover{transform:translateY(-2px);border-color:var(--purple);background:#f5f3ff}
-    .quiz-wrap{background:linear-gradient(160deg,#0d1117,#113a24);border-radius:24px;padding:28px;margin-top:24px}.quiz-wrap h3{color:#fff;text-align:center;font-family:'Fredoka',cursive;font-size:26px;margin-bottom:18px}.quiz-bar-wrap{height:10px;background:rgba(255,255,255,.12);border-radius:999px;overflow:hidden;margin-bottom:14px}.quiz-bar{height:100%;width:0;background:linear-gradient(90deg,#22c55e,#4ade80);transition:.35s ease}.quiz-score{text-align:center;color:#fde68a;font-family:'Fredoka',cursive;font-size:18px;margin-bottom:14px}.quiz-question{color:#fff;font-size:17px;font-weight:900;min-height:58px;line-height:1.5;margin-bottom:16px}.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}.quiz-option{border:2px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;cursor:pointer;text-align:left;transition:.2s ease}.quiz-option:hover:not(:disabled){background:rgba(255,255,255,.15);transform:scale(1.01)}.quiz-option.correct{background:rgba(34,197,94,.28);border-color:#22c55e}.quiz-option.wrong{background:rgba(220,38,38,.28);border-color:#dc2626}.quiz-feedback{min-height:26px;text-align:center;font-size:16px;font-weight:900;margin-bottom:12px}.quiz-next{display:block;margin:0 auto;border:none;border-radius:999px;padding:12px 32px;font-family:'Fredoka',cursive;font-size:18px;color:#fff;background:linear-gradient(135deg,#22c55e,#16a34a);cursor:pointer;transition:.2s ease;box-shadow:0 6px 20px rgba(34,197,94,.24)}.quiz-next:hover{transform:scale(1.04)}.quiz-next:disabled{opacity:.45;cursor:not-allowed;transform:none}
-    .nav-bottom{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0 10px}.nav-bottom a{display:inline-block;text-decoration:none;border-radius:12px;padding:12px 18px;font-weight:900;transition:.2s ease}.btn-back{background:#e5e7eb;color:#111827}.btn-back:hover{background:#d1d5db}.btn-next{background:var(--blue);color:#fff}.btn-next:hover{background:#15803d}.btn-next.disabled{background:#9ca3af;pointer-events:none;cursor:not-allowed}
-    .top-btn{position:fixed;right:22px;bottom:22px;width:50px;height:50px;border-radius:50%;border:none;background:#0d1117;color:#fff;font-size:20px;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.28);z-index:300;transition:.2s ease}.top-btn:hover{background:var(--blue);transform:scale(1.08)}
-    .footer{background:#0d1117;color:rgba(255,255,255,.6);text-align:center;padding:28px 20px;font-size:13px;font-weight:700;margin-top:50px}
-
-    .sound-toggle{position:fixed;left:22px;bottom:22px;z-index:320;border:none;border-radius:999px;padding:12px 16px;background:#fff;color:#0f172a;font-weight:900;font-family:'Nunito',sans-serif;box-shadow:0 8px 20px rgba(0,0,0,.18);cursor:pointer;transition:.2s ease}
-    .sound-toggle:hover{transform:scale(1.05)}
-    .sound-toggle.off{opacity:.72}
-    .celebration-layer{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:310}
-    .confetti{position:absolute;width:10px;height:16px;border-radius:4px;opacity:.95;animation:confettiFall 1200ms linear forwards}
-    .burst-ring{position:absolute;width:18px;height:18px;border:3px solid rgba(255,255,255,.95);border-radius:50%;animation:burstRing 700ms ease-out forwards}
-    .feedback-pop{animation:feedbackPop .45s ease}
-    .option-bounce{animation:optionBounce .36s ease}
-    @keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg) scale(1);opacity:1}100%{transform:translateY(110vh) rotate(540deg) scale(.85);opacity:0}}
-    @keyframes burstRing{0%{transform:scale(.4);opacity:.95}100%{transform:scale(7);opacity:0}}
-    @keyframes feedbackPop{0%{transform:scale(.88)}60%{transform:scale(1.08)}100%{transform:scale(1)}}
-    @keyframes optionBounce{0%{transform:scale(1)}50%{transform:scale(1.04)}100%{transform:scale(1)}}
-
-    @media(max-width:760px){.grid-2,.grid-3,.memory-grid,.quiz-options,.orbit-grid{grid-template-columns:1fr}.cover h1{font-size:44px}.stage h2{font-size:32px}.quiz-wrap{padding:22px}.sound-toggle{left:14px;bottom:14px;padding:10px 14px;font-size:13px}}
-  </style>
+    .stage p{margin-top:10px;color:rgba(255,255,255,.92);font-size:15px;font-weight:700;position:relative;z-index:1}
+    .stage-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;position:relative;z-index:1}
+    .stage-tag{background:rgba(255,255,255,.16);color:#fff;border:1.5px solid rgba(255,255,255,.24);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800}
+    .card{background:var(--white);border-radius:18px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}
+    .card h3{font-family:'Fredoka',cursive;font-size:24px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .card.bc{border-left:6px solid var(--orange)} .card.bc h3{color:var(--orange)}
+    .card.bp{border-left:6px solid var(--blue)} .card.bp h3{color:var(--blue)}
+    .card.ba{border-left:6px solid var(--purple)} .card.ba h3{color:var(--purple)}
+    .card.bg{border-left:6px solid var(--green)} .card.bg h3{color:var(--green)}
+    .card.bo{border-left:6px solid var(--amber)} .card.bo h3{color:var(--amber)}
+    .info{border-radius:14px;padding:16px 18px;margin:12px 0;font-size:14px;font-weight:700;line-height:1.65}
+    .info strong{font-weight:900}
+    .info.yellow{background:#fefce8;border:2px solid #fde047}
+    .info.blue{background:#eff6ff;border:2px solid #93c5fd}
+    .info.green{background:#f0fdf4;border:2px solid #86efac}
+    .info.orange{background:#fff7ed;border:2px solid #fdba74}
+    .info.purple{background:#f5f3ff;border:2px solid #c4b5fd}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
+    .bubble-card{background:var(--gray0);border:2px solid var(--gray2);border-radius:16px;padding:16px;text-align:center;transition:.2s ease;cursor:pointer;min-height:110px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px}
+    .bubble-card:hover{transform:translateY(-2px) scale(1.01);border-color:var(--blue);background:#ecfdf5}
+    .bubble-card strong{font-size:15px;color:var(--ink)}
+    .bubble-card small{color:var(--gray4);font-size:12px;font-weight:800}
+    .question{background:var(--gray0);border-left:5px solid var(--gray2);border-radius:14px;padding:15px 16px;margin-bottom:10px;font-size:14px;font-weight:700;line-height:1.65;cursor:pointer;transition:.2s ease}
+    .question:hover{transform:translateX(4px);background:#f8fbff}
+    .question.orange{border-left-color:var(--orange)}
+    .question.green{border-left-color:var(--green)}
+    .show-btn{border:none;border-radius:999px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:900;font-size:11px;cursor:pointer;margin-top:8px;color:#fff;background:var(--blue)}
+    .show-btn.orange{background:var(--orange)}
+    .show-btn.green{background:var(--green)}
+    .answer{display:none;margin-top:10px;border-radius:12px;padding:12px 14px;background:#f0fdf4;border:2px solid #86efac;color:#166534;font-size:13px;font-weight:800;line-height:1.6}
+    .answer.show{display:block}
+    .quiz-wrap{background:linear-gradient(160deg,#0d1117,#113a24);border-radius:24px;padding:28px;margin-top:24px}
+    .quiz-wrap h3{color:#fff;text-align:center;font-family:'Fredoka',cursive;font-size:26px;margin-bottom:18px}
+    .quiz-bar-wrap{height:10px;background:rgba(255,255,255,.12);border-radius:999px;overflow:hidden;margin-bottom:14px}
+    .quiz-bar{height:100%;width:0;background:linear-gradient(90deg,#22c55e,#4ade80);transition:.35s ease}
+    .quiz-score{text-align:center;color:#fde68a;font-family:'Fredoka',cursive;font-size:18px;margin-bottom:14px}
+    .quiz-question{color:#fff;font-size:17px;font-weight:900;min-height:58px;line-height:1.5;margin-bottom:16px}
+    .quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+    .quiz-option{border:2px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;cursor:pointer;text-align:left;transition:.2s ease}
+    .quiz-option:hover:not(:disabled){background:rgba(255,255,255,.15);transform:scale(1.01)}
+    .quiz-option.correct{background:rgba(34,197,94,.28);border-color:#22c55e}
+    .quiz-option.wrong{background:rgba(220,38,38,.28);border-color:#dc2626}
+    .quiz-feedback{min-height:26px;text-align:center;font-size:16px;font-weight:900;margin-bottom:12px}
+    .quiz-next{display:block;margin:0 auto;border:none;border-radius:999px;padding:12px 32px;font-family:'Fredoka',cursive;font-size:18px;color:#fff;background:linear-gradient(135deg,#22c55e,#16a34a);cursor:pointer;transition:.2s ease}
+    .quiz-next:hover{transform:scale(1.04)}
+    .quiz-next:disabled{opacity:.45;cursor:not-allowed;transform:none}
+    .videos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+    .video-card{background:var(--white);border-radius:18px;padding:18px;box-shadow:var(--shadow);border:2px solid #e5e7eb}
+    .video-card h4{font-family:'Fredoka',cursive;font-size:18px;margin-bottom:8px}
+    .video-card p{font-size:14px;font-weight:700;color:#334155;line-height:1.55;margin-bottom:12px}
+    .video-link{display:inline-block;text-decoration:none;border-radius:999px;padding:9px 14px;background:#111827;color:#fff;font-weight:900;font-size:12px}
+    .nav-bottom{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0 10px}
+    .nav-bottom a,.nav-bottom span{display:inline-block;text-decoration:none;border-radius:12px;padding:12px 18px;font-weight:900;transition:.2s ease}
+    .btn-secondary{background:#e5e7eb;color:#111827}
+    .btn-secondary:hover{background:#d1d5db}
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-primary:hover{background:#1d4ed8}
+    .btn-disabled{background:#9ca3af;color:#fff;pointer-events:none;cursor:not-allowed}
+    .top-btn{position:fixed;right:22px;bottom:22px;width:50px;height:50px;border-radius:50%;border:none;background:#0d1117;color:#fff;font-size:20px;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.28);z-index:300}
+    .top-btn:hover{background:var(--blue)}
+    .footer{background:#0d1117;color:rgba(255,255,255,.7);text-align:center;padding:28px 20px;font-size:13px;font-weight:700;margin-top:50px}
+    @media(max-width:760px){.grid-2,.grid-3,.quiz-options,.videos-grid{grid-template-columns:1fr}.cover h1{font-size:44px}.stage h2{font-size:32px}.quiz-wrap{padding:22px}}
+</style>
 </head>
-<body>
-  <div class="cover" id="top" style="background:linear-gradient(155deg,#0f172a 0%, #1d4ed8 46%, #60a5fa 100%)">
+<body id="top">
+  <div class="cover" style="background:linear-gradient(155deg,#0f172a 0%, #1d4ed8 46%, #60a5fa 100%)">
     <div class="cover-grid"></div>
-    <div class="cover-glow" style="background:radial-gradient(circle, rgba(96,165,250,.35), transparent 70%)"></div>
-    <div class="cover-icon" id="coverIcon">🌟</div>
-    <h1 id="coverTitle">Leitura, Números e Primeiras Palavras em Inglês</h1>
-    <p class="cover-sub" id="coverSubtitle">Dia 001 • segunda-feira • português + matemática + inglês</p>
+    <div class="cover-glow"></div>
+    <div class="cover-icon">🌟</div>
+    <h1>Leitura, Números e Primeiras Palavras em Inglês</h1>
+    <p class="cover-sub">Dia 001 • segunda-feira • português + matemática + inglês</p>
     <div class="cover-pills">
-      <span class="pill">⏱️ 55 min</span>
-      <span class="pill">📖 Português</span>
-      <span class="pill">🔢 Matemática</span>
-      <span class="pill">🌍 Inglês</span>
-      <span class="pill">✨ 10 XP</span>
-      <span class="pill">🪙 3 moedas</span>
+      <span class="pill">⏱️ 55 min</span><span class="pill">📖 Português</span><span class="pill">🔢 Matemática</span><span class="pill">🌍 Inglês</span>
     </div>
-    <div class="cover-note">
-      Hoje a Ayka segue o cronograma de <strong>segunda-feira</strong>. Primeiro faz uma leitura guiada, percebe sons e escreve uma frase curta. Depois treina <strong>contagem, números e cálculo mental</strong>. No final, entra em contato com <strong>cumprimentos, cores, números e uma musiquinha em inglês</strong>. <br><br>
-      <strong>Importante:</strong> esta é a primeira apostila da trilha. A revisão dela aparece no começo da <strong>apostila 2</strong>.
-    </div>
+    <div class="cover-note">Hoje a Ayka segue o cronograma de <strong>segunda-feira</strong>. Primeiro faz uma leitura guiada, depois treina <strong>contagem, números e cálculo mental</strong> e fecha com <strong>greetings, colors e numbers</strong> em inglês. <br><br><strong>Importante:</strong> esta é a primeira apostila da trilha. A revisão dela aparece no começo da <strong>apostila 2</strong>.</div>
   </div>
 
   <div class="science-bar">
-    <div class="science-chip">Leitura guiada</div>
-    <div class="science-chip">Consciência fonológica</div>
-    <div class="science-chip">Cálculo mental</div>
-    <div class="science-chip">Prática guiada</div>
-    <div class="science-chip">Prática independente</div>
-    <div class="science-chip">Aprendizagem lúdica</div>
-    <div class="science-chip">Fechamento leve</div>
-      <div class="science-chip">Fábula com exercícios</div>
+    <div class="science-chip">Leitura guiada</div><div class="science-chip">Consciência fonológica</div><div class="science-chip">Cálculo mental</div><div class="science-chip">Aprendizagem lúdica</div><div class="science-chip">Fechamento leve</div>
   </div>
 
   <nav class="nav">
@@ -124,30 +128,24 @@
     <button onclick="go('worked')">🧠 Exemplos</button>
     <button onclick="go('guided')">🧑‍🏫 Guiada</button>
     <button onclick="go('independent')">✏️ Independente</button>
-    <button onclick="go('quiz')">🎮 Quiz final</button>
-    <button onclick="go('fabula')">📖 Fábula final</button>
+    <button onclick="go('videos')">🎥 Vídeos</button>
+    <button onclick="go('quiz')">🎮 Quiz</button>
+    <button onclick="go('fabula')">📖 História final</button>
   </nav>
 
+  
   <div class="page" id="intro">
     <div class="stage orange">
-      <div class="stage-badge">🧭 Mapa da missão</div>
+      <div class="stage-badge">🧭 Missão do dia</div>
       <span class="stage-icon">🗺️</span>
-      <h2>Como estudar a apostila 1</h2>
-      <p>Esta apostila acompanha os três blocos da segunda-feira e mantém o estudo leve, claro e direto.</p>
-      <div class="stage-tags"><span class="stage-tag">55 minutos</span><span class="stage-tag">3 blocos</span><span class="stage-tag">2 pausas curtas</span></div>
+      <h2>Leitura, números e primeiras palavras em inglês</h2>
+      <p>O foco é fechar o dia com sensação de conquista: ler, contar e repetir com leveza.</p>
+      <div class="stage-tags"><span class="stage-tag">55 minutos</span><span class="stage-tag">3 blocos</span><span class="stage-tag">2 pausas</span></div>
     </div>
     <div class="card bo">
       <h3>🎒 Roteiro do dia</h3>
-      <div class="info yellow">
-        <strong>15h30–15h45 — Português:</strong> leitura guiada, sons iniciais e escrita curta.<br>
-        <strong>15h45–15h50 — Pausa:</strong> água, alongar e levantar.<br>
-        <strong>15h50–16h05 — Matemática:</strong> contagem, cálculo mental e números.<br>
-        <strong>16h05–16h10 — Pausa:</strong> respirar e se mexer um pouco.<br>
-        <strong>16h10–16h25 — Inglês:</strong> greetings, colors, numbers e música.
-      </div>
-      <div class="info orange">
-        <strong>Regra de ouro:</strong> a Ayka não precisa correr. O objetivo é <strong>entender bem</strong>, responder com calma e terminar a aula com sensação de conquista.
-      </div>
+      <div class="info yellow"><strong>Português:</strong> leitura guiada, som inicial e escrita curta.<br><strong>Matemática:</strong> contagem, comparação e cálculo mental leve.<br><strong>Inglês:</strong> greetings, colors, numbers e repetição com música.</div>
+      <div class="info orange"><strong>Regra de ouro:</strong> a Ayka não precisa correr. O objetivo é entender bem e terminar o dia com confiança.</div>
     </div>
   </div>
 
@@ -156,24 +154,12 @@
       <div class="stage-badge">🧪 Por que isso importa?</div>
       <span class="stage-icon">🧠</span>
       <h2>Base forte agora evita dificuldade depois</h2>
-      <p>Quem lê com atenção, conta com segurança e começa cedo com inglês entra no 3º ano com mais autonomia, confiança e repertório.</p>
+      <p>Quem lê com atenção, conta com segurança e começa cedo com inglês chega mais confiante no 3º ano.</p>
       <div class="stage-tags"><span class="stage-tag">Compreensão</span><span class="stage-tag">Raciocínio</span><span class="stage-tag">Vocabulário</span></div>
     </div>
     <div class="card bp">
       <h3>🎯 Objetivo da aula</h3>
-      <div class="info blue">
-        No final desta aula, a Ayka vai conseguir:<br>
-        • localizar a ideia principal de um texto curto<br>
-        • perceber sons iniciais e completar uma escrita simples<br>
-        • contar, comparar e resolver cálculos mentais fáceis<br>
-        • reconhecer e usar palavras básicas em inglês
-      </div>
-    </div>
-    <div class="card bg">
-      <h3>🌱 Frase de crescimento do dia</h3>
-      <div class="info green">
-        Eu posso aprender um pouco de cada vez. Quando eu leio, conto e repito, meu cérebro fica mais forte.
-      </div>
+      <div class="info blue">No final do dia, a Ayka deve conseguir localizar a ideia principal de um texto curto, resolver continhas simples e reconhecer palavras básicas em inglês.</div>
     </div>
   </div>
 
@@ -182,97 +168,37 @@
       <div class="stage-badge">📖 Bloco 1</div>
       <span class="stage-icon">📚</span>
       <h2>Português — leitura, sons e escrita curta</h2>
-      <p>Neste bloco, a Ayka lê um texto curtinho, identifica o mais importante e brinca com os sons das palavras.</p>
+      <p>Neste bloco, a Ayka lê um texto curtinho, identifica o mais importante e brinca com sons iniciais.</p>
       <div class="stage-tags"><span class="stage-tag">Leitura guiada</span><span class="stage-tag">Som inicial</span><span class="stage-tag">Frase curta</span></div>
     </div>
     <div class="card bc">
-      <div class="cpa-label cpa-c">📘 Leitura guiada</div>
       <h3>🐶 Texto do dia</h3>
-      <div class="info blue">
-        <strong>Luna e o parque</strong><br><br>
-        Luna foi ao parque com a mãe. Ela correu na grama, brincou no escorregador e viu um cachorro marrom. No fim, Luna voltou para casa feliz porque a tarde foi divertida.
-      </div>
-      <div class="info orange">
-        <strong>Ideia principal:</strong> Luna passou uma tarde divertida no parque.
-      </div>
+      <div class="info blue"><strong>Luna e o parque</strong><br><br>Luna foi ao parque com a mãe. Ela correu na grama, brincou no escorregador e viu um cachorro marrom. No fim, voltou para casa feliz porque a tarde foi divertida.</div>
       <div class="grid-2">
-        <div class="bubble-card" onclick="highlightCard(this)"><div style="font-size:32px;">🌳</div><strong>Foi ao parque</strong><small>informação importante</small></div>
-        <div class="bubble-card" onclick="highlightCard(this)"><div style="font-size:32px;">🐕</div><strong>Viu um cachorro marrom</strong><small>detalhe</small></div>
-        <div class="bubble-card" onclick="highlightCard(this)"><div style="font-size:32px;">🛝</div><strong>Brincou no escorregador</strong><small>detalhe</small></div>
-        <div class="bubble-card" onclick="highlightCard(this)"><div style="font-size:32px;">😊</div><strong>Voltou feliz</strong><small>ajuda a entender o texto</small></div>
+        <div class="bubble-card"><div style="font-size:32px;">🌳</div><strong>Foi ao parque</strong><small>ideia importante</small></div>
+        <div class="bubble-card"><div style="font-size:32px;">😊</div><strong>Voltou feliz</strong><small>conclusão do texto</small></div>
       </div>
+      <div class="info orange"><strong>Escrita curta:</strong> complete e copie no caderno: A Luna foi ao ______. Ela voltou para casa ______.</div>
     </div>
-    <div class="card bc">
-      <h3>🔤 Consciência fonológica</h3>
-      <div class="grid-3">
-        <div class="info yellow"><strong>L</strong><br>Luna • livro • lápis</div>
-        <div class="info blue"><strong>P</strong><br>parque • pato • pipa</div>
-        <div class="info green"><strong>C</strong><br>cachorro • casa • cola</div>
-      </div>
-      <div class="info purple">
-        O jogo aqui é perceber o <strong>som do começo</strong>. Luna começa com <strong>L</strong>. Parque começa com <strong>P</strong>.
-      </div>
-    </div>
-    <div class="card bc">
-      <h3>✍️ Escrita curta</h3>
-      <div class="info yellow">
-        Complete e copie no caderno:<br>
-        <strong>A Luna foi ao ______.</strong><br>
-        <strong>Ela voltou para casa ______.</strong>
-      </div>
-      <div class="info green">
-        Resposta esperada: <strong>parque</strong> e <strong>feliz</strong>.
-      </div>
-    </div>
-    <div class="stars"><span>Português:</span><span class="star" onclick="toggleStar(this)">⭐</span><span class="star off" onclick="toggleStar(this)">⭐</span><span class="star off" onclick="toggleStar(this)">⭐</span></div>
   </div>
 
   <div class="page" id="nivel2">
     <div class="stage blue">
       <div class="stage-badge">🔢 Bloco 2</div>
       <span class="stage-icon">🧮</span>
-      <h2>Matemática — contagem, números e cálculo mental</h2>
-      <p>Aqui a Ayka observa quantidades, faz somas mentais simples e compara números sem complicação.</p>
+      <h2>Matemática — contagem, comparação e cálculo mental</h2>
+      <p>A matemática de hoje trabalha observação de quantidades e continhas simples de cabeça.</p>
       <div class="stage-tags"><span class="stage-tag">Contagem</span><span class="stage-tag">Comparação</span><span class="stage-tag">Cálculo mental</span></div>
     </div>
     <div class="card bp">
-      <div class="cpa-label cpa-p">🔢 Contando com os olhos</div>
       <h3>🍎 Quantidades do dia</h3>
-      <div class="sun-wrap">
-        <div class="sun-core">NÚMEROS</div>
-        <div class="orbit-grid">
-          <div class="orbit">3 maçãs</div>
-          <div class="orbit">5 lápis</div>
-          <div class="orbit">7 estrelas</div>
-          <div class="orbit">10 dedos</div>
-        </div>
-      </div>
-      <div class="info blue">
-        Contar bem ajuda a somar e comparar. Quando a Ayka olha, conta e confere, ela evita erro bobo.
-      </div>
-    </div>
-    <div class="card bp">
-      <h3>⚡ Cálculo mental rápido</h3>
       <div class="grid-3">
-        <div class="info orange"><strong>2 + 1 = 3</strong><br>juntou mais 1</div>
-        <div class="info blue"><strong>4 + 2 = 6</strong><br>pensar de cabeça</div>
-        <div class="info green"><strong>7 - 1 = 6</strong><br>tirou 1</div>
+        <div class="info yellow"><strong>3 maçãs</strong><br>contar com calma</div>
+        <div class="info blue"><strong>5 lápis</strong><br>conferir a quantidade</div>
+        <div class="info green"><strong>7 estrelas</strong><br>comparar números</div>
       </div>
-      <div class="info purple">
-        Dica: para cálculo mental pequeno, a Ayka pode imaginar objetos, dedos ou passos na cabeça.
-      </div>
+      <div class="info purple"><strong>Dica:</strong> para cálculo mental pequeno, a Ayka pode imaginar objetos, dedos ou passos na cabeça.</div>
     </div>
-    <div class="card bp">
-      <h3>📏 Quem é maior?</h3>
-      <div class="grid-2">
-        <div class="info yellow"><strong>8 é maior que 5</strong><br>porque vem depois na contagem.</div>
-        <div class="info green"><strong>3 é menor que 6</strong><br>porque vem antes na contagem.</div>
-      </div>
-      <div class="info orange">
-        Compare assim: conte na cabeça e veja qual número está mais à frente.
-      </div>
-    </div>
-    <div class="stars"><span>Matemática:</span><span class="star" onclick="toggleStar(this)">⭐</span><span class="star off" onclick="toggleStar(this)">⭐</span><span class="star off" onclick="toggleStar(this)">⭐</span></div>
   </div>
 
   <div class="page" id="nivel3">
@@ -280,69 +206,39 @@
       <div class="stage-badge">🌍 Bloco 3</div>
       <span class="stage-icon">🎵</span>
       <h2>Inglês — greetings, colors, numbers e música</h2>
-      <p>O último bloco é leve. A Ayka conhece palavras básicas, fala em voz alta e fecha a aula com ritmo.</p>
+      <p>O bloco final é leve e focado em escuta, repetição e contato positivo com o idioma.</p>
       <div class="stage-tags"><span class="stage-tag">Greetings</span><span class="stage-tag">Colors</span><span class="stage-tag">Numbers</span></div>
     </div>
     <div class="card ba">
-      <div class="cpa-label cpa-a">🌈 Vocabulário inicial</div>
-      <h3>👋 Cumprimentos do dia</h3>
+      <h3>👋 Palavras do dia</h3>
       <div class="grid-2">
         <div class="info blue"><strong>Hello</strong><br>olá</div>
         <div class="info green"><strong>Goodbye</strong><br>tchau</div>
-        <div class="info orange"><strong>Good morning</strong><br>bom dia</div>
-        <div class="info purple"><strong>Thank you</strong><br>obrigada(o)</div>
-      </div>
-    </div>
-    <div class="card ba">
-      <h3>🎨 Cores e números</h3>
-      <div class="grid-3">
-        <div class="info red"><strong>Red</strong><br>vermelho</div>
-        <div class="info blue"><strong>Blue</strong><br>azul</div>
-        <div class="info green"><strong>Green</strong><br>verde</div>
-      </div>
-      <div class="grid-3">
-        <div class="info yellow"><strong>One</strong><br>1</div>
-        <div class="info orange"><strong>Two</strong><br>2</div>
+        <div class="info orange"><strong>Blue</strong><br>azul</div>
         <div class="info purple"><strong>Three</strong><br>3</div>
       </div>
+      <div class="info yellow"><strong>Fechamento leve:</strong> ouvir, repetir e brincar com o som já é avanço real para esta fase.</div>
     </div>
-    <div class="card ba">
-      <h3>🎶 Mini música para repetir</h3>
-      <div class="info yellow">
-        <strong>Hello, hello, how are you?</strong><br>
-        <strong>One, two, three — red, blue, green!</strong>
-      </div>
-      <div class="info green">
-        A ideia não é decorar perfeito. É <strong>ouvir, repetir e brincar com o som</strong>.
-      </div>
-    </div>
-    <div class="stars"><span>Inglês:</span><span class="star" onclick="toggleStar(this)">⭐</span><span class="star off" onclick="toggleStar(this)">⭐</span><span class="star off" onclick="toggleStar(this)">⭐</span></div>
   </div>
 
   <div class="page" id="worked">
-    <div class="stage dark">
-      <div class="stage-badge">🧠 Exemplos resolvidos</div>
-      <span class="stage-icon">🔍</span>
+    <div class="stage green">
+      <div class="stage-badge">🧠 Exemplos</div>
+      <span class="stage-icon">🔎</span>
       <h2>Primeiro eu vejo, depois eu faço</h2>
-      <p>Aqui a Ayka observa como pensar em cada matéria antes de tentar sozinha.</p>
+      <p>Aqui a Ayka observa como pensar antes de responder sozinha.</p>
     </div>
-    <div class="worked">
-      <h3 style="font-family:'Fredoka',cursive;color:var(--blue);margin-bottom:10px;">Exemplo 1 — Português</h3>
-      <div class="info blue"><strong>Pergunta:</strong> O que foi mais importante no texto da Luna?</div>
-      <div class="info green"><strong>Pensando:</strong> o texto conta várias coisas, mas todas mostram que ela teve uma tarde boa no parque.</div>
-      <div class="info purple"><strong>Resposta:</strong> A ideia principal é que Luna se divertiu no parque.</div>
+    <div class="card bg">
+      <h3>✅ Exemplo 1</h3>
+      <div class="info green"><strong>Pergunta:</strong> O que foi mais importante no texto da Luna?<br><strong>Resposta:</strong> que ela passou uma tarde divertida no parque.</div>
     </div>
-    <div class="worked">
-      <h3 style="font-family:'Fredoka',cursive;color:var(--blue);margin-bottom:10px;">Exemplo 2 — Matemática</h3>
-      <div class="info blue"><strong>Pergunta:</strong> Se eu tenho 4 bolinhas e ganho mais 2, com quantas fico?</div>
-      <div class="info green"><strong>Pensando:</strong> 4, 5, 6.</div>
-      <div class="info purple"><strong>Resposta:</strong> 4 + 2 = 6.</div>
+    <div class="card bg">
+      <h3>✅ Exemplo 2</h3>
+      <div class="info blue"><strong>Pergunta:</strong> Quanto é 4 + 2?<br><strong>Resposta:</strong> 6.</div>
     </div>
-    <div class="worked">
-      <h3 style="font-family:'Fredoka',cursive;color:var(--blue);margin-bottom:10px;">Exemplo 3 — Inglês</h3>
-      <div class="info blue"><strong>Pergunta:</strong> Como digo “olá” em inglês?</div>
-      <div class="info green"><strong>Pensando:</strong> essa é a palavra de greeting que usamos quando encontramos alguém.</div>
-      <div class="info purple"><strong>Resposta:</strong> <strong>Hello</strong>.</div>
+    <div class="card bg">
+      <h3>✅ Exemplo 3</h3>
+      <div class="info purple"><strong>Pergunta:</strong> Como digo “olá” em inglês?<br><strong>Resposta:</strong> Hello.</div>
     </div>
   </div>
 
@@ -350,72 +246,85 @@
     <div class="stage orange">
       <div class="stage-badge">🧑‍🏫 Prática guiada</div>
       <span class="stage-icon">✍️</span>
-      <h2>Agora vamos fazer juntas</h2>
-      <p>Aqui a Ayka já responde com um pouco mais de autonomia, mas ainda com apoio.</p>
+      <h2>Agora com apoio</h2>
+      <p>A ideia é tentar primeiro e abrir a resposta só depois.</p>
     </div>
-    <div class="guided">
-      <div class="question orange" onclick="toggleAnswer('g1')">
-        <strong>1.</strong> No texto da Luna, qual palavra completa a frase?<br>
-        “A Luna foi ao ______.”<br>
-        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('g1')">Ver resposta</button>
-        <div class="answer" id="g1">Parque.</div>
-      </div>
-      <div class="question orange" onclick="toggleAnswer('g2')">
-        <strong>2.</strong> Que som vem no começo de <strong>lápis</strong>?<br>
-        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('g2')">Ver resposta</button>
-        <div class="answer" id="g2">O som de <strong>L</strong>.</div>
-      </div>
-      <div class="question orange" onclick="toggleAnswer('g3')">
+    <div class="card bc">
+      <h3>📝 Vamos praticar</h3>
+      <div class="question orange" onclick="toggleAnswer('d1g1')">
+        <strong>1.</strong> No texto da Luna, a palavra que completa “A Luna foi ao ______” é:<br>
+        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('d1g1')">Ver resposta</button>
+        <div class="answer" id="d1g1">parque.</div>
+      </div><div class="question orange" onclick="toggleAnswer('d1g2')">
+        <strong>2.</strong> Qual palavra começa com o som de L?<br>
+        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('d1g2')">Ver resposta</button>
+        <div class="answer" id="d1g2">Luna ou lápis.</div>
+      </div><div class="question orange" onclick="toggleAnswer('d1g3')">
         <strong>3.</strong> Se a Ayka tem 3 estrelas e ganha mais 2, fica com quantas?<br>
-        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('g3')">Ver resposta</button>
-        <div class="answer" id="g3">5 estrelas.</div>
-      </div>
-      <div class="question orange" onclick="toggleAnswer('g4')">
-        <strong>4.</strong> Como se diz <strong>azul</strong> em inglês?<br>
-        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('g4')">Ver resposta</button>
-        <div class="answer" id="g4">Blue.</div>
+        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('d1g3')">Ver resposta</button>
+        <div class="answer" id="d1g3">5 estrelas.</div>
+      </div><div class="question orange" onclick="toggleAnswer('d1g4')">
+        <strong>4.</strong> Como se diz “olá” em inglês?<br>
+        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('d1g4')">Ver resposta</button>
+        <div class="answer" id="d1g4">Hello.</div>
       </div>
     </div>
   </div>
 
   <div class="page" id="independent">
-    <div class="stage green">
+    <div class="stage blue">
       <div class="stage-badge">✏️ Prática independente</div>
       <span class="stage-icon">🚀</span>
       <h2>Agora é com a Ayka</h2>
-      <p>Neste momento ela tenta sozinha e depois confere.</p>
+      <p>Nesta parte ela tenta sozinha e depois confere.</p>
     </div>
-    <div class="independent">
-      <div class="question green" onclick="toggleAnswer('i1')">
+    <div class="card bp">
+      <h3>📌 Desafios do dia</h3>
+      <div class="question green" onclick="toggleAnswer('d1i1')">
         <strong>1.</strong> O que foi mais importante no texto: o cachorro ser marrom ou a tarde ter sido divertida?<br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i1')">Ver resposta</button>
-        <div class="answer" id="i1">O mais importante foi a tarde ter sido divertida. O cachorro marrom é só um detalhe.</div>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d1i1')">Ver resposta</button>
+        <div class="answer" id="d1i1">O mais importante foi a tarde ter sido divertida.</div>
+      </div><div class="question green" onclick="toggleAnswer('d1i2')">
+        <strong>2.</strong> Qual número é maior: 6 ou 4?<br>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d1i2')">Ver resposta</button>
+        <div class="answer" id="d1i2">6 é maior.</div>
+      </div><div class="question green" onclick="toggleAnswer('d1i3')">
+        <strong>3.</strong> Resolva mentalmente: 5 + 3<br>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d1i3')">Ver resposta</button>
+        <div class="answer" id="d1i3">8.</div>
+      </div><div class="question green" onclick="toggleAnswer('d1i4')">
+        <strong>4.</strong> Qual palavra significa azul em inglês?<br>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d1i4')">Ver resposta</button>
+        <div class="answer" id="d1i4">Blue.</div>
       </div>
-      <div class="question green" onclick="toggleAnswer('i2')">
-        <strong>2.</strong> Escreva uma palavra que comece com o som de <strong>P</strong>.<br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i2')">Ver resposta</button>
-        <div class="answer" id="i2">Resposta possível: parque, pato, pipa, pão.</div>
-      </div>
-      <div class="question green" onclick="toggleAnswer('i3')">
-        <strong>3.</strong> Qual número é maior: <strong>6</strong> ou <strong>4</strong>?<br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i3')">Ver resposta</button>
-        <div class="answer" id="i3">6 é maior.</div>
-      </div>
-      <div class="question green" onclick="toggleAnswer('i4')">
-        <strong>4.</strong> Resolva mentalmente: <strong>5 + 3</strong><br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i4')">Ver resposta</button>
-        <div class="answer" id="i4">8.</div>
-      </div>
-      <div class="question green" onclick="toggleAnswer('i5')">
-        <strong>5.</strong> Ligue a palavra em inglês ao significado: <strong>Hello</strong><br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i5')">Ver resposta</button>
-        <div class="answer" id="i5">Hello = olá.</div>
-      </div>
-      <div class="question green" onclick="toggleAnswer('i6')">
-        <strong>6.</strong> Qual destas palavras em inglês representa o número 3: <strong>one, two ou three</strong>?<br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i6')">Ver resposta</button>
-        <div class="answer" id="i6">Three.</div>
-      </div>
+    </div>
+  </div>
+
+
+  <div class="page" id="videos">
+    <div class="stage purple">
+      <div class="stage-badge">🎥 Fechamento do dia</div>
+      <span class="stage-icon">📺</span>
+      <h2>Vídeos do dia</h2>
+      <p>Seção final padronizada para reforçar o conteúdo com apoio visual e repetição leve.</p>
+      <div class="stage-tags"><span class="stage-tag">Reforço visual</span><span class="stage-tag">Repetição</span><span class="stage-tag">Aprendizagem leve</span></div>
+    </div>
+    <div class="videos-grid">
+      <div class="video-card">
+          <h4>História infantil sobre parque e leitura</h4>
+          <p>Busca pronta para reforçar leitura guiada e compreensão de texto com contexto parecido ao da apostila.</p>
+          <a class="video-link" href="https://www.youtube.com/results?search_query=historia+infantil+parque+leitura" target="_blank" rel="noopener noreferrer">Abrir busca</a>
+        </div>
+<div class="video-card">
+          <h4>Contagem e números até 10</h4>
+          <p>Busca pronta para treinar contagem visual, comparação e cálculo mental simples.</p>
+          <a class="video-link" href="https://www.youtube.com/results?search_query=contagem+ate+10+infantil" target="_blank" rel="noopener noreferrer">Abrir busca</a>
+        </div>
+<div class="video-card">
+          <h4>Greetings, colors and numbers song</h4>
+          <p>Busca pronta para repetir vocabulário de inglês com apoio musical.</p>
+          <a class="video-link" href="https://www.youtube.com/results?search_query=greetings+colors+numbers+song+kids" target="_blank" rel="noopener noreferrer">Abrir busca</a>
+        </div>
     </div>
   </div>
 
@@ -424,437 +333,152 @@
       <div class="stage-badge">🎮 Quiz final</div>
       <span class="stage-icon">🏆</span>
       <h2>Quiz final — revisão do Dia 1</h2>
-      <p>Agora a Ayka fecha a missão com perguntas rápidas sobre os três blocos do dia.</p>
+      <p>Fechamento rápido do dia para consolidar memória e entendimento.</p>
     </div>
     <div class="quiz-wrap">
-      <h3>Ayka vs Leitura, Números e Inglês</h3>
+      <h3>Quiz final — revisão do Dia 1</h3>
       <div class="quiz-bar-wrap"><div class="quiz-bar" id="quizBar"></div></div>
-      <div class="quiz-score" id="quizScore">Questão 1 de 12</div>
+      <div class="quiz-score" id="quizScore">Questão 1</div>
       <div class="quiz-question" id="quizQuestion">Carregando...</div>
       <div class="quiz-options" id="quizOptions"></div>
       <div class="quiz-feedback" id="quizFeedback"></div>
       <button class="quiz-next" id="quizNext" onclick="nextQuiz()" disabled>Próxima ➡️</button>
     </div>
+  </div>
 
-
-    <div class="page" id="fabula">
-      <div class="stage purple">
-        <div class="stage-badge">📖 Fábula do dia</div>
-        <span class="stage-icon">🐝</span>
-        <h2>A abelhinha que aprendeu a contar</h2>
-        <p>No fim da apostila, a Ayka fecha a missão com uma história curta. Aqui ela lê, pensa, conta e usa palavrinhas em inglês de forma leve.</p>
-        <div class="stage-tags"><span class="stage-tag">Leitura</span><span class="stage-tag">Contagem</span><span class="stage-tag">Inglês</span></div>
-      </div>
-
-      <div class="card ba">
-        <h3>📚 Fábula</h3>
-        <div class="info purple">
-          Uma abelhinha saiu cedo para visitar o jardim. Antes de pousar na primeira flor, ela disse: <strong>Hello!</strong><br><br>
-          No caminho, viu uma flor <strong>blue</strong>, uma flor amarela e uma flor vermelha. A abelhinha ficou feliz e decidiu contar quantas flores havia ali.<br><br>
-          Ela pousou uma vez, duas vezes, três vezes e percebeu que, quando observava com calma, conseguia aprender melhor. Então pensou: “Se eu olho, conto e repito, meu trabalho fica mais fácil.”<br><br>
-          No fim do passeio, a abelhinha voltou para casa e contou à mamãe abelha o que viu. Ela disse que o jardim era bonito, colorido e cheio de coisas para descobrir. A mamãe sorriu e falou: “Quem presta atenção aprende mais.” 
-        </div>
-      </div>
-
-      <div class="card bc">
-        <h3>🧠 Entendendo a fábula</h3>
-        <div class="question" onclick="toggleAnswer('f1q1')">
-          <strong>1.</strong> Quem é a personagem principal da história?
-          <button class="show-btn" onclick="event.stopPropagation();toggleAnswer('f1q1')">Ver resposta</button>
-          <div class="answer" id="f1q1">A personagem principal é a <strong>abelhinha</strong>.</div>
-        </div>
-        <div class="question" onclick="toggleAnswer('f1q2')">
-          <strong>2.</strong> O que a abelhinha viu no jardim?
-          <button class="show-btn" onclick="event.stopPropagation();toggleAnswer('f1q2')">Ver resposta</button>
-          <div class="answer" id="f1q2">Ela viu <strong>flores de cores diferentes</strong>.</div>
-        </div>
-        <div class="question" onclick="toggleAnswer('f1q3')">
-          <strong>3.</strong> Qual foi a lição da história?
-          <button class="show-btn" onclick="event.stopPropagation();toggleAnswer('f1q3')">Ver resposta</button>
-          <div class="answer" id="f1q3">A lição é que <strong>quem presta atenção aprende mais</strong>.</div>
-        </div>
-      </div>
-
-      <div class="card bp">
-        <h3>🔢 Exercícios ligados à apostila</h3>
-        <div class="question" onclick="toggleAnswer('f1q4')">
-          <strong>4.</strong> A abelhinha pousou 3 vezes. Se pousar mais 2 vezes, quantas vezes serão ao todo?
-          <button class="show-btn" onclick="event.stopPropagation();toggleAnswer('f1q4')">Ver resposta</button>
-          <div class="answer" id="f1q4">Serão <strong>5 vezes</strong>. 3 + 2 = 5.</div>
-        </div>
-        <div class="question" onclick="toggleAnswer('f1q5')">
-          <strong>5.</strong> Qual destas palavras em inglês apareceu na fábula: <em>Hello</em> ou <em>Dog</em>?
-          <button class="show-btn" onclick="event.stopPropagation();toggleAnswer('f1q5')">Ver resposta</button>
-          <div class="answer" id="f1q5">A palavra que apareceu foi <strong>Hello</strong>.</div>
-        </div>
-        <div class="question" onclick="toggleAnswer('f1q6')">
-          <strong>6.</strong> A palavra <strong>blue</strong> fala de qual ideia: cor ou número?
-          <button class="show-btn" onclick="event.stopPropagation();toggleAnswer('f1q6')">Ver resposta</button>
-          <div class="answer" id="f1q6"><strong>Blue</strong> fala de uma <strong>cor</strong>.</div>
-        </div>
-        <div class="question" onclick="toggleAnswer('f1q7')">
-          <strong>7.</strong> Escreva ou fale uma frase curta sobre o jardim da abelhinha.
-          <button class="show-btn" onclick="event.stopPropagation();toggleAnswer('f1q7')">Ver resposta</button>
-          <div class="answer" id="f1q7">Resposta possível: <strong>O jardim tem flores coloridas.</strong></div>
-        </div>
-      </div>
-
-      <div class="card bg">
-        <h3>✨ Moral da fábula</h3>
-        <div class="info green"><strong>Observar com calma, repetir e prestar atenção</strong> ajuda a aprender melhor todos os dias.</div>
+  <div class="page" id="fabula">
+    <div class="stage green">
+      <div class="stage-badge">📖 Fechamento com história</div>
+      <span class="stage-icon">✨</span>
+      <h2>A abelhinha que aprendeu a contar</h2>
+      <p>Uma história curta para encerrar a apostila conectando conteúdo, imaginação e linguagem.</p>
+      <div class="stage-tags"><span class="stage-tag">Leitura</span><span class="stage-tag">Conexão</span><span class="stage-tag">Encerramento</span></div>
+    </div>
+    <div class="card ba">
+      <h3>📚 História final</h3>
+      <div class="info purple">Uma abelhinha saiu cedo para visitar o jardim. Antes de pousar na primeira flor, ela disse <strong>Hello</strong>. No caminho, viu flores coloridas e decidiu contar quantas havia ali. Ao observar com calma, percebeu que aprender ficava mais fácil quando ela olhava, contava e repetia. No fim, contou tudo para a mamãe abelha, que sorriu e disse: quem presta atenção aprende mais.</div>
+    </div>
+    <div class="card bc">
+      <h3>🧠 Entendendo a história</h3>
+      <div class="question green" onclick="toggleAnswer('d1f1')">
+        <strong>1.</strong> Quem é a personagem principal da história?<br>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d1f1')">Ver resposta</button>
+        <div class="answer" id="d1f1">A abelhinha.</div>
+      </div><div class="question green" onclick="toggleAnswer('d1f2')">
+        <strong>2.</strong> O que ela fez no jardim?<br>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d1f2')">Ver resposta</button>
+        <div class="answer" id="d1f2">Observou flores, contou e aprendeu com calma.</div>
+      </div><div class="question green" onclick="toggleAnswer('d1f3')">
+        <strong>3.</strong> Qual é a moral da história?<br>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d1f3')">Ver resposta</button>
+        <div class="answer" id="d1f3">Quem presta atenção aprende mais.</div>
       </div>
     </div>
+  </div>
 
-
-    <div class="nav-bottom">
-      <a class="btn-back" href="../index.html">← Voltar para o cronograma</a>
-      <a class="btn-next" id="btnProximaApostila" href="#">Próxima apostila →</a>
-    </div>
+  <div class="nav-bottom">
+    <span class="btn-secondary btn-disabled">← Apostila anterior</span>
+    <a class="btn-secondary" href="../index.html">↩ Voltar ao cronograma</a>
+    <a class="btn-primary" href="dia-002.html">Próxima apostila →</a>
   </div>
 
   <button class="top-btn" onclick="go('top')">⬆️</button>
 
-  <footer class="footer" id="footerInfo">
-    Dia 001 — Leitura, Números e Primeiras Palavras em Inglês • Projeto Ayka • Português + Matemática + Inglês • Estrutura: blocos do cronograma + prática + quiz final + fábula com exercícios
-  </footer>
+  <footer class="footer">Dia 001 — Leitura, Números e Primeiras Palavras em Inglês • Projeto Ayka • navegação padronizada + vídeos no final</footer>
 
   <script>
-    function go(id){
-      playClickSound();
+    function go(id) {
       const el = document.getElementById(id);
-      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    function toggleAnswer(id){
-      playClickSound();
+    function toggleAnswer(id) {
       const el = document.getElementById(id);
-      if(el) el.classList.toggle('show');
+      if (el) el.classList.toggle('show');
     }
 
-    function toggleStar(el){
-      playClickSound();
-      const group = el.parentElement.querySelectorAll('.star');
-      const idx = Array.from(group).indexOf(el);
-      group.forEach((star, i) => {
-        if(i <= idx){
-          star.classList.remove('off');
-        }else{
-          star.classList.add('off');
-        }
-      });
-      celebrateElement(el, 10);
-    }
-
-    function highlightCard(el){
-      playClickSound();
-      const cards = el.parentElement.querySelectorAll('.bubble-card');
-      cards.forEach(card => {
-        card.style.borderColor = '';
-        card.style.background = '';
-      });
-      el.style.borderColor = '#2563eb';
-      el.style.background = '#eff6ff';
-      celebrateElement(el, 8);
-    }
-
-
-    const soundState = {
-      enabled: true,
-      unlocked: false,
-      ctx: null
-    };
-
-    function getAudioCtx(){
-      const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      if(!AudioCtx) return null;
-      if(!soundState.ctx) soundState.ctx = new AudioCtx();
-      return soundState.ctx;
-    }
-
-    async function unlockAudio(){
-      const ctx = getAudioCtx();
-      if(!ctx) return;
-      if(ctx.state === 'suspended'){
-        try{ await ctx.resume(); }catch(e){}
-      }
-      soundState.unlocked = true;
-    }
-
-    function playTone(freq, duration=0.09, type='sine', volume=0.025, when=0){
-      if(!soundState.enabled) return;
-      const ctx = getAudioCtx();
-      if(!ctx) return;
-      const start = ctx.currentTime + when;
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = type;
-      osc.frequency.setValueAtTime(freq, start);
-      gain.gain.setValueAtTime(0.0001, start);
-      gain.gain.exponentialRampToValueAtTime(volume, start + 0.01);
-      gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
-      osc.connect(gain).connect(ctx.destination);
-      osc.start(start);
-      osc.stop(start + duration + 0.02);
-    }
-
-    function playCorrectSound(){
-      playTone(523.25, 0.08, 'triangle', 0.03, 0);
-      playTone(659.25, 0.09, 'triangle', 0.03, 0.07);
-      playTone(783.99, 0.12, 'triangle', 0.03, 0.14);
-    }
-
-    function playWrongSound(){
-      playTone(220, 0.08, 'sawtooth', 0.022, 0);
-      playTone(185, 0.14, 'sawtooth', 0.02, 0.06);
-    }
-
-    function playClickSound(){
-      playTone(440, 0.045, 'square', 0.013, 0);
-    }
-
-    function playBigWinSound(){
-      [523.25,659.25,783.99,1046.5].forEach((f, i) => playTone(f, 0.12, 'triangle', 0.032, i * 0.08));
-    }
-
-    function burstAt(x, y, count=24){
-      const layer = document.getElementById('celebrationLayer');
-      if(!layer) return;
-      const colors = ['#60a5fa','#22c55e','#f59e0b','#f472b6','#fde047','#a78bfa','#fb7185'];
-      const ring = document.createElement('div');
-      ring.className = 'burst-ring';
-      ring.style.left = `${x - 9}px`;
-      ring.style.top = `${y - 9}px`;
-      layer.appendChild(ring);
-      setTimeout(() => ring.remove(), 720);
-
-      for(let i = 0; i < count; i++){
-        const piece = document.createElement('div');
-        piece.className = 'confetti';
-        piece.style.left = `${x + (Math.random()*120 - 60)}px`;
-        piece.style.top = `${y - 10 + (Math.random()*18 - 9)}px`;
-        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-        piece.style.transform = `translateY(-20px) rotate(${Math.random()*180}deg)`;
-        piece.style.animationDuration = `${900 + Math.random()*700}ms`;
-        piece.style.width = `${8 + Math.random()*6}px`;
-        piece.style.height = `${12 + Math.random()*8}px`;
-        layer.appendChild(piece);
-        setTimeout(() => piece.remove(), 1800);
-      }
-    }
-
-    function celebrateElement(el, count=24){
-      const rect = el.getBoundingClientRect();
-      burstAt(rect.left + rect.width/2, rect.top + rect.height/2, count);
-      el.classList.remove('option-bounce');
-      void el.offsetWidth;
-      el.classList.add('option-bounce');
-    }
-
-    function celebrateScreen(){
-      const w = window.innerWidth;
-      burstAt(w * 0.22, 120, 26);
-      burstAt(w * 0.5, 90, 34);
-      burstAt(w * 0.78, 120, 26);
-    }
-
-    function pulseFeedback(){
-      const feedback = document.getElementById('quizFeedback');
-      if(!feedback) return;
-      feedback.classList.remove('feedback-pop');
-      void feedback.offsetWidth;
-      feedback.classList.add('feedback-pop');
-    }
-
-    function updateSoundToggle(){
-      const btn = document.getElementById('soundToggle');
-      if(!btn) return;
-      btn.textContent = soundState.enabled ? '🔊 Som ligado' : '🔇 Som desligado';
-      btn.classList.toggle('off', !soundState.enabled);
-      btn.setAttribute('aria-pressed', String(soundState.enabled));
-    }
-
-
-    const quizData = [
-      {
-        "q": "No texto da Luna, qual é a ideia principal?",
-        "opts": [
-          "O cachorro era marrom.",
-          "Luna teve uma tarde divertida no parque.",
-          "O escorregador era grande.",
-          "A mãe foi com ela."
-        ],
-        "a": 1
-      },
-      {
-        "q": "Qual palavra começa com o som de L?",
-        "opts": ["parque", "lápis", "casa", "pipa"],
-        "a": 1
-      },
-      {
-        "q": "Complete: A Luna voltou para casa...",
-        "opts": ["triste", "molhada", "feliz", "assustada"],
-        "a": 2
-      },
-      {
-        "q": "Quanto é 3 + 2?",
-        "opts": ["4", "5", "6", "7"],
-        "a": 1
-      },
-      {
-        "q": "Qual número é maior?",
-        "opts": ["4", "6"],
-        "a": 1
-      },
-      {
-        "q": "Se eu tenho 7 balas e tiro 1, fico com:",
-        "opts": ["5", "6", "7", "8"],
-        "a": 1
-      },
-      {
-        "q": "Como se diz 'olá' em inglês?",
-        "opts": ["Blue", "One", "Hello", "Green"],
-        "a": 2
-      },
-      {
-        "q": "Qual palavra significa 'azul'?",
-        "opts": ["Red", "Blue", "Three", "Goodbye"],
-        "a": 1
-      },
-      {
-        "q": "Qual palavra representa o número 2?",
-        "opts": ["one", "two", "three", "hello"],
-        "a": 1
-      },
-      {
-        "q": "Em português, a atividade de escrita curta pedia completar a frase com:",
-        "opts": ["parque", "janela", "sapato", "bicicleta"],
-        "a": 0
-      },
-      {
-        "q": "O objetivo da pausa curta é:",
-        "opts": [
-          "fazer mais lição",
-          "beber água e relaxar um pouco",
-          "pular o resto da aula",
-          "trocar de apostila"
-        ],
-        "a": 1
-      },
-      {
-        "q": "Para terminar bem o Dia 1, a Ayka precisa:",
-        "opts": [
-          "fazer tudo correndo",
-          "entender, praticar e repetir com calma",
-          "ler só o começo",
-          "chutar o quiz"
-        ],
-        "a": 1
-      }
-    ];
-
+    const quizData = [{"q": "No texto da Luna, qual é a ideia principal?", "opts": ["O cachorro era marrom.", "Luna teve uma tarde divertida no parque.", "O escorregador era grande.", "A mãe correu na grama."], "a": 1}, {"q": "Qual palavra começa com o som de L?", "opts": ["parque", "lápis", "casa", "pipa"], "a": 1}, {"q": "Quanto é 3 + 2?", "opts": ["4", "5", "6", "7"], "a": 1}, {"q": "Qual número é maior?", "opts": ["4", "6"], "a": 1}, {"q": "Como se diz 'olá' em inglês?", "opts": ["Blue", "Hello", "Three", "Goodbye"], "a": 1}, {"q": "Qual palavra significa azul?", "opts": ["Blue", "Hello", "One", "Thank you"], "a": 0}];
     let quizIndex = 0;
     let quizScore = 0;
-    let answered = false;
+    let quizAnswered = false;
 
-    function initQuiz(){
+    function initQuiz() {
       quizIndex = 0;
       quizScore = 0;
       renderQuiz();
     }
 
-    function renderQuiz(){
-      answered = false;
+    function renderQuiz() {
+      quizAnswered = false;
       const item = quizData[quizIndex];
-
       document.getElementById('quizQuestion').textContent = item.q;
       document.getElementById('quizScore').textContent = `Questão ${quizIndex + 1} de ${quizData.length}`;
       document.getElementById('quizBar').style.width = `${(quizIndex / quizData.length) * 100}%`;
       document.getElementById('quizFeedback').textContent = '';
-      document.getElementById('quizFeedback').style.color = '#fff';
+      document.getElementById('quizFeedback').style.color = '#ffffff';
       document.getElementById('quizNext').disabled = true;
 
-      const opts = document.getElementById('quizOptions');
-      opts.innerHTML = '';
-
-      item.opts.forEach((opt, i) => {
+      const options = document.getElementById('quizOptions');
+      options.innerHTML = '';
+      item.opts.forEach((opt, index) => {
         const button = document.createElement('button');
         button.className = 'quiz-option';
         button.textContent = opt;
-        button.onclick = () => answerQuiz(i);
-        opts.appendChild(button);
+        button.onclick = () => answerQuiz(index);
+        options.appendChild(button);
       });
     }
 
-    function answerQuiz(selected){
-      if(answered) return;
-      answered = true;
+    function answerQuiz(selected) {
+      if (quizAnswered) return;
+      quizAnswered = true;
 
       const item = quizData[quizIndex];
       const buttons = document.querySelectorAll('.quiz-option');
-      buttons.forEach(btn => btn.disabled = true);
-
+      buttons.forEach(button => button.disabled = true);
       buttons[item.a].classList.add('correct');
 
-      if(selected === item.a){
+      const feedback = document.getElementById('quizFeedback');
+      if (selected === item.a) {
         quizScore++;
-        document.getElementById('quizFeedback').textContent = '🎉 Correto!';
-        document.getElementById('quizFeedback').style.color = '#4ade80';
-        pulseFeedback();
-        playCorrectSound();
-        celebrateElement(buttons[item.a], 20);
-      }else{
+        feedback.textContent = '🎉 Correto!';
+        feedback.style.color = '#4ade80';
+      } else {
         buttons[selected].classList.add('wrong');
-        document.getElementById('quizFeedback').textContent = '❌ A correta está em verde.';
-        document.getElementById('quizFeedback').style.color = '#f87171';
-        pulseFeedback();
-        playWrongSound();
+        feedback.textContent = '❌ A correta está em verde.';
+        feedback.style.color = '#f87171';
       }
 
       document.getElementById('quizNext').disabled = false;
     }
 
-    function nextQuiz(){
+    function nextQuiz() {
       quizIndex++;
-      if(quizIndex >= quizData.length){
+      if (quizIndex >= quizData.length) {
         finishQuiz();
-      }else{
-        renderQuiz();
+        return;
       }
+      renderQuiz();
     }
 
-    function finishQuiz(){
+    function finishQuiz() {
       const percent = Math.round((quizScore / quizData.length) * 100);
-      const question = document.getElementById('quizQuestion');
-      const options = document.getElementById('quizOptions');
-      const feedback = document.getElementById('quizFeedback');
-      const score = document.getElementById('quizScore');
-      const next = document.getElementById('quizNext');
-
       document.getElementById('quizBar').style.width = '100%';
+      document.getElementById('quizQuestion').textContent = '🏁 Quiz concluído!';
+      document.getElementById('quizOptions').innerHTML = '';
+      document.getElementById('quizScore').textContent = `Acertos: ${quizScore} de ${quizData.length} (${percent}%)`;
 
-      question.textContent = '🏆 Quiz concluído!';
-      options.innerHTML = '';
-      score.textContent = `Ayka acertou ${quizScore} de ${quizData.length} (${percent}%)`;
-
-      let msg = '';
-      if(percent >= 85){
-        msg = '🥇 Excelente. A base do Dia 1 ficou muito firme.';
-      }else if(percent >= 65){
-        msg = '🥈 Muito bom. Uma revisão curta amanhã vai consolidar bastante.';
-      }else{
-        msg = '💪 Bom começo. Agora vale revisar com calma e tentar de novo.';
+      const feedback = document.getElementById('quizFeedback');
+      if (percent >= 80) {
+        feedback.textContent = 'Excelente. A base do dia ficou firme.';
+      } else if (percent >= 60) {
+        feedback.textContent = 'Muito bom. Uma revisão curta amanhã consolida ainda mais.';
+      } else {
+        feedback.textContent = 'Bom começo. Vale revisar com calma e tentar novamente.';
       }
-
-      feedback.textContent = msg;
       feedback.style.color = '#fde68a';
-      pulseFeedback();
-      celebrateScreen();
-      if(percent >= 85){
-        playBigWinSound();
-      }else if(percent >= 65){
-        playCorrectSound();
-      }
 
+      const next = document.getElementById('quizNext');
       next.textContent = '🔄 Tentar novamente';
       next.disabled = false;
       next.onclick = () => {
@@ -864,25 +488,6 @@
       };
     }
 
-    (function(){
-      const btn = document.getElementById('btnProximaApostila');
-      if(!btn) return;
-      btn.href = 'dia-002.html';
-    })();
-
-    document.addEventListener('pointerdown', unlockAudio, { once: true });
-    document.addEventListener('keydown', unlockAudio, { once: true });
-
-    const soundToggle = document.getElementById('soundToggle');
-    if(soundToggle){
-      soundToggle.addEventListener('click', async () => {
-        await unlockAudio();
-        soundState.enabled = !soundState.enabled;
-        updateSoundToggle();
-      });
-    }
-
-    updateSoundToggle();
     initQuiz();
   </script>
 </body>
