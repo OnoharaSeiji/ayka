@@ -7,100 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    :root{--ink:#0f172a;--navy:#16233d;--blue:#2563eb;--blue2:#60a5fa;--green:#16a34a;--orange:#ea580c;--amber:#f59e0b;--yellow:#fef3c7;--purple:#7c3aed;--gray0:#f8fafc;--gray2:#e2e8f0;--gray4:#64748b;--white:#ffffff;--shadow:0 12px 30px rgba(15,23,42,.10)}
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'Nunito',sans-serif;background:var(--gray0);color:var(--ink);line-height:1.65}
-    .cover{min-height:72vh;background:linear-gradient(155deg,#0d1117 0%, #113a24 46%, #16a34a 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;position:relative;overflow:hidden}
-    .cover-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);background-size:56px 56px}
-    .cover-glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle, rgba(74,222,128,.35), transparent 70%);top:-120px;right:-100px}
-    .cover-icon{font-size:88px;position:relative;z-index:2;margin-bottom:14px}
-    .cover h1{font-family:'Fredoka',cursive;font-size:clamp(38px,7vw,70px);line-height:1.08;color:#fff;text-shadow:0 8px 30px rgba(0,0,0,.35);position:relative;z-index:2}
-    .cover-sub{margin-top:14px;color:rgba(255,255,255,.9);font-weight:800;font-size:clamp(16px,2.5vw,22px);position:relative;z-index:2}
-    .cover-pills{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:26px;position:relative;z-index:2}
-    .pill{padding:9px 16px;border-radius:999px;font-size:13px;font-weight:900;border:2px solid rgba(255,255,255,.24);color:#fff;background:rgba(255,255,255,.12);backdrop-filter:blur(4px)}
-    .cover-note{margin-top:24px;max-width:760px;padding:18px 22px;border-radius:18px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);color:rgba(255,255,255,.94);font-size:14px;font-weight:700;line-height:1.65;position:relative;z-index:2}.cover-note strong{color:#fde68a}
-    .science-bar{background:var(--navy);padding:12px 18px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-    .science-chip{background:rgba(255,255,255,.08);color:rgba(255,255,255,.9);border:1.5px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800}
-    .nav{position:sticky;top:0;z-index:200;background:#0d1117;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:12px 14px;box-shadow:0 2px 20px rgba(0,0,0,.4)}
-    .nav button{border:1.5px solid rgba(255,255,255,.18);background:transparent;color:rgba(255,255,255,.82);border-radius:999px;padding:7px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;cursor:pointer;transition:.22s ease}
-    .nav button:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:scale(1.04)}
-    .page{max-width:980px;margin:0 auto;padding:40px 18px}
-    .stage{border-radius:24px;padding:28px 24px;margin-bottom:28px;position:relative;overflow:hidden}
-    .stage::after{content:'';position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.08);right:-50px;bottom:-90px}
-    .stage.orange{background:linear-gradient(135deg,#9a3412,#ea580c,#fb923c)}
-    .stage.blue{background:linear-gradient(135deg,#1e3a8a,#2563eb,#60a5fa)}
-    .stage.purple{background:linear-gradient(135deg,#4c1d95,#7c3aed,#a78bfa)}
-    .stage.green{background:linear-gradient(135deg,#14532d,#15803d,#4ade80)}
-    .stage.dark{background:linear-gradient(135deg,#0d1117,#113a24,#16a34a)}
-    .stage-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.18);color:#fff;border:1.5px solid rgba(255,255,255,.28);padding:6px 14px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;margin-bottom:10px}
-    .stage-icon{font-size:50px;margin-bottom:10px;display:block;position:relative;z-index:1}
-    .stage h2{font-family:'Fredoka',cursive;font-size:clamp(28px,4vw,48px);color:#fff;line-height:1.12;text-shadow:0 4px 16px rgba(0,0,0,.25);position:relative;z-index:1}
-    .stage p{margin-top:10px;color:rgba(255,255,255,.92);font-size:15px;font-weight:700;position:relative;z-index:1}
-    .stage-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;position:relative;z-index:1}
-    .stage-tag{background:rgba(255,255,255,.16);color:#fff;border:1.5px solid rgba(255,255,255,.24);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800}
-    .card{background:var(--white);border-radius:18px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}
-    .card h3{font-family:'Fredoka',cursive;font-size:24px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-    .card.bc{border-left:6px solid var(--orange)} .card.bc h3{color:var(--orange)}
-    .card.bp{border-left:6px solid var(--blue)} .card.bp h3{color:var(--blue)}
-    .card.ba{border-left:6px solid var(--purple)} .card.ba h3{color:var(--purple)}
-    .card.bg{border-left:6px solid var(--green)} .card.bg h3{color:var(--green)}
-    .card.bo{border-left:6px solid var(--amber)} .card.bo h3{color:var(--amber)}
-    .info{border-radius:14px;padding:16px 18px;margin:12px 0;font-size:14px;font-weight:700;line-height:1.65}
-    .info strong{font-weight:900}
-    .info.yellow{background:#fefce8;border:2px solid #fde047}
-    .info.blue{background:#eff6ff;border:2px solid #93c5fd}
-    .info.green{background:#f0fdf4;border:2px solid #86efac}
-    .info.orange{background:#fff7ed;border:2px solid #fdba74}
-    .info.purple{background:#f5f3ff;border:2px solid #c4b5fd}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
-    .bubble-card{background:var(--gray0);border:2px solid var(--gray2);border-radius:16px;padding:16px;text-align:center;transition:.2s ease;cursor:pointer;min-height:110px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px}
-    .bubble-card:hover{transform:translateY(-2px) scale(1.01);border-color:var(--blue);background:#ecfdf5}
-    .bubble-card strong{font-size:15px;color:var(--ink)}
-    .bubble-card small{color:var(--gray4);font-size:12px;font-weight:800}
-    .question{background:var(--gray0);border-left:5px solid var(--gray2);border-radius:14px;padding:15px 16px;margin-bottom:10px;font-size:14px;font-weight:700;line-height:1.65;cursor:pointer;transition:.2s ease}
-    .question:hover{transform:translateX(4px);background:#f8fbff}
-    .question.orange{border-left-color:var(--orange)}
-    .question.green{border-left-color:var(--green)}
-    .show-btn{border:none;border-radius:999px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:900;font-size:11px;cursor:pointer;margin-top:8px;color:#fff;background:var(--blue)}
-    .show-btn.orange{background:var(--orange)}
-    .show-btn.green{background:var(--green)}
-    .answer{display:none;margin-top:10px;border-radius:12px;padding:12px 14px;background:#f0fdf4;border:2px solid #86efac;color:#166534;font-size:13px;font-weight:800;line-height:1.6}
-    .answer.show{display:block}
-    .quiz-wrap{background:linear-gradient(160deg,#0d1117,#113a24);border-radius:24px;padding:28px;margin-top:24px}
-    .quiz-wrap h3{color:#fff;text-align:center;font-family:'Fredoka',cursive;font-size:26px;margin-bottom:18px}
-    .quiz-bar-wrap{height:10px;background:rgba(255,255,255,.12);border-radius:999px;overflow:hidden;margin-bottom:14px}
-    .quiz-bar{height:100%;width:0;background:linear-gradient(90deg,#22c55e,#4ade80);transition:.35s ease}
-    .quiz-score{text-align:center;color:#fde68a;font-family:'Fredoka',cursive;font-size:18px;margin-bottom:14px}
-    .quiz-question{color:#fff;font-size:17px;font-weight:900;min-height:58px;line-height:1.5;margin-bottom:16px}
-    .quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
-    .quiz-option{border:2px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;cursor:pointer;text-align:left;transition:.2s ease}
-    .quiz-option:hover:not(:disabled){background:rgba(255,255,255,.15);transform:scale(1.01)}
-    .quiz-option.correct{background:rgba(34,197,94,.28);border-color:#22c55e}
-    .quiz-option.wrong{background:rgba(220,38,38,.28);border-color:#dc2626}
-    .quiz-feedback{min-height:26px;text-align:center;font-size:16px;font-weight:900;margin-bottom:12px}
-    .quiz-next{display:block;margin:0 auto;border:none;border-radius:999px;padding:12px 32px;font-family:'Fredoka',cursive;font-size:18px;color:#fff;background:linear-gradient(135deg,#22c55e,#16a34a);cursor:pointer;transition:.2s ease}
-    .quiz-next:hover{transform:scale(1.04)}
-    .quiz-next:disabled{opacity:.45;cursor:not-allowed;transform:none}
-    .videos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-    .video-card{background:var(--white);border-radius:18px;padding:18px;box-shadow:var(--shadow);border:2px solid #e5e7eb}
-    .video-card h4{font-family:'Fredoka',cursive;font-size:18px;margin-bottom:8px}
-    .video-card p{font-size:14px;font-weight:700;color:#334155;line-height:1.55;margin-bottom:12px}
-    .video-link{display:inline-block;text-decoration:none;border-radius:999px;padding:9px 14px;background:#111827;color:#fff;font-weight:900;font-size:12px}
-    .nav-bottom{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0 10px}
-    .nav-bottom a,.nav-bottom span{display:inline-block;text-decoration:none;border-radius:12px;padding:12px 18px;font-weight:900;transition:.2s ease}
-    .btn-secondary{background:#e5e7eb;color:#111827}
-    .btn-secondary:hover{background:#d1d5db}
-    .btn-primary{background:var(--blue);color:#fff}
-    .btn-primary:hover{background:#1d4ed8}
-    .btn-disabled{background:#9ca3af;color:#fff;pointer-events:none;cursor:not-allowed}
-    .top-btn{position:fixed;right:22px;bottom:22px;width:50px;height:50px;border-radius:50%;border:none;background:#0d1117;color:#fff;font-size:20px;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.28);z-index:300}
-    .top-btn:hover{background:var(--blue)}
-    .footer{background:#0d1117;color:rgba(255,255,255,.7);text-align:center;padding:28px 20px;font-size:13px;font-weight:700;margin-top:50px}
-    @media(max-width:760px){.grid-2,.grid-3,.quiz-options,.videos-grid{grid-template-columns:1fr}.cover h1{font-size:44px}.stage h2{font-size:32px}.quiz-wrap{padding:22px}}
-</style>
+  <link rel="stylesheet" href="../assets/css/apostila.css">
+  <script>window.APOSTILA_PAGE = {"prevFile": "dia-001.html", "nextFile": "dia-003.html", "footer": "Dia 002 — Revisão do Dia 1, Formas, Natureza e Japonês Inicial • Projeto Ayka • revisão no início + estrutura compartilhada", "videos": [{"title": "Formas geométricas no cotidiano", "description": "Busca pronta para reforçar círculo, quadrado, triângulo e retângulo com exemplos visuais.", "url": "https://www.youtube.com/results?search_query=formas+geometricas+infantil"}, {"title": "Partes da planta para crianças", "description": "Busca pronta para revisar raiz, caule, folha e flor com apoio visual.", "url": "https://www.youtube.com/results?search_query=partes+da+planta+infantil"}, {"title": "Japonês infantil: cumprimentos e números", "description": "Busca pronta para repetir aisatsu e ichi, ni, san de forma leve.", "url": "https://www.youtube.com/results?search_query=japones+infantil+cumprimentos+numeros"}], "quizData": [{"q": "Qual objeto lembra mais um círculo?", "opts": ["Porta", "Relógio", "Livro", "Janela"], "a": 1}, {"q": "Qual forma tem três lados?", "opts": ["Quadrado", "Círculo", "Triângulo", "Retângulo"], "a": 2}, {"q": "Qual parte da planta fixa e puxa água?", "opts": ["Flor", "Raiz", "Folha", "Fruto"], "a": 1}, {"q": "Qual destes animais vive na água?", "opts": ["Peixe", "Gato", "Formiga", "Coelho"], "a": 0}, {"q": "Como se diz 'olá / boa tarde' em japonês?", "opts": ["Ohayou", "Konnichiwa", "Mizu", "Hana"], "a": 1}, {"q": "Qual palavra japonesa significa o número 2?", "opts": ["San", "Ni", "Ao", "Aka"], "a": 1}]};</script>
 </head>
 <body id="top">
   <div class="cover" style="background:linear-gradient(155deg,#0d1117 0%, #113a24 46%, #16a34a 100%)">
@@ -109,30 +17,13 @@
     <div class="cover-icon">📐</div>
     <h1>Revisão, Formas, Natureza e Japonês Inicial</h1>
     <p class="cover-sub">Dia 002 • terça-feira • matemática + ciências + japonês</p>
-    <div class="cover-pills">
-      <span class="pill">🔁 revisão no início</span><span class="pill">📐 Matemática</span><span class="pill">🔬 Ciências</span><span class="pill">🗾 Japonês</span>
-    </div>
+    <div class="cover-pills"><span class="pill">🔁 revisão no início</span><span class="pill">📐 Matemática</span><span class="pill">🔬 Ciências</span><span class="pill">🗾 Japonês</span></div>
     <div class="cover-note">Hoje a Ayka segue o cronograma de <strong>terça-feira</strong>, mas começa com uma <strong>revisão rápida da apostila anterior</strong>. Depois observa <strong>formas geométricas</strong>, aprende sobre <strong>plantas e animais</strong> e fecha com <strong>aisatsu e números iniciais em japonês</strong>.</div>
   </div>
 
-  <div class="science-bar">
-    <div class="science-chip">Revisão do Dia 1</div><div class="science-chip">Geometria</div><div class="science-chip">Formas do cotidiano</div><div class="science-chip">Plantas e animais</div><div class="science-chip">Japonês inicial</div>
-  </div>
+  <div class="science-bar"><div class="science-chip">Revisão do Dia 1</div><div class="science-chip">Geometria</div><div class="science-chip">Formas do cotidiano</div><div class="science-chip">Plantas e animais</div><div class="science-chip">Japonês inicial</div></div>
 
-  <nav class="nav">
-    <button onclick="go('review')">🔁 Revisão rápida</button>
-    <button onclick="go('intro')">🧭 Missão do dia</button>
-    <button onclick="go('porque')">🧪 Por que isso importa?</button>
-    <button onclick="go('nivel1')">📐 Matemática</button>
-    <button onclick="go('nivel2')">🔬 Ciências</button>
-    <button onclick="go('nivel3')">🗾 Japonês</button>
-    <button onclick="go('worked')">🧠 Exemplos</button>
-    <button onclick="go('guided')">🧑‍🏫 Guiada</button>
-    <button onclick="go('independent')">✏️ Independente</button>
-    <button onclick="go('videos')">🎥 Vídeos</button>
-    <button onclick="go('quiz')">🎮 Quiz</button>
-    <button onclick="go('fabula')">📖 História final</button>
-  </nav>
+  <nav class="nav"><button onclick="go('review')">🔁 Revisão rápida</button><button onclick="go('intro')">🧭 Missão do dia</button><button onclick="go('porque')">🧪 Por que isso importa?</button><button onclick="go('nivel1')">📚 Bloco 1</button><button onclick="go('nivel2')">🧠 Bloco 2</button><button onclick="go('nivel3')">🌍 Bloco 3</button><button onclick="go('worked')">🧠 Exemplos</button><button onclick="go('guided')">🧑‍🏫 Guiada</button><button onclick="go('independent')">✏️ Independente</button><button onclick="go('videos')">🎥 Vídeos</button><button onclick="go('quiz')">🎮 Quiz</button><button onclick="go('fabula')">📖 História final</button></nav>
 
   
   <div class="page" id="review">
@@ -145,22 +36,19 @@
     </div>
     <div class="card bg">
       <h3>📚 O que estudamos ontem?</h3>
-      <div class="grid-3">
-        <div class="bubble-card"><div style="font-size:30px;">📖</div><strong>Português</strong><small>leitura guiada e escrita curta</small></div>
-        <div class="bubble-card"><div style="font-size:30px;">🔢</div><strong>Matemática</strong><small>contagem e cálculo mental</small></div>
-        <div class="bubble-card"><div style="font-size:30px;">🌍</div><strong>Inglês</strong><small>greetings, colors e numbers</small></div>
-      </div>
-      <div class="question green" onclick="toggleAnswer('d2r1')">
+      <div class="grid-3"><div class="bubble-card"><div style="font-size:30px;">📖</div><strong>Português</strong><small>leitura guiada e escrita curta</small></div><div class="bubble-card"><div style="font-size:30px;">🔢</div><strong>Matemática</strong><small>contagem e cálculo mental</small></div><div class="bubble-card"><div style="font-size:30px;">🌍</div><strong>Inglês</strong><small>greetings, colors e numbers</small></div></div>
+      <div class="question green" onclick="toggleAnswer('r2_1')">
         <strong>1.</strong> Se eu tenho 2 lápis e ganho mais 1, com quantos fico?<br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d2r1')">Ver resposta</button>
-        <div class="answer" id="d2r1">3 lápis.</div>
-      </div><div class="question green" onclick="toggleAnswer('d2r2')">
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('r2_1')">Ver resposta</button>
+        <div class="answer" id="r2_1">3 lápis.</div>
+      </div><div class="question green" onclick="toggleAnswer('r2_2')">
         <strong>2.</strong> Como posso cumprimentar alguém em inglês?<br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d2r2')">Ver resposta</button>
-        <div class="answer" id="d2r2">Hello.</div>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('r2_2')">Ver resposta</button>
+        <div class="answer" id="r2_2">Hello.</div>
       </div>
     </div>
   </div>
+
 
   <div class="page" id="intro">
     <div class="stage orange">
@@ -185,8 +73,13 @@
       <p>Quem reconhece formas, compara tamanhos, observa a natureza e escuta novos sons constrói repertório com menos esforço.</p>
       <div class="stage-tags"><span class="stage-tag">Raciocínio visual</span><span class="stage-tag">Curiosidade científica</span><span class="stage-tag">Memória auditiva</span></div>
     </div>
+    <div class="card bp">
+      <h3>🎯 Objetivo da aula</h3>
+      <div class="info blue">No final da aula, a Ayka deve reconhecer formas geométricas simples, identificar partes da planta e repetir palavras básicas em japonês.</div>
+    </div>
   </div>
 
+  
   <div class="page" id="nivel1">
     <div class="stage orange">
       <div class="stage-badge">📐 Bloco 1</div>
@@ -195,16 +88,7 @@
       <p>A matemática aparece nas coisas que a Ayka vê e usa todos os dias.</p>
       <div class="stage-tags"><span class="stage-tag">Concreto</span><span class="stage-tag">Observação visual</span><span class="stage-tag">Comparação</span></div>
     </div>
-    <div class="card bc">
-      <h3>🏠 Onde estão as formas?</h3>
-      <div class="grid-2">
-        <div class="bubble-card"><div style="font-size:32px;">⚽</div><strong>Círculo</strong><small>bola e relógio</small></div>
-        <div class="bubble-card"><div style="font-size:32px;">🪟</div><strong>Quadrado</strong><small>janela e azulejo</small></div>
-        <div class="bubble-card"><div style="font-size:32px;">🍕</div><strong>Triângulo</strong><small>fatia e placa</small></div>
-        <div class="bubble-card"><div style="font-size:32px;">📺</div><strong>Retângulo</strong><small>livro e porta</small></div>
-      </div>
-      <div class="info blue"><strong>Comparar também é aprender:</strong> comprido x curto, alto x baixo, maior x menor.</div>
-    </div>
+    <div class="card bc"><h3>🏠 Onde estão as formas?</h3><div class="grid-2"><div class="bubble-card"><div style="font-size:32px;">⚽</div><strong>Círculo</strong><small>bola e relógio</small></div><div class="bubble-card"><div style="font-size:32px;">🪟</div><strong>Quadrado</strong><small>janela e azulejo</small></div><div class="bubble-card"><div style="font-size:32px;">🍕</div><strong>Triângulo</strong><small>fatia e placa</small></div><div class="bubble-card"><div style="font-size:32px;">📺</div><strong>Retângulo</strong><small>livro e porta</small></div></div><div class="info blue"><strong>Comparar também é aprender:</strong> comprido x curto, alto x baixo, maior x menor.</div></div>
   </div>
 
   <div class="page" id="nivel2">
@@ -215,16 +99,7 @@
       <p>Agora a Ayka observa partes da planta e diferenças simples entre animais.</p>
       <div class="stage-tags"><span class="stage-tag">Observação</span><span class="stage-tag">Partes da planta</span><span class="stage-tag">Perguntas simples</span></div>
     </div>
-    <div class="card bp">
-      <h3>🌿 Partes da planta</h3>
-      <div class="grid-2">
-        <div class="info yellow"><strong>Raiz</strong><br>fixa e puxa água</div>
-        <div class="info blue"><strong>Caule</strong><br>sustenta</div>
-        <div class="info green"><strong>Folha</strong><br>ajuda a planta a viver</div>
-        <div class="info purple"><strong>Flor</strong><br>parte da reprodução</div>
-      </div>
-      <div class="info orange"><strong>Mini observação:</strong> o que acontece com a semente quando recebe água? Ela começa a mudar e pode germinar.</div>
-    </div>
+    <div class="card bp"><h3>🌿 Partes da planta</h3><div class="grid-2"><div class="info yellow"><strong>Raiz</strong><br>fixa e puxa água</div><div class="info blue"><strong>Caule</strong><br>sustenta</div><div class="info green"><strong>Folha</strong><br>ajuda a planta a viver</div><div class="info purple"><strong>Flor</strong><br>parte da reprodução</div></div><div class="info orange"><strong>Mini observação:</strong> o que acontece com a semente quando recebe água? Ela começa a mudar e pode germinar.</div></div>
   </div>
 
   <div class="page" id="nivel3">
@@ -235,67 +110,45 @@
       <p>O objetivo é escutar, repetir e criar familiaridade com sons novos sem pressão.</p>
       <div class="stage-tags"><span class="stage-tag">Escuta</span><span class="stage-tag">Repetição</span><span class="stage-tag">Vocabulário visual</span></div>
     </div>
-    <div class="card ba">
-      <h3>🙋 Palavras do dia</h3>
-      <div class="grid-3">
-        <div class="info yellow"><strong>Ohayou</strong><br>bom dia</div>
-        <div class="info blue"><strong>Konnichiwa</strong><br>olá / boa tarde</div>
-        <div class="info green"><strong>Oyasumi</strong><br>boa noite</div>
-      </div>
-      <div class="grid-3">
-        <div class="info orange"><strong>Ichi</strong><br>1</div>
-        <div class="info purple"><strong>Ni</strong><br>2</div>
-        <div class="info yellow"><strong>San</strong><br>3</div>
-      </div>
-    </div>
+    <div class="card ba"><h3>🙋 Palavras do dia</h3><div class="grid-3"><div class="info yellow"><strong>Ohayou</strong><br>bom dia</div><div class="info blue"><strong>Konnichiwa</strong><br>olá / boa tarde</div><div class="info green"><strong>Oyasumi</strong><br>boa noite</div></div><div class="grid-3"><div class="info orange"><strong>Ichi</strong><br>1</div><div class="info purple"><strong>Ni</strong><br>2</div><div class="info yellow"><strong>San</strong><br>3</div></div></div>
   </div>
+
 
   <div class="page" id="worked">
     <div class="stage green">
       <div class="stage-badge">🧠 Exemplos</div>
-      <span class="stage-icon">🪄</span>
+      <span class="stage-icon">🔎</span>
       <h2>Primeiro eu vejo, depois eu faço</h2>
-      <p>Aqui a Ayka observa o raciocínio antes de responder.</p>
+      <p>Aqui a Ayka observa como pensar antes de responder sozinha.</p>
     </div>
-    <div class="card bg">
-      <h3>✅ Exemplo 1</h3>
-      <div class="info green"><strong>Pergunta:</strong> Que forma lembra uma porta?<br><strong>Resposta:</strong> retângulo.</div>
-    </div>
-    <div class="card bg">
-      <h3>✅ Exemplo 2</h3>
-      <div class="info blue"><strong>Pergunta:</strong> Qual parte da planta puxa água?<br><strong>Resposta:</strong> a raiz.</div>
-    </div>
-    <div class="card bg">
-      <h3>✅ Exemplo 3</h3>
-      <div class="info purple"><strong>Pergunta:</strong> Como dizer “olá” em japonês?<br><strong>Resposta:</strong> Konnichiwa.</div>
-    </div>
+    <div class="card bg"><h3>✅ Exemplo 1</h3><div class="info green"><strong>Pergunta:</strong> Que forma lembra uma porta?<br><strong>Resposta:</strong> retângulo.</div></div><div class="card bg"><h3>✅ Exemplo 2</h3><div class="info blue"><strong>Pergunta:</strong> Qual parte da planta puxa água?<br><strong>Resposta:</strong> a raiz.</div></div><div class="card bg"><h3>✅ Exemplo 3</h3><div class="info purple"><strong>Pergunta:</strong> Como dizer “olá” em japonês?<br><strong>Resposta:</strong> Konnichiwa.</div></div>
   </div>
 
   <div class="page" id="guided">
     <div class="stage orange">
       <div class="stage-badge">🧑‍🏫 Prática guiada</div>
-      <span class="stage-icon">🧩</span>
-      <h2>Agora com ajuda</h2>
-      <p>Nesta parte a Ayka responde e depois confere.</p>
+      <span class="stage-icon">✍️</span>
+      <h2>Agora com apoio</h2>
+      <p>A ideia é tentar primeiro e abrir a resposta só depois.</p>
     </div>
     <div class="card bc">
       <h3>📝 Vamos praticar</h3>
-      <div class="question orange" onclick="toggleAnswer('d2g1')">
+      <div class="question orange" onclick="toggleAnswer('g2_1')">
         <strong>1.</strong> Que forma parece uma bola?<br>
-        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('d2g1')">Ver resposta</button>
-        <div class="answer" id="d2g1">Círculo.</div>
-      </div><div class="question orange" onclick="toggleAnswer('d2g2')">
+        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('g2_1')">Ver resposta</button>
+        <div class="answer" id="g2_1">Círculo.</div>
+      </div><div class="question orange" onclick="toggleAnswer('g2_2')">
         <strong>2.</strong> O que costuma ser mais alto: uma cadeira ou uma geladeira?<br>
-        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('d2g2')">Ver resposta</button>
-        <div class="answer" id="d2g2">A geladeira.</div>
-      </div><div class="question orange" onclick="toggleAnswer('d2g3')">
+        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('g2_2')">Ver resposta</button>
+        <div class="answer" id="g2_2">A geladeira.</div>
+      </div><div class="question orange" onclick="toggleAnswer('g2_3')">
         <strong>3.</strong> Qual parte da planta fixa e puxa água do solo?<br>
-        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('d2g3')">Ver resposta</button>
-        <div class="answer" id="d2g3">A raiz.</div>
-      </div><div class="question orange" onclick="toggleAnswer('d2g4')">
+        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('g2_3')">Ver resposta</button>
+        <div class="answer" id="g2_3">A raiz.</div>
+      </div><div class="question orange" onclick="toggleAnswer('g2_4')">
         <strong>4.</strong> Como se diz “olá / boa tarde” em japonês?<br>
-        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('d2g4')">Ver resposta</button>
-        <div class="answer" id="d2g4">Konnichiwa.</div>
+        <button class="show-btn orange" onclick="event.stopPropagation();toggleAnswer('g2_4')">Ver resposta</button>
+        <div class="answer" id="g2_4">Konnichiwa.</div>
       </div>
     </div>
   </div>
@@ -305,30 +158,29 @@
       <div class="stage-badge">✏️ Prática independente</div>
       <span class="stage-icon">🚀</span>
       <h2>Agora é com a Ayka</h2>
-      <p>Neste momento ela tenta sozinha e depois confere.</p>
+      <p>Nesta parte ela tenta sozinha e depois confere.</p>
     </div>
     <div class="card bp">
       <h3>📌 Desafios do dia</h3>
-      <div class="question green" onclick="toggleAnswer('d2i1')">
+      <div class="question green" onclick="toggleAnswer('i2_1')">
         <strong>1.</strong> O relógio parece mais com círculo, quadrado ou triângulo?<br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d2i1')">Ver resposta</button>
-        <div class="answer" id="d2i1">Círculo.</div>
-      </div><div class="question green" onclick="toggleAnswer('d2i2')">
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i2_1')">Ver resposta</button>
+        <div class="answer" id="i2_1">Círculo.</div>
+      </div><div class="question green" onclick="toggleAnswer('i2_2')">
         <strong>2.</strong> Qual objeto costuma ser mais comprido: lápis ou borracha?<br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d2i2')">Ver resposta</button>
-        <div class="answer" id="d2i2">O lápis.</div>
-      </div><div class="question green" onclick="toggleAnswer('d2i3')">
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i2_2')">Ver resposta</button>
+        <div class="answer" id="i2_2">O lápis.</div>
+      </div><div class="question green" onclick="toggleAnswer('i2_3')">
         <strong>3.</strong> Qual palavra japonesa significa água: mizu ou hana?<br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d2i3')">Ver resposta</button>
-        <div class="answer" id="d2i3">Mizu.</div>
-      </div><div class="question green" onclick="toggleAnswer('d2i4')">
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i2_3')">Ver resposta</button>
+        <div class="answer" id="i2_3">Mizu.</div>
+      </div><div class="question green" onclick="toggleAnswer('i2_4')">
         <strong>4.</strong> Como se diz o número 2 em japonês?<br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d2i4')">Ver resposta</button>
-        <div class="answer" id="d2i4">Ni.</div>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('i2_4')">Ver resposta</button>
+        <div class="answer" id="i2_4">Ni.</div>
       </div>
     </div>
   </div>
-
 
   <div class="page" id="videos">
     <div class="stage purple">
@@ -338,23 +190,7 @@
       <p>Seção final padronizada para reforçar o conteúdo com apoio visual e repetição leve.</p>
       <div class="stage-tags"><span class="stage-tag">Reforço visual</span><span class="stage-tag">Repetição</span><span class="stage-tag">Aprendizagem leve</span></div>
     </div>
-    <div class="videos-grid">
-      <div class="video-card">
-          <h4>Formas geométricas no cotidiano</h4>
-          <p>Busca pronta para reforçar círculo, quadrado, triângulo e retângulo com exemplos visuais.</p>
-          <a class="video-link" href="https://www.youtube.com/results?search_query=formas+geometricas+infantil" target="_blank" rel="noopener noreferrer">Abrir busca</a>
-        </div>
-<div class="video-card">
-          <h4>Partes da planta para crianças</h4>
-          <p>Busca pronta para revisar raiz, caule, folha e flor com apoio visual.</p>
-          <a class="video-link" href="https://www.youtube.com/results?search_query=partes+da+planta+infantil" target="_blank" rel="noopener noreferrer">Abrir busca</a>
-        </div>
-<div class="video-card">
-          <h4>Japonês infantil: cumprimentos e números</h4>
-          <p>Busca pronta para repetir aisatsu e ichi, ni, san de forma leve.</p>
-          <a class="video-link" href="https://www.youtube.com/results?search_query=japones+infantil+cumprimentos+numeros" target="_blank" rel="noopener noreferrer">Abrir busca</a>
-        </div>
-    </div>
+    <div class="videos-grid" id="videosGrid"></div>
   </div>
 
   <div class="page" id="quiz">
@@ -389,135 +225,32 @@
     </div>
     <div class="card bc">
       <h3>🧠 Entendendo a história</h3>
-      <div class="question green" onclick="toggleAnswer('d2f1')">
+      <div class="question green" onclick="toggleAnswer('f2_1')">
         <strong>1.</strong> Qual era a forma da caixa da semente?<br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d2f1')">Ver resposta</button>
-        <div class="answer" id="d2f1">Quadrado.</div>
-      </div><div class="question green" onclick="toggleAnswer('d2f2')">
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('f2_1')">Ver resposta</button>
+        <div class="answer" id="f2_1">Quadrado.</div>
+      </div><div class="question green" onclick="toggleAnswer('f2_2')">
         <strong>2.</strong> O que ajudou a semente a começar a crescer?<br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d2f2')">Ver resposta</button>
-        <div class="answer" id="d2f2">A água, chamada de mizu.</div>
-      </div><div class="question green" onclick="toggleAnswer('d2f3')">
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('f2_2')">Ver resposta</button>
+        <div class="answer" id="f2_2">A água, chamada de mizu.</div>
+      </div><div class="question green" onclick="toggleAnswer('f2_3')">
         <strong>3.</strong> O que a história mostra?<br>
-        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('d2f3')">Ver resposta</button>
-        <div class="answer" id="d2f3">Que observar formas e seres vivos ajuda a entender melhor o mundo.</div>
+        <button class="show-btn green" onclick="event.stopPropagation();toggleAnswer('f2_3')">Ver resposta</button>
+        <div class="answer" id="f2_3">Que observar formas e seres vivos ajuda a entender melhor o mundo.</div>
       </div>
     </div>
   </div>
 
   <div class="nav-bottom">
-    <a class="btn-secondary" href="dia-001.html">← Apostila anterior</a>
+    <a id="prevLesson" class="btn-secondary" href="#">← Apostila anterior</a>
     <a class="btn-secondary" href="../index.html">↩ Voltar ao cronograma</a>
-    <span class="btn-primary btn-disabled">Próxima apostila →</span>
+    <a id="nextLesson" class="btn-primary" href="#">Próxima apostila →</a>
   </div>
 
   <button class="top-btn" onclick="go('top')">⬆️</button>
 
-  <footer class="footer">Dia 002 — Revisão do Dia 1, Formas, Natureza e Japonês Inicial • Projeto Ayka • revisão no início + vídeos no final</footer>
+  <footer class="footer" id="footerInfo"></footer>
 
-  <script>
-    function go(id) {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    function toggleAnswer(id) {
-      const el = document.getElementById(id);
-      if (el) el.classList.toggle('show');
-    }
-
-    const quizData = [{"q": "Qual objeto lembra mais um círculo?", "opts": ["Porta", "Relógio", "Livro", "Janela"], "a": 1}, {"q": "Qual forma tem três lados?", "opts": ["Quadrado", "Círculo", "Triângulo", "Retângulo"], "a": 2}, {"q": "Qual parte da planta fixa e puxa água?", "opts": ["Flor", "Raiz", "Folha", "Fruto"], "a": 1}, {"q": "Qual destes animais vive na água?", "opts": ["Peixe", "Gato", "Formiga", "Coelho"], "a": 0}, {"q": "Como se diz 'olá / boa tarde' em japonês?", "opts": ["Ohayou", "Konnichiwa", "Mizu", "Hana"], "a": 1}, {"q": "Qual palavra japonesa significa o número 2?", "opts": ["San", "Ni", "Ao", "Aka"], "a": 1}];
-    let quizIndex = 0;
-    let quizScore = 0;
-    let quizAnswered = false;
-
-    function initQuiz() {
-      quizIndex = 0;
-      quizScore = 0;
-      renderQuiz();
-    }
-
-    function renderQuiz() {
-      quizAnswered = false;
-      const item = quizData[quizIndex];
-      document.getElementById('quizQuestion').textContent = item.q;
-      document.getElementById('quizScore').textContent = `Questão ${quizIndex + 1} de ${quizData.length}`;
-      document.getElementById('quizBar').style.width = `${(quizIndex / quizData.length) * 100}%`;
-      document.getElementById('quizFeedback').textContent = '';
-      document.getElementById('quizFeedback').style.color = '#ffffff';
-      document.getElementById('quizNext').disabled = true;
-
-      const options = document.getElementById('quizOptions');
-      options.innerHTML = '';
-      item.opts.forEach((opt, index) => {
-        const button = document.createElement('button');
-        button.className = 'quiz-option';
-        button.textContent = opt;
-        button.onclick = () => answerQuiz(index);
-        options.appendChild(button);
-      });
-    }
-
-    function answerQuiz(selected) {
-      if (quizAnswered) return;
-      quizAnswered = true;
-
-      const item = quizData[quizIndex];
-      const buttons = document.querySelectorAll('.quiz-option');
-      buttons.forEach(button => button.disabled = true);
-      buttons[item.a].classList.add('correct');
-
-      const feedback = document.getElementById('quizFeedback');
-      if (selected === item.a) {
-        quizScore++;
-        feedback.textContent = '🎉 Correto!';
-        feedback.style.color = '#4ade80';
-      } else {
-        buttons[selected].classList.add('wrong');
-        feedback.textContent = '❌ A correta está em verde.';
-        feedback.style.color = '#f87171';
-      }
-
-      document.getElementById('quizNext').disabled = false;
-    }
-
-    function nextQuiz() {
-      quizIndex++;
-      if (quizIndex >= quizData.length) {
-        finishQuiz();
-        return;
-      }
-      renderQuiz();
-    }
-
-    function finishQuiz() {
-      const percent = Math.round((quizScore / quizData.length) * 100);
-      document.getElementById('quizBar').style.width = '100%';
-      document.getElementById('quizQuestion').textContent = '🏁 Quiz concluído!';
-      document.getElementById('quizOptions').innerHTML = '';
-      document.getElementById('quizScore').textContent = `Acertos: ${quizScore} de ${quizData.length} (${percent}%)`;
-
-      const feedback = document.getElementById('quizFeedback');
-      if (percent >= 80) {
-        feedback.textContent = 'Excelente. A base do dia ficou firme.';
-      } else if (percent >= 60) {
-        feedback.textContent = 'Muito bom. Uma revisão curta amanhã consolida ainda mais.';
-      } else {
-        feedback.textContent = 'Bom começo. Vale revisar com calma e tentar novamente.';
-      }
-      feedback.style.color = '#fde68a';
-
-      const next = document.getElementById('quizNext');
-      next.textContent = '🔄 Tentar novamente';
-      next.disabled = false;
-      next.onclick = () => {
-        next.textContent = 'Próxima ➡️';
-        next.onclick = nextQuiz;
-        initQuiz();
-      };
-    }
-
-    initQuiz();
-  </script>
+  <script src="../assets/js/apostila.js"></script>
 </body>
 </html>
