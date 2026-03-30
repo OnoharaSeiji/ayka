@@ -2,9 +2,13 @@ window.AYKA_CONFIG = {
   siteName: "Ayka Estudos",
   trackName: "Ponte 2º para 3º ano",
   dailyStudyMinutes: 60,
+  weekDays: ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"],
   days: [
     {
       day: 1,
+      calendarDay: 23,
+      monthKey: "2026-03",
+      monthLabel: "Março 2026",
       dateLabel: "23 mar 2026",
       weekday: "Seg",
       title: "Português, Matemática e Leitura",
@@ -32,6 +36,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 2,
+      calendarDay: 24,
+      monthKey: "2026-03",
+      monthLabel: "Março 2026",
       dateLabel: "24 mar 2026",
       weekday: "Ter",
       title: "Revisão, formas, medidas e plantas",
@@ -59,6 +66,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 3,
+      calendarDay: 25,
+      monthKey: "2026-03",
+      monthLabel: "Março 2026",
       dateLabel: "25 mar 2026",
       weekday: "Qua",
       title: "Texto curto, família e mapa do bairro",
@@ -70,6 +80,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 4,
+      calendarDay: 26,
+      monthKey: "2026-03",
+      monthLabel: "Março 2026",
       dateLabel: "26 mar 2026",
       weekday: "Qui",
       title: "Problemas do cotidiano, sílabas e japonês",
@@ -81,6 +94,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 5,
+      calendarDay: 27,
+      monthKey: "2026-03",
+      monthLabel: "Março 2026",
       dateLabel: "27 mar 2026",
       weekday: "Sex",
       title: "Revisão semanal, arte e inglês lúdico",
@@ -92,6 +108,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 6,
+      calendarDay: 30,
+      monthKey: "2026-03",
+      monthLabel: "Março 2026",
       dateLabel: "30 mar 2026",
       weekday: "Seg",
       title: "Números até 50, leitura guiada e inglês",
@@ -103,6 +122,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 7,
+      calendarDay: 31,
+      monthKey: "2026-03",
+      monthLabel: "Março 2026",
       dateLabel: "31 mar 2026",
       weekday: "Ter",
       title: "Revisão, sólidos e animais",
@@ -114,6 +136,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 8,
+      calendarDay: 1,
+      monthKey: "2026-04",
+      monthLabel: "Abril 2026",
       dateLabel: "01 abr 2026",
       weekday: "Qua",
       title: "Interpretação, folclore e cidade",
@@ -125,6 +150,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 9,
+      calendarDay: 2,
+      monthKey: "2026-04",
+      monthLabel: "Abril 2026",
       dateLabel: "02 abr 2026",
       weekday: "Qui",
       title: "Adição, ortografia e japonês inicial",
@@ -136,6 +164,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 10,
+      calendarDay: 3,
+      monthKey: "2026-04",
+      monthLabel: "Abril 2026",
       dateLabel: "03 abr 2026",
       weekday: "Sex",
       title: "Revisão semanal, projeto e leitura",
@@ -147,6 +178,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 11,
+      calendarDay: 6,
+      monthKey: "2026-04",
+      monthLabel: "Abril 2026",
       dateLabel: "06 abr 2026",
       weekday: "Seg",
       title: "Subtração, leitura e inglês",
@@ -158,6 +192,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 12,
+      calendarDay: 7,
+      monthKey: "2026-04",
+      monthLabel: "Abril 2026",
       dateLabel: "07 abr 2026",
       weekday: "Ter",
       title: "Revisão, medidas, corpo humano e japonês",
@@ -169,6 +206,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 13,
+      calendarDay: 8,
+      monthKey: "2026-04",
+      monthLabel: "Abril 2026",
       dateLabel: "08 abr 2026",
       weekday: "Qua",
       title: "Produção de frases, história local e mapa",
@@ -180,6 +220,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 14,
+      calendarDay: 9,
+      monthKey: "2026-04",
+      monthLabel: "Abril 2026",
       dateLabel: "09 abr 2026",
       weekday: "Qui",
       title: "Situações-problema, sílabas complexas e japonês",
@@ -191,6 +234,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 15,
+      calendarDay: 10,
+      monthKey: "2026-04",
+      monthLabel: "Abril 2026",
       dateLabel: "10 abr 2026",
       weekday: "Sex",
       title: "Revisão semanal, arte e oralidade",
@@ -202,6 +248,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 16,
+      calendarDay: 13,
+      monthKey: "2026-04",
+      monthLabel: "Abril 2026",
       dateLabel: "13 abr 2026",
       weekday: "Seg",
       title: "Números até 100, leitura e inglês",
@@ -213,6 +262,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 17,
+      calendarDay: 14,
+      monthKey: "2026-04",
+      monthLabel: "Abril 2026",
       dateLabel: "14 abr 2026",
       weekday: "Ter",
       title: "Revisão, calendário, estações e japonês",
@@ -224,6 +276,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 18,
+      calendarDay: 15,
+      monthKey: "2026-04",
+      monthLabel: "Abril 2026",
       dateLabel: "15 abr 2026",
       weekday: "Qua",
       title: "Texto, sequência temporal e bairro",
@@ -235,6 +290,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 19,
+      calendarDay: 16,
+      monthKey: "2026-04",
+      monthLabel: "Abril 2026",
       dateLabel: "16 abr 2026",
       weekday: "Qui",
       title: "Problemas, ortografia e japonês",
@@ -246,6 +304,9 @@ window.AYKA_CONFIG = {
     },
     {
       day: 20,
+      calendarDay: 17,
+      monthKey: "2026-04",
+      monthLabel: "Abril 2026",
       dateLabel: "17 abr 2026",
       weekday: "Sex",
       title: "Revisão geral, criação e leitura livre",
