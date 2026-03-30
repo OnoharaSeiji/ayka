@@ -6,13 +6,222 @@
 <title>📚 Cronograma de Estudos da Ayka</title>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .calendar-toolbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    flex-wrap:wrap;
+    margin:0 0 1rem;
+    padding:1rem;
+    border-radius:16px;
+    background:rgba(255,255,255,.72);
+    border:1px solid rgba(45,32,22,.08);
+  }
+  .calendar-month-meta{
+    flex:1 1 220px;
+    text-align:center;
+  }
+  .calendar-month-kicker{
+    font-size:.72rem;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--muted);
+    margin-bottom:.2rem;
+  }
+  .calendar-month-title{
+    font-family:'Baloo 2',cursive;
+    font-size:1.45rem;
+    font-weight:800;
+    color:var(--ink);
+    line-height:1.1;
+  }
+  .calendar-month-subtitle{
+    font-size:.82rem;
+    font-weight:700;
+    color:var(--muted);
+    margin-top:.15rem;
+  }
+  .calendar-nav-btn{
+    border:none;
+    border-radius:999px;
+    padding:.7rem 1rem;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Baloo 2',cursive;
+    font-size:.92rem;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+  }
+  .calendar-nav-btn:hover:not(:disabled){
+    transform:translateY(-2px);
+    box-shadow:0 6px 16px rgba(0,0,0,.12);
+  }
+  .calendar-nav-btn:disabled{
+    opacity:.45;
+    cursor:not-allowed;
+    box-shadow:none;
+  }
+  .calendar-weekdays{
+    display:grid;
+    grid-template-columns:repeat(7,minmax(0,1fr));
+    gap:.6rem;
+    margin-bottom:.75rem;
+  }
+  .calendar-weekday-head{
+    text-align:center;
+    font-size:.78rem;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--muted);
+    background:rgba(255,255,255,.6);
+    border-radius:12px;
+    padding:.55rem .25rem;
+  }
+  .calendar-month-grid{
+    display:grid;
+    grid-template-columns:repeat(7,minmax(0,1fr));
+    gap:.75rem;
+  }
+  .calendar-day-card{
+    min-height:165px;
+    border-radius:16px;
+    padding:.85rem;
+    background:#fff;
+    border:2px solid rgba(45,32,22,.08);
+    box-shadow:0 4px 16px rgba(45,32,22,.06);
+    color:inherit;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    gap:.5rem;
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+  .calendar-day-card.ready:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 24px rgba(45,32,22,.12);
+    border-color:rgba(255,107,107,.28);
+  }
+  .calendar-day-card.planned{
+    background:linear-gradient(180deg,#fff,#fffcf5);
+  }
+  .calendar-day-card.empty{
+    min-height:120px;
+    background:rgba(255,255,255,.46);
+    border:1.5px dashed rgba(45,32,22,.10);
+    box-shadow:none;
+    justify-content:flex-start;
+  }
+  .calendar-day-card.off-range{
+    opacity:.55;
+  }
+  .calendar-day-number{
+    font-family:'Baloo 2',cursive;
+    font-size:1rem;
+    font-weight:800;
+    color:var(--ink);
+    line-height:1;
+  }
+  .calendar-day-number.empty{
+    color:var(--muted);
+    opacity:.75;
+  }
+  .calendar-entry-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.5rem;
+  }
+  .calendar-entry-weekday{
+    font-size:.72rem;
+    font-weight:900;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.06em;
+  }
+  .calendar-entry-badge{
+    font-size:.66rem;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    padding:.2rem .48rem;
+    border-radius:999px;
+  }
+  .calendar-entry-badge.ready{
+    background:#E7F9EE;
+    color:#18794E;
+  }
+  .calendar-entry-badge.planned{
+    background:#F3E8FF;
+    color:#7C3AED;
+  }
+  .calendar-entry-day{
+    font-family:'Baloo 2',cursive;
+    font-size:.98rem;
+    font-weight:800;
+    color:var(--ink);
+  }
+  .calendar-entry-title{
+    font-size:.78rem;
+    font-weight:800;
+    line-height:1.4;
+    color:#4F443A;
+    min-height:2.2rem;
+  }
+  .calendar-entry-chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.3rem;
+    margin-top:auto;
+  }
+  .calendar-entry-chip{
+    font-size:.64rem;
+    font-weight:800;
+    padding:.16rem .48rem;
+    border-radius:999px;
+    background:var(--paper);
+    border:1px solid rgba(45,32,22,.08);
+  }
+  .calendar-empty-note{
+    font-size:.72rem;
+    font-weight:700;
+    color:var(--muted);
+    line-height:1.35;
+    margin-top:.35rem;
+  }
+  @media(max-width:980px){
+    .calendar-month-grid,.calendar-weekdays{
+      grid-template-columns:repeat(4,minmax(0,1fr));
+    }
+  }
+  @media(max-width:720px){
+    .calendar-month-grid,.calendar-weekdays{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+    .calendar-day-card,.calendar-day-card.empty{
+      min-height:auto;
+    }
+    .calendar-toolbar{
+      justify-content:center;
+    }
+    .calendar-month-meta{
+      order:-1;
+      width:100%;
+    }
+  }
+</style>
 </head>
 <body>
 
 <header class="hero">
   <div class="hero-emoji-row">📚 ✏️ 🎨 🔬 🌍 🎵 🏃‍♀️</div>
   <h1 id="calendarTitle">Cronograma da Ayka</h1>
-  <p class="hero-sub" id="calendarSubtitle">2º ano → entrada forte no 3º ano · calendário único do cronograma</p>
+  <p class="hero-sub" id="calendarSubtitle">2º ano → entrada forte no 3º ano · calendário mensal do cronograma</p>
   <div class="hero-pills">
     <span class="hero-pill">⏱️ até 60 min por dia</span>
     <span class="hero-pill">📚 foco em base forte do 2º ano</span>
@@ -21,14 +230,14 @@
 </header>
 
 <section class="section active" id="sec-calendario">
-  <h2 class="section-title">📅 Calendário das apostilas</h2>
-  <p class="section-sub">Home simplificada para funcionar como calendário puro do projeto AYKA.</p>
+  <h2 class="section-title">📅 Cronograma mensal</h2>
+  <p class="section-sub">Calendário com navegação por mês para acompanhar o cronograma e abrir as apostilas prontas.</p>
 
   <div class="info-box mission-box">
     <span class="info-box-icon">🎯</span>
     <div>
       <div class="info-box-title">Como este calendário funciona</div>
-      <div class="info-box-text">Cada card representa um dia do cronograma. Quando a apostila já está pronta, o card abre a página do dia. Quando ainda não foi produzida, o card permanece como trilha planejada, mantendo a visão do cronograma sem poluir a home.</div>
+      <div class="info-box-text">Use os botões para alternar entre os meses do cronograma. Cada dia planejado aparece no calendário mensal. Quando a apostila já estiver pronta, o card abre a página do dia. Quando ainda não foi produzida, o card permanece como trilha planejada.</div>
     </div>
   </div>
 
@@ -36,15 +245,29 @@
     <div class="calendar-head">
       <div>
         <h3>🗓️ Calendário do cronograma</h3>
-        <p>Fonte única de verdade do projeto: dias, status, arquivos e progressão do cronograma.</p>
+        <p>Visão mensal do AYKA com status por dia e navegação entre os meses já mapeados.</p>
       </div>
       <div class="hero-pill" id="calendarSummary">0 apostilas prontas · 0 dias mapeados</div>
     </div>
+
+    <div class="calendar-toolbar">
+      <button class="calendar-nav-btn" id="prevMonthBtn" type="button">← Mês anterior</button>
+      <div class="calendar-month-meta">
+        <div class="calendar-month-kicker">Mês exibido</div>
+        <div class="calendar-month-title" id="currentMonthLabel">—</div>
+        <div class="calendar-month-subtitle" id="currentMonthSubtitle">—</div>
+      </div>
+      <button class="calendar-nav-btn" id="nextMonthBtn" type="button">Próximo mês →</button>
+    </div>
+
     <div class="legend" style="margin-bottom:1rem">
       <div class="legend-item"><div class="legend-dot" style="background:#18794E"></div>Apostila pronta</div>
       <div class="legend-item"><div class="legend-dot" style="background:#7C3AED"></div>Dia planejado</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#B0B7C3"></div>Dia sem estudo mapeado</div>
     </div>
-    <div class="calendar-grid" id="calendarGrid"></div>
+
+    <div class="calendar-weekdays" id="calendarWeekdays"></div>
+    <div class="calendar-month-grid" id="calendarGrid"></div>
   </div>
 </section>
 
