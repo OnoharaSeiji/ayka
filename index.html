@@ -1,68 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>📚 Cronograma de Estudos da Ayka</title>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/calendar-extra.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trilha Ayka</title>
+  <meta name="description" content="Projeto enxuto do AYKA com cronograma centralizado em config.js e apostilas em pasta própria." />
+  <script src="config.js"></script>
+  <style>
+    :root{--bg:#fffaf2;--paper:#fff7ea;--ink:#2d2016;--muted:#7d6b5e;--line:#eadfce;--orange:#ff9b3b;--pink:#ff6b6b;--purple:#8b5cf6;--blue:#4ea8de;--green:#22c55e;--shadow:0 14px 36px rgba(45,32,22,.10);--radius:22px}
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:Nunito,Arial,sans-serif;background:linear-gradient(180deg,#fffdf8,#fff8ef);color:var(--ink);line-height:1.5}
+    .wrap{width:min(1180px,calc(100% - 24px));margin:0 auto;padding:20px 0 36px}.hero{background:linear-gradient(135deg,#ff9b3b,#ff6b6b,#8b5cf6,#4ea8de);border-radius:32px;padding:28px;box-shadow:var(--shadow);color:#fff;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 26px,rgba(255,255,255,.06) 26px,rgba(255,255,255,.06) 52px)}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center}.kicker{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid rgba(255,255,255,.26);border-radius:999px;background:rgba(255,255,255,.12);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.hero h1{font-family:'Baloo 2',system-ui,sans-serif;font-size:clamp(30px,5vw,54px);line-height:1.02;margin:14px 0 10px}.hero p{max-width:720px;font-size:15px;font-weight:700;color:rgba(255,255,255,.94)}
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.pill{padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);font-size:12px;font-weight:800}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:16px}.stat-label{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#fff2cc}.stat-value{font-size:28px;font-weight:900;line-height:1;margin:6px 0}.stat-sub{font-size:12px;font-weight:700;color:rgba(255,255,255,.9)}
+    .layout{display:grid;grid-template-columns:1fr .92fr;gap:18px;margin-top:18px}.panel{background:#fff;border:1px solid var(--line);border-radius:26px;padding:20px;box-shadow:var(--shadow)}.panel h2{font-family:'Baloo 2',system-ui,sans-serif;font-size:28px;line-height:1.1;margin-bottom:6px}.sub{font-size:14px;color:var(--muted);font-weight:700;margin-bottom:16px}
+    .week-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.week-card{background:linear-gradient(180deg,#fff8ef,#fff);border:2px solid var(--line);border-radius:20px;padding:14px;cursor:pointer;transition:.2s ease}.week-card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(45,32,22,.10)}.week-card.active{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.12)}.week-top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px}.week-tag{font-size:11px;font-weight:900;color:#7d4b00;background:#fff4d6;border-radius:999px;padding:5px 9px}.week-title{font-weight:900;font-size:16px;line-height:1.25;margin-bottom:6px}.week-desc{font-size:12px;font-weight:700;color:var(--muted);line-height:1.45;min-height:54px}.week-meta{font-size:12px;font-weight:800;color:#5b4a3c;margin-top:8px}
+    .days-list{display:grid;gap:12px}.day-card{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:start;padding:14px;border:2px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#fff,#fffaf2)}.day-num{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#ff9b3b,#ff6b6b);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;line-height:1}.day-num span:last-child{font-size:11px;opacity:.92}.day-title{font-size:18px;font-weight:900;line-height:1.2;margin-bottom:4px}.day-date{font-size:12px;font-weight:800;color:var(--muted);margin-bottom:8px}.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{font-size:11px;font-weight:800;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 9px}.status{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:900;text-transform:uppercase}.ready{background:#eaf8ef;color:#18794e}.planned{background:#f2ecff;color:#7c3aed}.open-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;margin-top:10px;background:#111827;color:#fff;padding:10px 14px;border-radius:12px;font-size:12px;font-weight:900}
+    .focus-card{background:linear-gradient(135deg,#fff3d7,#fff);border:2px solid #f7d08a;border-radius:20px;padding:18px}.focus-card h3{font-family:'Baloo 2',system-ui,sans-serif;font-size:24px;line-height:1.1;margin-bottom:8px}.focus-card p{font-size:14px;font-weight:700;color:#5c4d40}.helper{display:grid;gap:12px;margin-top:14px}.helper-box{border:2px solid var(--line);border-radius:18px;padding:14px;background:linear-gradient(180deg,#fff,#fffaf5)}.helper-box strong{display:block;margin-bottom:6px}.helper-box small{display:block;color:var(--muted);font-size:12px;font-weight:700;line-height:1.45}.footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px;font-weight:800}
+    @media(max-width:980px){.hero-grid,.layout{grid-template-columns:1fr}.week-grid{grid-template-columns:repeat(2,minmax(0,1fr))}} @media(max-width:640px){.wrap{width:min(100% - 16px,1180px)}.hero,.panel{padding:16px;border-radius:22px}.stats,.week-grid{grid-template-columns:1fr}.day-card{grid-template-columns:1fr}.day-num{width:64px}}
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<header class="hero">
-  <div class="hero-emoji-row">📚 ✏️ 🎨 🔬 🌍 🎵 🏃‍♀️</div>
-  <h1 id="calendarTitle">Cronograma da Ayka</h1>
-  <p class="hero-sub" id="calendarSubtitle">2º ano → entrada forte no 3º ano · calendário mensal do cronograma</p>
-  <div class="hero-pills">
-    <span class="hero-pill">⏱️ até 60 min por dia</span>
-    <span class="hero-pill">📚 foco em base forte do 2º ano</span>
-    <span class="hero-pill">🚀 ponte para o 3º ano</span>
+  <div class="wrap">
+    <section class="hero"><div class="hero-grid"><div><div class="kicker">🌟 AYKA enxuto • núcleo em config.js</div><h1 id="heroTitle">Trilha Ayka</h1><p id="heroSubtitle">Carregando cronograma...</p><div class="pill-row"><span class="pill" id="pillDuration">⏱️</span><span class="pill" id="pillDays">📚</span><span class="pill" id="pillWeeks">🗓️</span></div></div><div class="stats"><div class="stat"><div class="stat-label">Apostilas prontas</div><div class="stat-value" id="statReady">0</div><div class="stat-sub">detectadas automaticamente</div></div><div class="stat"><div class="stat-label">Dias planejados</div><div class="stat-value" id="statTotal">0</div><div class="stat-sub">organizados em semanas</div></div><div class="stat"><div class="stat-label">Semana ativa</div><div class="stat-value" id="statWeek">1</div><div class="stat-sub">salva no navegador</div></div><div class="stat"><div class="stat-label">Próxima missão</div><div class="stat-value" id="statNext">--</div><div class="stat-sub">primeiro dia ainda sem arquivo</div></div></div></div></section>
+    <div class="layout"><section class="panel"><h2>🗺️ Tabuleiro das semanas</h2><p class="sub">Tudo parte de um único arquivo: <strong>config.js</strong>. O site verifica quais apostilas já existem na pasta e marca automaticamente como prontas.</p><div class="week-grid" id="weekGrid"></div></section><aside class="panel"><h2>🎯 Como fica prático</h2><p class="sub">Com os 20 dias já planejados no <strong>config.js</strong>, para avançar no projeto você normalmente só cria a nova apostila em <strong>apostilas/</strong>.</p><div class="focus-card" id="focusCard"><h3>Carregando semana...</h3><p>Selecione uma semana no tabuleiro para ver os dias dela.</p></div><div class="helper"><div class="helper-box"><strong>Fluxo ideal</strong><small>1. Duplicar o modelo da apostila<br>2. Salvar como <code>dia-00x.html</code> em <code>apostilas/</code><br>3. Subir para o repositório</small></div><div class="helper-box"><strong>O que o site faz sozinho</strong><small>Se o arquivo existe, o dia aparece como <strong>pronta</strong>. Se não existe, fica como <strong>planejada</strong>.</small></div><div class="helper-box"><strong>Quando ainda precisa mexer no config</strong><small>Somente quando você quiser adicionar um dia novo fora do plano já mapeado ou alterar título, data ou matérias.</small></div></div></aside></div>
+    <section class="panel" style="margin-top:18px"><h2>📚 Missões da semana</h2><p class="sub">Abertura automática para dias prontos e estado planejado para os demais.</p><div class="days-list" id="daysList"></div></section>
+    <div class="footer">Projeto AYKA em arquitetura enxuta: <strong>index.html + config.js</strong> no núcleo, com apostilas usando base compartilhada.</div>
   </div>
-</header>
-
-<section class="section active" id="sec-calendario">
-  <h2 class="section-title">📅 Calendário das apostilas</h2>
-  <p class="section-sub">Agora o AYKA usa um calendário mensal com navegação entre meses e dados separados da engine.</p>
-
-  <div class="info-box mission-box">
-    <span class="info-box-icon">🧩</span>
-    <div>
-      <div class="info-box-title">Nova arquitetura do projeto</div>
-      <div class="info-box-text">O cronograma agora fica em <strong>data/cronograma.js</strong>. A lógica do calendário fica em <strong>assets/js/calendar.js</strong>. O conteúdo de cada dia fica em <strong>apostilas/</strong>. Assim, para adicionar novos dias, você normalmente atualiza só os dados e a nova apostila.</div>
-    </div>
-  </div>
-
-  <div class="calendar-wrap">
-    <div class="calendar-head">
-      <div>
-        <h3>🗓️ Cronograma mensal</h3>
-        <p id="calendarMonthSummary">Carregando mês...</p>
-      </div>
-      <div class="hero-pill" id="calendarSummary">0 apostilas prontas · 0 dias mapeados</div>
-    </div>
-
-    <div class="calendar-toolbar">
-      <button class="month-nav-btn" id="prevMonthBtn" type="button">← Mês anterior</button>
-      <div class="month-label-wrap">
-        <div class="month-label" id="monthLabel">Mês</div>
-        <div class="month-subtitle" id="monthSubtitle">Resumo do mês</div>
-      </div>
-      <button class="month-nav-btn" id="nextMonthBtn" type="button">Próximo mês →</button>
-    </div>
-
-    <div class="legend monthly-legend">
-      <div class="legend-item"><div class="legend-dot" style="background:#18794E"></div>Apostila pronta</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#7C3AED"></div>Dia planejado</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#E5E7EB"></div>Sem estudo mapeado</div>
-    </div>
-
-    <div class="month-weekdays" id="monthWeekdays"></div>
-    <div class="month-grid" id="monthGrid"></div>
-  </div>
-</section>
-
-<script src="data/cronograma.js"></script>
-<script src="assets/js/calendar.js"></script>
+  <script>
+    const STORAGE_KEY = 'ayka_selected_week_v1';
+    function esc(str){return String(str ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');}
+    async function fileExists(url){try{let res = await fetch(url,{method:'HEAD',cache:'no-store'}); if(res.ok) return true; if(res.status===405||res.status===0){res=await fetch(url,{method:'GET',cache:'no-store'}); return res.ok;} return false;}catch(e){return false;}}
+    async function buildDaysStatus(days){return Promise.all(days.map(async day => ({...day,status:(await fileExists(day.file))?'pronta':'planejada'})));}
+    function getSelectedWeek(weeks){const raw=Number(localStorage.getItem(STORAGE_KEY)); if(raw&&weeks.some(w=>w.numero===raw)) return raw; return 1;}
+    function setSelectedWeek(week){localStorage.setItem(STORAGE_KEY,String(week));}
+    function formatDate(dateStr){const d = new Date(dateStr+'T00:00:00'); return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'short'});}
+    function nextPlanned(days){return days.find(d => d.status !== 'pronta') || null;}
+    function renderHero(data,days,selectedWeek){document.getElementById('heroTitle').textContent=data.projeto.titulo;document.getElementById('heroSubtitle').textContent=data.projeto.subtitulo;document.getElementById('pillDuration').textContent='⏱️ '+data.projeto.duracaoDiaria;document.getElementById('pillDays').textContent='📚 '+data.projeto.totalDiasPlanejados+' dias planejados';document.getElementById('pillWeeks').textContent='🗓️ '+data.projeto.totalSemanas+' semanas';const ready=days.filter(d=>d.status==='pronta').length; const next=nextPlanned(days); document.getElementById('statReady').textContent=ready; document.getElementById('statTotal').textContent=days.length; document.getElementById('statWeek').textContent=selectedWeek; document.getElementById('statNext').textContent=next ? String(next.numero).padStart(2,'0') : 'ok';}
+    function renderWeeks(data,days,selectedWeek){const grid=document.getElementById('weekGrid'); grid.innerHTML=data.semanas.map(week=>{const weekDays=days.filter(d=>d.semana===week.numero); const ready=weekDays.filter(d=>d.status==='pronta').length; return `<div class="week-card ${week.numero===selectedWeek?'active':''}" data-week="${week.numero}"><div class="week-top"><span class="week-tag">Semana ${week.numero}</span><span>${ready}/${weekDays.length} prontas</span></div><div class="week-title">${esc(week.titulo)}</div><div class="week-desc">${esc(week.descricao)}</div><div class="week-meta">${esc(week.faixa)}</div></div>`;}).join(''); grid.querySelectorAll('.week-card').forEach(card=>card.addEventListener('click',()=>{const week=Number(card.dataset.week); setSelectedWeek(week); renderAll(window.AYKA_CACHE.days,week);}));}
+    function renderFocus(data,days,selectedWeek){const week=data.semanas.find(w=>w.numero===selectedWeek); const weekDays=days.filter(d=>d.semana===selectedWeek); const ready=weekDays.filter(d=>d.status==='pronta').length; document.getElementById('focusCard').innerHTML=`<h3>Semana ${selectedWeek} — ${esc(week.titulo)}</h3><p>${esc(week.descricao)}</p><p style="margin-top:10px"><strong>${ready}/${weekDays.length}</strong> apostilas prontas nesta semana.</p><p style="margin-top:10px">Para avançar, basta subir o próximo arquivo <strong>dia-00x.html</strong> na pasta <strong>apostilas/</strong>.</p>`;}
+    function renderDays(days,selectedWeek){const list=document.getElementById('daysList'); const weekDays=days.filter(d=>d.semana===selectedWeek); list.innerHTML=weekDays.map(day=>{const subjects=day.subjects.map(s=>`<span class="chip">${esc(s)}</span>`).join(''); const badgeClass=day.status==='pronta'?'ready':'planned'; const badgeLabel=day.status==='pronta'?'pronta':'planejada'; return `<div class="day-card"><div class="day-num"><span>D${String(day.numero).padStart(2,'0')}</span><span>${esc(day.weekday)}</span></div><div><div class="day-title">${esc(day.titulo)}</div><div class="day-date">${esc(formatDate(day.data))} • ${esc(day.data)}</div><div class="chips">${subjects}</div>${day.status==='pronta'?`<a class="open-btn" href="${esc(day.file)}">Abrir apostila</a>`:`<div style="margin-top:10px;color:#7d6b5e;font-size:13px;font-weight:800">Adicione o arquivo <code>${esc(day.file.split('/').pop())}</code> na pasta <code>apostilas/</code>.</div>`}</div><div class="status ${badgeClass}">${badgeLabel}</div></div>`;}).join('');}
+    function renderAll(days,selectedWeek){renderHero(window.AYKA,days,selectedWeek); renderWeeks(window.AYKA,days,selectedWeek); renderFocus(window.AYKA,days,selectedWeek); renderDays(days,selectedWeek);}
+    (async function init(){const days = await buildDaysStatus(window.AYKA.dias || []); window.AYKA_CACHE={days}; const selectedWeek=getSelectedWeek(window.AYKA.semanas || []); renderAll(days,selectedWeek);})();
+  </script>
 </body>
 </html>
